@@ -5,27 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public bool isStart;
-    public bool isQuit;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public void PlayGame() {
+        SceneManager.LoadSceneAsync(1);
     }
-
-    private void OnMouseUp()
-    {
-        if (isStart) {
-            SceneManager.LoadScene("Scenes/LvlSelector");
-
-        }
-        if (isQuit) { 
-            Application.Quit();
-        }
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void StopGame() { 
+        Application.Quit();
     }
 }
