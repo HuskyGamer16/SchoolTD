@@ -1,18 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class ResolutionChange : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private TextMeshProUGUI text;
+    private TextMeshProUGUI res;
+    private Resolution[] Resol;
+    private List<Resolution> filteredRes;
+    private float currentRefRate;
+    private int currentResIndex = 0;
+    private string[] res_available = new string[]{"3840x2160","2560x1440","2048x1152","1920x1080","1366x768","1280x720","960x540","640x360"};
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        Resol = Screen.resolutions;
+        filteredRes = new List<Resolution>();
+    }
+    public void IncRes()
+    {
+    
+    }
+    public void DecRes() 
+    {
+    
     }
 }
