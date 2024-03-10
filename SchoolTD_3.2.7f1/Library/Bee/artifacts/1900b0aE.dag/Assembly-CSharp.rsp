@@ -390,6 +390,7 @@
 "Assets/Scripts/MouseHover.cs"
 "Assets/Scripts/ResolutionChange.cs"
 "Assets/Scripts/SounsSettings.cs"
+"Assets/Scripts/SpawnEnemy.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark02.cs"
