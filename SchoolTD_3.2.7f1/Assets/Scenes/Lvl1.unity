@@ -1827,15 +1827,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3f5b0a06dfa66554a8d0d78aff7f595d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -807.9
+      value: -813.24
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3f5b0a06dfa66554a8d0d78aff7f595d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.938528
+      value: 12.09
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3f5b0a06dfa66554a8d0d78aff7f595d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 199.7
+      value: 201.95
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3f5b0a06dfa66554a8d0d78aff7f595d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1885,6 +1885,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: desk01
       objectReference: {fileID: 0}
+    - target: {fileID: 8235354159380435542, guid: 3f5b0a06dfa66554a8d0d78aff7f595d, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 8b8e4a86911663a4a9c3472a43fb9373, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
