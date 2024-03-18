@@ -2,15 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
+using System.Timers;
 public class SpawnEnemy : MonoBehaviour
 {
     // Reference to the Prefab. Drag a Prefab into this field in the Inspector.
     public GameObject myPrefab;
-
+    
     // This script will simply instantiate the Prefab when the game starts.
     void Start()
     {
+
         // Instantiate at position (0, 0, 0) and zero rotation.
-        Instantiate(myPrefab, new Vector3(-840, 0, 275), Quaternion.identity);
+        Instantiate(myPrefab, new Vector3(-885, 18, 275), Quaternion.Euler(new Vector3(-90,-90,0)));
     }
 }
