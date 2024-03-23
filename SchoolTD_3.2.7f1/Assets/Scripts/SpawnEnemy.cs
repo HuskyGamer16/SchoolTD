@@ -7,27 +7,24 @@ public class SpawnEnemy : MonoBehaviour
 {
     // Reference to the Prefab. Drag a Prefab into this field in the Inspector.
     public GameObject myPrefab;
-    public float speed = 4;
+    public float timeToSpawn;
+    public float spawnCooldown;
+    public GameObject StartPoint;
     int amount = 1;
     // This script will simply instantiate the Prefab when the game starts.
     void Start()
     {
-            
-
-        // Instantiate at position (0, 0, 0) and zero rotation.
-
+            spawnCooldown = timeToSpawn;
     }
-   
     private void Update()
-        {
-
-        while (amount <= 10 )
-                {
-            //This summons as of now a shitload of prefabs, by the frame)
-            amount++;
-        Instantiate(myPrefab, new Vector3(-885, 18, 275), Quaternion.Euler(new Vector3(-90, -90, 0)));
+    {
+        if(amount <= 10 ){
+        spawnCooldown -= Time.deltaTime; 
         }
-        //if (true) { false; }
-        
+        if(spawnCooldown<=0){
+            Instantiate(myPrefab, StartPoint.transform.position, Quaternion.Euler(new Vector3(-90, -90, 0)));
+        spawnCooldown = timeToSpawn;
+        amount++;
+       }
     }
 }

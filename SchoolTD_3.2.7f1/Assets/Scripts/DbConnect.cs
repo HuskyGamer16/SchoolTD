@@ -35,26 +35,58 @@ public class DbConnect : MonoBehaviour
             return false;
         }
     }
-    public void TablePlayer()
-    {
-        if (Connect())
-        {
-            string query = "CREATE TABLE player( int id auto_increment not null primary key, username varchar(32) not null, password varchar(512) not null, score int);";
-            MySqlCommand cmd = new MySqlCommand(query, con);
-            cmd.ExecuteNonQuery();
-            Connect_close();
-        }
-    }
     public void InsertPlayer(player temp)
     {
         if (Connect())
         {
-            string query = "INSERT INTO player(username,password) VALUES(@username,@password);";
+            string query = "INSERT INTO player(username,pw) VALUES(@username,@pw);";
             MySqlCommand cmd = new MySqlCommand(query, con);
             cmd.Parameters.AddWithValue("@username", temp.Username);
-            cmd.Parameters.AddWithValue("@password", temp.Password);
+            cmd.Parameters.AddWithValue("@pw", temp.Pw);
             cmd.ExecuteNonQuery();
             Connect_close();
         }
+    }
+    public List<player> CountUserPlayer(player tempUser)
+    {
+        //dunno?
+        List<player> temp = new();
+        if (Connect())
+        {
+            string query = "select Count(*) as db from player where username like @username;";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+            cmd.Parameters.AddWithValue("@username", tempUser.Username);
+            MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    temp.Add(new player(
+                        reader.GetInt32(0),
+                        reader.GetString(1),
+                        reader.GetString(2)
+                        ));
+                }
+            Connect_close();
+        }
+        return temp;
+    }
+    public List<player> SelectAllPlayer()
+    {
+        List<player> temp = new();
+        if (Connect())
+        {
+            string query = "select * from player;";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+            MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    temp.Add(new player(
+                        reader.GetInt32(0),
+                        reader.GetString(1),
+                        reader.GetString(2)
+                        ));
+                }
+            Connect_close();
+        }
+        return temp;
     }
 }

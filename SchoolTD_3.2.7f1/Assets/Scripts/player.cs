@@ -6,28 +6,24 @@ public class player : MonoBehaviour
 {
     private int id;
     private string username;
-    private string password;
-    private int score;
-
-    public player(string username, string password, int score)
+    private string pw;
+    
+    public player(string username, string pw)
     {
         this.username = username;
-        this.password = password;
-        this.score = score;
+        this.pw = pw;
     }
 
-    public player(int id, string username, string password, int score)
+    public player(int id, string username, string pw)
     {
         this.id = id;
         this.username = username;
-        this.password = password;
-        this.score = score;
+        this.pw = pw;
     }
 
     public int Id { get => id; set => id = value; }
     public string Username { get => username; set => username = value; }
-    public string Password { get => password; set => password = value; }
-    public int Score { get => score; set => score = value; }
+    public string Pw { get => pw; set => pw = value; }
 
     
 }
