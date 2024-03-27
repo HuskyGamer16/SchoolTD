@@ -22,7 +22,7 @@ public class SpawnEnemy : MonoBehaviour
         spawnCooldown -= Time.deltaTime; 
         }
         if(spawnCooldown<=0){
-            Instantiate(myPrefab, StartPoint.transform.position, Quaternion.Euler(new Vector3(-90, -90, 0)));
+            Instantiate(myPrefab, StartPoint.transform.position, Quaternion.Euler(new Vector3(-90, -180, 0)));
         spawnCooldown = timeToSpawn;
         amount++;
        }

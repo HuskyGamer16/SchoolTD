@@ -17,7 +17,7 @@ public class ResolutionChange : MonoBehaviour
 
     private RefreshRate currentRefRate;
     private int currentResIndex = 0;
-    [SerializeField] private IPanel Panel; 
+    private PanelSettings PanelSett; 
     
     private void Start()
     {
@@ -48,16 +48,12 @@ public class ResolutionChange : MonoBehaviour
     }
     private void Update()
     {
-        //    if(Input.GetKey(KeyCode.Escape) && (bool)Panel.)
-        //    {
-        //        //Debug.Log("Escapse pressed");
-        //        Panel.SetActive(false);
-        //    }
-        //    if (Input.GetKey(KeyCode.Escape) && !(bool)Panel.activeSelf)
-        //    {
-        //        //Debug.Log("Escapse pressed");
-        //        Panel.SetActive(true);
-        //    }
+        if (Input.GetKey(KeyCode.Escape)){
+            Debug.Log("Escape pressed!");
+            IPanel panel = GetComponent<IPanel>();
+            //if(panel. )
+            //if (true) { } else { }
+        }
     }
     public void IncRes()
     {
