@@ -400,6 +400,7 @@
 "Assets/Scripts/player.cs"
 "Assets/Scripts/ResolutionChange.cs"
 "Assets/Scripts/Settings_scenes.cs"
+"Assets/Scripts/shootTurretBasic.cs"
 "Assets/Scripts/SounsSettings.cs"
 "Assets/Scripts/SpawnEnemy.cs"
 "Assets/Scripts/waves.cs"

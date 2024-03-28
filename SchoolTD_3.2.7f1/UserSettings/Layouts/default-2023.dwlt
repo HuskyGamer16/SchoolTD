@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 1397.3334
   m_ShowMode: 4
-  m_Title: Inspector
+  m_Title: Scene
   m_RootView: {fileID: 5}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -94,8 +94,8 @@ MonoBehaviour:
     y: 0
     width: 404.66666
     height: 922
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: GameView
+  m_Name: SceneView
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -219,7 +219,7 @@ MonoBehaviour:
     height: 922
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 14}
+  m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 18}
   - {fileID: 15}
@@ -227,8 +227,8 @@ MonoBehaviour:
   - {fileID: 19}
   - {fileID: 17}
   - {fileID: 14}
-  m_Selected: 5
-  m_LastSelected: 2
+  m_Selected: 2
+  m_LastSelected: 5
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,8 +248,8 @@ MonoBehaviour:
     y: 0
     width: 652
     height: 922
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -773,9 +773,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -6.8159842, y: 28.479897, z: -75.71656}
+    m_Target: {x: -18.569643, y: 9.167511, z: 3.5669906}
     speed: 2
-    m_Value: {x: -6.8159842, y: 28.479897, z: -75.71656}
+    m_Value: {x: -18.569643, y: 9.167511, z: 3.5669906}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -821,13 +821,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.506
   m_Rotation:
-    m_Target: {x: 0.17156392, y: -0.0028232848, z: 0.0004764617, w: 0.98528266}
+    m_Target: {x: 0.09564414, y: 0.11420449, z: -0.010949815, w: 0.98899394}
     speed: 2
-    m_Value: {x: 0.17154469, y: -0.0028229682, z: 0.00047640826, w: 0.98517215}
+    m_Value: {x: 0.0946244, y: 0.1151803, z: -0.010927872, w: 0.988767}
   m_Size:
-    m_Target: 27.737686
+    m_Target: 0.9829388
     speed: 2
-    m_Value: 27.737686
+    m_Value: 0.8660254
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -897,26 +897,26 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 368cffff
-      m_LastClickedID: -29642
-      m_ExpandedIDs: 02c8ffff30d1ffff50d1ffff62d1ffff70d1ffff9ad4ffff02daffff0efbffff6c78000080780000be780000d8780000f8780000fe7800005a79000094790000c4790000327a0000
+      m_SelectedIDs: ae00ffff
+      m_LastClickedID: -65362
+      m_ExpandedIDs: 9e02ffff0efbffff6c78000088780000cc78000078790000da790000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: bullet(Clone)
+        m_OriginalName: bullet(Clone)
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -15300
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_TrimLeadingAndTrailingWhitespace: 0
-        m_ClientGUIView: {fileID: 0}
+        m_ClientGUIView: {fileID: 4}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -995,7 +995,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -1047,10 +1047,10 @@ MonoBehaviour:
     m_TextWithWhitespace: "Animator\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 218
-    y: 73
-    width: 798
-    height: 414
+    x: 404.6667
+    y: 72.66667
+    width: 1501.3334
+    height: 901
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1162,7 +1162,7 @@ MonoBehaviour:
     m_SkipHidden: 1
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Models
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1172,16 +1172,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 95
   m_LastFolders:
-  - Assets
+  - Assets/Models
   m_LastFoldersGridSize: 95
   m_LastProjectPath: E:\Github\SchoolTD\SchoolTD_3.2.7f1
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 547c0000
-    m_LastClickedID: 31828
-    m_ExpandedIDs: 00000000547c0000567c0000ca7c0000489f000000ca9a3bffffff7f
+    m_SelectedIDs: 9a7b0000
+    m_LastClickedID: 31642
+    m_ExpandedIDs: 00000000987b00009a7b000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1210,7 +1210,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000547c0000567c0000
+    m_ExpandedIDs: 00000000987b00009a7b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1342,7 +1342,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 31282
+  m_LastSelectedObjectID: 31194
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1364,10 +1364,10 @@ MonoBehaviour:
     m_TextWithWhitespace: "Audio Mixer\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 313
-    y: 81
-    width: 805
-    height: 361
+    x: 404.6667
+    y: 72.66667
+    width: 1501.3334
+    height: 901
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1499,12 +1499,12 @@ MonoBehaviour:
       oldMaxSizes: 
       oldSplitSize: 0
     m_HorizontalSplitter:
-      ID: 391
+      ID: 1001
       splitterInitialOffset: 0
       currentActiveSplitter: -1
       realSizes:
-      - 241
-      - 564
+      - 450.66666
+      - 1050.6667
       relativeSizes:
       - 0.3
       - 0.7
@@ -1514,7 +1514,7 @@ MonoBehaviour:
       maxSizes:
       - 0
       - 0
-      lastTotalSize: 805
+      lastTotalSize: 1501.3334
       splitSize: 6
       xOffset: 0
       m_Version: 1
