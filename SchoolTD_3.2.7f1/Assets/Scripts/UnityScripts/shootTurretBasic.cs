@@ -17,8 +17,9 @@ public class shootTurretBasic : MonoBehaviour
     {
         if (other.gameObject.activeSelf && other.CompareTag("Enemy")) {
             spawnCooldown -= Time.deltaTime;
-            if (spawnCooldown <= 0) { 
-                Instantiate(Bullet,gameObject.transform.position,Quaternion.identity);
+            if (spawnCooldown <= 0)
+            {
+                Instantiate(Bullet,transform.position,Quaternion.identity);
                 spawnCooldown = timeToSpawn;
             }
         }

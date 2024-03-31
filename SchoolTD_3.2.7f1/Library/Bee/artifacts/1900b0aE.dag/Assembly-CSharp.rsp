@@ -398,6 +398,7 @@
 "Assets/Scripts/player.cs"
 "Assets/Scripts/playerTower.cs"
 "Assets/Scripts/TotalTower.cs"
+"Assets/Scripts/UnityScripts/bulletGo.cs"
 "Assets/Scripts/UnityScripts/CamSwitch.cs"
 "Assets/Scripts/UnityScripts/CheckPlayerHP.cs"
 "Assets/Scripts/UnityScripts/DbConnect.cs"
