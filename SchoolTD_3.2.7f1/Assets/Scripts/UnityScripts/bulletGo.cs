@@ -8,6 +8,7 @@ public class bulletGo : MonoBehaviour
     public float speed = 25f;
     private GameObject EndPos;
     private NavMeshAgent agent;
+    public float lifetime = .75f;
     
     void Start()
     {
@@ -16,9 +17,23 @@ public class bulletGo : MonoBehaviour
     }
     void Update()
     {
+        if (EndPos == null) {
+            EndPos = GameObject.FindGameObjectWithTag("Enemy");
+            if (EndPos == null)
+            {
+                Destroy(gameObject);
+            }
+        }
         agent.speed = speed;
         agent.destination = EndPos.transform.position;
-        agent.angularSpeed = 180f;
+        agent.angularSpeed = 270f;
+        if (lifetime <= 0)
+        {
+            Destroy(gameObject);
+        }
+         
+        lifetime -= Time.deltaTime;
+        
     }
 
     private void OnTriggerStay(Collider other)
