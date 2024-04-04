@@ -6,10 +6,11 @@ using System.Text;
 using TMPro;
 
 public class LoginHandler : MonoBehaviour
-{ 
+{
     private bool IsGood;
+    public GameObject boulder;
     public GameObject panelFrom;
-    public GameObject panelTo;
+    public GameObject MainPanel;
     [SerializeField] private TMP_InputField nameInput;
     [SerializeField] private TMP_InputField pwInput;
     [SerializeField] private TMP_Text pwError;
@@ -21,9 +22,15 @@ public class LoginHandler : MonoBehaviour
     {
         ResetInputs();
     }
+    private void FixedUpdate()
+    {
+        if (Input.GetKey(KeyCode.Escape)) {
+            BackToMain();
+        }
+    }
     public void ResetInputs()
     {
-        sLog.text = "Please, Log in to play";
+        sLog.text = "To enter, show Student ID";
         nameInput.text = "";
         pwInput.text = "";
         IsGood = false;
@@ -43,26 +50,26 @@ public class LoginHandler : MonoBehaviour
             else if (count <= 0)
             {
                 pwError.enabled = true;
-                pwError.text = "There is no one in the database with this username!";
+                pwError.text = "There is no one in the school with this name!";
             }
-                if(count > 1)
+            if (count > 1)
             {
                 pwError.enabled = true;
-                pwError.text = "There is more than one person in the database with this username!";
+                pwError.text = "There is more than one person in the school with this name!";
             }
         }
     }
-   
+
     public void CheckPW()
     {
         if (nameInput != null)
         {
-            List<player> players =  db.SelectAllPlayer();
+            List<player> players = db.SelectAllPlayer();
 
             int i = 0;
-            while(i < players.Count && players[i].Username != nameInput.text)
+            while (i < players.Count && players[i].Username != nameInput.text)
             {
-                i++;    
+                i++;
             }
             if (i < players.Count) {
                 string pass = players[i].Pw;
@@ -85,13 +92,37 @@ public class LoginHandler : MonoBehaviour
         if (!IsGood)
         {
             pwError.enabled = true;
-            pwError.text = "You haven't filled out the form correctly!";
+            if (pwInput.text != null && nameInput.text != null)
+            {
+                pwError.text = "Student name, and/or password do not match!";
+            }
+            else
+                pwError.text = "You haven't filled out the form correctly!";
         }
         else
         {
-            sLog.text = "Sikeres bejelentkezés!";
+            sLog.text = "Successful Entrance!";
             pwError.text = "";
             pwError.enabled = true;
+            boulder.SetActive(true);
+            cam.GetComponent<Animator>().enabled = true;
+            SendToSelect();
         }
+    }
+    public void SendToSelect(){
+        Animator ani = cam.GetComponent<Animator>();
+        ani.speed = 1;
+        if (!ani.GetComponent<Animation>().isPlaying)
+            {
+            ani.enabled = false;
+            panelFrom.SetActive(false);
+        }
+    }
+    public void BackToMain() { 
+        Animator ani = cam.GetComponent<Animator>();
+        //somehow i have to make it transition backwards, or make a new anim with the reverse of the orig 
+        //ani.speed = -1;
+        panelFrom.SetActive(false);
+        MainPanel.SetActive(true);
     }
 }

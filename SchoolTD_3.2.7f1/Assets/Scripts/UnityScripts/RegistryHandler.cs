@@ -38,7 +38,7 @@ public class RegistryHandler : MonoBehaviour
         }
     }
     public void ResetInputs() {
-        sReg.text = "You can sign-up here";
+        sReg.text = "You can enroll here";
         nameInput.text = "";
         pwInput.text = "";
         pwAgainInput.text = "";
@@ -54,7 +54,7 @@ public class RegistryHandler : MonoBehaviour
             if (count > 0)
             {
                 pwError.enabled = true;
-                pwError.text = "This username is already in use!";
+                pwError.text = "This (user)name is already in use!";
             }
             else
             {
@@ -113,7 +113,7 @@ public class RegistryHandler : MonoBehaviour
             Debug.Log(hash);
             db.InsertPlayer(new player(nameInput.text, hash));
             //This is not safe by any means, but time is running low, so we have to deal with it, desperate times calls for desperate measures.
-            sReg.text = "Succesful registration!";
+            sReg.text = "Succesful Enrollment!";
             Delay = 1050f;
         }
     }
