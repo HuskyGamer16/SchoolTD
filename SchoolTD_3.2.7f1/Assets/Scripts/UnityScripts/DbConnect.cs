@@ -1,10 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using MySql.Data.MySqlClient;
 
-public class DbConnect : MonoBehaviour
+public class DbConnect
 {
     private MySqlConnection con;
     public DbConnect(string host, string dbname, string ui, string pw)
@@ -47,27 +46,23 @@ public class DbConnect : MonoBehaviour
             Connect_close();
         }
     }
-    public List<player> CountUserPlayer(player tempUser)
+    public int CountUserPlayer(string tempUser)
     {
         //dunno?
-        List<player> temp = new();
+        int count = 0;
         if (Connect())
         {
-            string query = "select Count(*) as db from player where username like @username;";
+            string query = "select Count(username) as db from player where username like @username;";
             MySqlCommand cmd = new MySqlCommand(query, con);
-            cmd.Parameters.AddWithValue("@username", tempUser.Username);
+            cmd.Parameters.AddWithValue("@username", tempUser);
             MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    temp.Add(new player(
-                        reader.GetInt32(0),
-                        reader.GetString(1),
-                        reader.GetString(2)
-                        ));
+                    count += reader.GetInt32(0);
                 }
             Connect_close();
         }
-        return temp;
+        return count;
     }
     public List<player> SelectAllPlayer()
     {
