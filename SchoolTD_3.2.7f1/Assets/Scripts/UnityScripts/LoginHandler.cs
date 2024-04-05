@@ -8,6 +8,7 @@ using TMPro;
 public class LoginHandler : MonoBehaviour
 {
     private bool IsGood;
+    public AnimationClip CamMovementReverse;
     public GameObject boulder;
     public GameObject panelFrom;
     public GameObject MainPanel;
@@ -122,6 +123,9 @@ public class LoginHandler : MonoBehaviour
         Animator ani = cam.GetComponent<Animator>();
         //somehow i have to make it transition backwards, or make a new anim with the reverse of the orig 
         //ani.speed = -1;
+        ani.enabled = true;
+        ani.GetComponent<Animation>().AddClip(CamMovementReverse, "CamMovementReverse");
+        ani.PlayInFixedTime("CamMovementReverse");
         panelFrom.SetActive(false);
         MainPanel.SetActive(true);
     }
