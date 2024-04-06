@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-public class levels : MonoBehaviour
+public class levels 
 {
     private int id;
     private int waveID;

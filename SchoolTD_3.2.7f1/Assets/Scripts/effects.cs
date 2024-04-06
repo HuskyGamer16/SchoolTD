@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-public class effects : MonoBehaviour
+public class effects 
 {
     private int id;
     private string effectName;
