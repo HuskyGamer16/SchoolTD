@@ -17,7 +17,7 @@ public class ResolutionChange : MonoBehaviour
 
     private RefreshRate currentRefRate;
     private int currentResIndex = 0;
-    private PanelSettings PanelSett; 
+    private GameObject Settings;
     
     private void Start()
     {
@@ -49,10 +49,17 @@ public class ResolutionChange : MonoBehaviour
     private void Update()
     {
         if (Input.GetKey(KeyCode.Escape)){
-            Debug.Log("Escape pressed!");
-            IPanel panel = GetComponent<IPanel>();
-            //if(panel. )
-            //if (true) { } else { }
+            if (Time.timeScale == 0)
+            {
+                Time.timeScale = 1f;
+                Settings.SetActive(false);
+
+            }
+            else
+            {
+                Time.timeScale = 0f;
+                Settings.SetActive(true);
+            }
         }
     }
     public void IncRes()

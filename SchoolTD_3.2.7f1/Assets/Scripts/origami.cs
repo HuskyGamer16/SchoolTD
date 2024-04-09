@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-public class origami : MonoBehaviour
+public class origami
 {
     private int id;
     private int baseHP;

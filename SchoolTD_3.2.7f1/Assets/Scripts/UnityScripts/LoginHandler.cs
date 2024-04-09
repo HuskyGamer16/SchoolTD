@@ -7,6 +7,8 @@ using TMPro;
 
 public class LoginHandler : MonoBehaviour
 {
+    public LoginHandler instance;
+    public int playerid;
     private bool IsGood;
     public AnimationClip CamMovementReverse;
     public GameObject boulder;
@@ -31,6 +33,7 @@ public class LoginHandler : MonoBehaviour
     }
     public void ResetInputs()
     {
+        playerid = 0;
         sLog.text = "To enter, show Student ID";
         nameInput.text = "";
         pwInput.text = "";
@@ -80,6 +83,7 @@ public class LoginHandler : MonoBehaviour
                 if (pass == hash) {
                     Debug.Log("Azonos!");
                     IsGood = true;
+                    playerid = players[i].Id;
                 }
                 else
                 {

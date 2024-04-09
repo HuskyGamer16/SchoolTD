@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.Animations;
 using System.Timers;
 public class SpawnEnemy : MonoBehaviour
@@ -11,7 +12,7 @@ public class SpawnEnemy : MonoBehaviour
     public GameObject StartPoint;
     bool waveFinished = false; 
     DbConnect db = new DbConnect("127.0.0.1", "schooltd", "root", "");
-    List<effects> GetEffects = new();
+    public List<effects> GetEffects = new();
     List<origami> GetEnemies = new();
     List<waves> GetWaves = new();
     List<levels> GetLevel = new();
@@ -48,7 +49,6 @@ public class SpawnEnemy : MonoBehaviour
                     amount = 0;
                 }       
             }
-            Debug.Log(tillWaveSpawn);
             if (tillWaveSpawn > 0)
             {
                 tillWaveSpawn -= Time.deltaTime;
@@ -58,7 +58,7 @@ public class SpawnEnemy : MonoBehaviour
     }
     public void Spawn(int max)
     {
-        if (amount < max)
+        if (amount <= max)
         {
             spawnCooldown -= Time.deltaTime;
         }
@@ -72,8 +72,8 @@ public class SpawnEnemy : MonoBehaviour
     }
     public GameObject RandomEnemy()
     {
-        int max = enemyWeight[0] + enemyWeight[1] + enemyWeight[2];
-        int r = Random.Range(0, max+1);
+        int Weight = enemyWeight[0] + enemyWeight[1] + enemyWeight[2];
+        int r = Random.Range(0, Weight+1);
         int a;
         if (r< enemyWeight[0])
         {
@@ -96,31 +96,48 @@ public class SpawnEnemy : MonoBehaviour
         {
             a += 6;
         }
-        switch (a%3) {
-            case 0: 
-                myPrefabs[a].GetComponent<EnemyMovement>().Hp *= 2/4*(GetWaves[0].Id%10);
-                myPrefabs[a].GetComponent<EnemyMovement>().Hp += currentWave*5;
-                myPrefabs[a].GetComponent<EnemyMovement>().SPD *= 3/2;
+        EnemyMovement Em = myPrefabs[a].GetComponent<EnemyMovement>();
+        switch (a % 3)
+        {
+            case 0:
+                Em.Hp = GetEnemies[0].BaseHP;
+                Em.Def = GetEnemies[0].BaseDef;
+                Em.SPD = GetEnemies[0].BaseSpeed;
                 break;
             case 1:
-                myPrefabs[a].GetComponent<EnemyMovement>().Hp *= 1;
-                myPrefabs[a].GetComponent<EnemyMovement>().Hp += currentWave * 5;
-                myPrefabs[a].GetComponent<EnemyMovement>().SPD *= 1;
+                Em.Hp = GetEnemies[1].BaseHP;
+                Em.Def = GetEnemies[1].BaseDef;
+                Em.SPD = GetEnemies[1].BaseSpeed;
                 break;
             case 2:
-                myPrefabs[a].GetComponent<EnemyMovement>().Hp *= 3/2;
-                myPrefabs[a].GetComponent<EnemyMovement>().Hp += currentWave * 5;
-                myPrefabs[a].GetComponent<EnemyMovement>().SPD *= 2/4;
+                Em.Hp = GetEnemies[2].BaseHP;
+                Em.Def = GetEnemies[2].BaseDef;
+                Em.SPD = GetEnemies[2].BaseSpeed;
                 break;
         }
+        switch (a/3) {
+            case 0: 
+                Em.Hp += (currentWave*5)-50;
+                Em.SPD += 15;
+                break;
+            case 1:
+                Em.Hp += currentWave * 5;
+                break;
+            case 2:
+                Em.Hp += (currentWave * 5)+50;
+                Em.SPD -= 15;
+                break;
+        }
+                Em.GetComponent<NavMeshAgent>().speed = Mathf.FloorToInt(Em.SPD/10);
+                Em.GetComponent<NavMeshAgent>().angularSpeed = Em.SPD;
+
         return myPrefabs[a];
     }
     public void Enemies() {
         //GetLevel = db.SelectLevel(1);
-        Debug.Log(waveIds[currentWave]);
         GetWaves = db.SelectWave(waveIds[currentWave]);
         GetEffects = db.SelectEffects();
-        GetEnemies = db.SelectOrigami(GetWaves[0].OrigamiId);
+        GetEnemies = db.SelectOrigami();
         max = GetWaves[0].EnemyTotal;
     }
     

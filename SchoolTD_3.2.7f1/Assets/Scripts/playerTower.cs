@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-
-public class playerTower : MonoBehaviour
+public class playerTower 
 {
     private int id;
     private int towerID;

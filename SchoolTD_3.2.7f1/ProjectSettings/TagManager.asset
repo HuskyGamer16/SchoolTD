@@ -6,6 +6,8 @@ TagManager:
   tags:
   - projectile
   - Enemy
+  - Desk
+  - Tower
   layers:
   - Default
   - TransparentFX

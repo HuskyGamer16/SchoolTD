@@ -11,20 +11,17 @@ public class shootTurretBasic : MonoBehaviour
     void Start()
     {
         amount = 0;
-        timeToSpawn = 5f;
+        timeToSpawn = 3f;
         spawnCooldown = timeToSpawn;
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.activeSelf && other.CompareTag("Enemy"))
-        {
-            if (amount == 1)
-            {
-                amount = 0;
-            }
+        if (other.gameObject.activeSelf)
+        { 
+        
         }
     }
-    
+
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.activeSelf && other.CompareTag("Enemy")) {
