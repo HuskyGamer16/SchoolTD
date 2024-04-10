@@ -69,7 +69,27 @@ public class DbConnect
         }
         return temp;
     }
-
+    public List<effects> SelectEffect(int effectid)
+    {
+        List<effects> temp = new();
+        if (Connect())
+        {
+            string query = "SELECT * FROM effects WHERE id = @id";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+            cmd.Parameters.AddWithValue("@id", effectid);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                temp.Add(new(
+                    reader.GetInt32(0),
+                    reader.GetString(1),
+                    reader.GetString(2)
+                    ));
+            }
+            Connect_close();
+        }
+        return temp;
+    }
     public List<effects> SelectEffects() {
         List<effects> temp = new();
         if (Connect())

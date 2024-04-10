@@ -8,7 +8,8 @@ using System;
 
 public class SpawnTower : MonoBehaviour
 {
-    DbConnect db = new DbConnect("127.0.0.1", "schooltd", "root", "");
+    public SpawnTower instance; 
+    static DbConnect db = new DbConnect("127.0.0.1", "schooltd", "root", "");
     public GameObject[] Tower;
     int playerid = 1;
     public int baseDMG = 25;
@@ -67,7 +68,10 @@ public class SpawnTower : MonoBehaviour
             placeObj = gameObject;
         }
     }
-    
+    public static effects GiveEffect(int effectid) {
+        effects eff = db.SelectEffect(effectid)[0];
+        return eff;
+    }
     private bool LookForGamObject(out RaycastHit hit)
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -121,6 +125,7 @@ public class SpawnTower : MonoBehaviour
             if (j >= OccupiedPlaces.Count)
             {
                 place.y += 5.8f;
+                Tower[pTowers[0].TowerID - 1].GetComponent<TowerDMG>().level = Towers[pTowers[0].TowerID-1].CurrentLVL;
                 Instantiate(Tower[pTowers[0].TowerID - 1], place, Quaternion.identity);
                 OccupiedPlaces.Add(AvailablePlaces[i].name);
             }
