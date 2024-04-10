@@ -17,8 +17,8 @@ public class SpawnTower : MonoBehaviour
     public Vector3 place;
     public GameObject placeObj;
     int max;
-    public GameObject[] AvailablePlaces;
-    public List<string> OccupiedPlaces;
+    public GameObject[] AllPlaces;
+    public List<GameObject> OccupiedPlaces;
     List<playerTower> GetPlayerTowers;
     List<TotalTower> Towers;
     List<playerTower> pTowers;
@@ -34,8 +34,8 @@ public class SpawnTower : MonoBehaviour
     {
         level = db.SelectLevel(1)[0];
         max = level.MaxBuildables;
-        AvailablePlaces= new GameObject[max];
-        playerid = GetComponent<LoginHandler>().playerid;
+        AllPlaces = GameObject.FindGameObjectsWithTag("Bok");
+        //playerid = GetComponent<LoginHandler>().playerid;
         AllEffects = db.SelectEffects();
         OccupiedPlaces.Clear();
         BuyTower.SetActive(false);
@@ -53,19 +53,11 @@ public class SpawnTower : MonoBehaviour
 
     private void Availability(GameObject gameObject)
     {
-        bool Available = false;
-        int i = 0;
-        while (i < AvailablePlaces.Length && AvailablePlaces[i].gameObject != gameObject)
-        {
-            i++;
-        }
-        if (i < AvailablePlaces.Length) {
-            Available = true;
-        }
-        if (gameObject.CompareTag("Desk") && Available) {
-            Debug.Log("Asztal: " + gameObject.name);
+        if (gameObject.CompareTag("Bok")  && OccupiedPlaces.Count < max) {
+            Debug.Log("Könyv: " + gameObject.name);
             place = gameObject.transform.position;
             placeObj = gameObject;
+            OccupiedPlaces.Add(gameObject);
         }
     }
     public static effects GiveEffect(int effectid) {
@@ -85,21 +77,21 @@ public class SpawnTower : MonoBehaviour
     {
         pTowers = db.SelectEffectTower(playerid,db.GetEffectID("nothing"));
         int i = 0;
-        while (place != AvailablePlaces[i].transform.position && i < AvailablePlaces.Length)
+        while (place != OccupiedPlaces[i].transform.position && i < OccupiedPlaces.Count)
         {
             i++;
         }
-        if (i < AvailablePlaces.Length)
+        if (i < OccupiedPlaces.Count)
         {
             int j =0;
-            while (j < OccupiedPlaces.Count && OccupiedPlaces[j] != AvailablePlaces[i].name) { 
+            while (j < OccupiedPlaces.Count && OccupiedPlaces[j] != OccupiedPlaces[i]) { 
             j++;
             }
             if (j >= OccupiedPlaces.Count)
             {
                 place.y += 5.8f;
                 Instantiate(Tower[pTowers[0].TowerID - 1], place, Quaternion.identity);
-                OccupiedPlaces.Add(AvailablePlaces[i].name);
+                OccupiedPlaces.Add(OccupiedPlaces[i]);
             }
             Cannonbutton.enabled = false;
             place = new Vector3(0, -100, 0);
@@ -111,14 +103,14 @@ public class SpawnTower : MonoBehaviour
         pTowers = db.SelectEffectTower(playerid, db.GetEffectID("water"));
         Debug.Log("Water");
         int i = 0;
-        while (place != AvailablePlaces[i].transform.position && i < AvailablePlaces.Length)
+        while (place != OccupiedPlaces[i].transform.position && i < OccupiedPlaces.Count)
         {
             i++;
         }
-        if (i < AvailablePlaces.Length)
+        if (i < OccupiedPlaces.Count)
         {
             int j = 0;
-            while (j < OccupiedPlaces.Count && OccupiedPlaces[j] != AvailablePlaces[i].name)
+            while (j < OccupiedPlaces.Count && OccupiedPlaces[j] != OccupiedPlaces[i])
             {
                 j++;
             }
@@ -127,7 +119,7 @@ public class SpawnTower : MonoBehaviour
                 place.y += 5.8f;
                 Tower[pTowers[0].TowerID - 1].GetComponent<TowerDMG>().level = Towers[pTowers[0].TowerID-1].CurrentLVL;
                 Instantiate(Tower[pTowers[0].TowerID - 1], place, Quaternion.identity);
-                OccupiedPlaces.Add(AvailablePlaces[i].name);
+                OccupiedPlaces.Add(OccupiedPlaces[i]);
             }
             Waterbutton.enabled = false;
             place = new Vector3(0, -100, 0);
@@ -139,12 +131,12 @@ public class SpawnTower : MonoBehaviour
         pTowers = db.SelectEffectTower(playerid, db.GetEffectID("ice"));
         Debug.Log("Ice");
         int i = 0;
-        while (place != AvailablePlaces[i].transform.position && i < AvailablePlaces.Length) { 
+        while (place != OccupiedPlaces[i].transform.position && i < OccupiedPlaces.Count) { 
             i++;
         }
-        if (i <AvailablePlaces.Length ) {
+        if (i <OccupiedPlaces.Count) {
             int j = 0;
-            while (j < OccupiedPlaces.Count && OccupiedPlaces[j] != AvailablePlaces[i].name)
+            while (j < OccupiedPlaces.Count && OccupiedPlaces[j] != OccupiedPlaces[i])
             {
                 j++;
             }
@@ -152,7 +144,7 @@ public class SpawnTower : MonoBehaviour
             {
                 place.y += 5.8f;
                 Instantiate(Tower[pTowers[0].TowerID - 1], place, Quaternion.identity);
-                OccupiedPlaces.Add(AvailablePlaces[i].name);
+                OccupiedPlaces.Add(OccupiedPlaces[i]);
             }
             Icebutton.enabled = false;
             place = new Vector3(0, -100, 0);
@@ -163,13 +155,13 @@ public class SpawnTower : MonoBehaviour
         pTowers = db.SelectEffectTower(playerid, db.GetEffectID("fire"));
         Debug.Log("Fire");
         int i = 0;
-        while (place != AvailablePlaces[i].transform.position && i < AvailablePlaces.Length) { 
+        while (place != OccupiedPlaces[i].transform.position && i < OccupiedPlaces.Count) { 
             i++;
         }
-        if (i < AvailablePlaces.Length)
+        if (i < OccupiedPlaces.Count)
         {
             int j = 0;
-            while (j < OccupiedPlaces.Count && OccupiedPlaces[j] != AvailablePlaces[i].name)
+            while (j < OccupiedPlaces.Count && OccupiedPlaces[j] != OccupiedPlaces[i])
             {
                 j++;
             }
@@ -177,7 +169,7 @@ public class SpawnTower : MonoBehaviour
             {
                 place.y += 6.8f;
                 Instantiate(Tower[pTowers[0].TowerID - 1], place, Quaternion.identity);
-                OccupiedPlaces.Add(AvailablePlaces[i].name);
+                OccupiedPlaces.Add(OccupiedPlaces[i]);
             }
             Firebutton.enabled = false;
             place = new Vector3(0, -100, 0);
@@ -188,14 +180,14 @@ public class SpawnTower : MonoBehaviour
         pTowers = db.SelectEffectTower(playerid, db.GetEffectID("electric")); ;
         Debug.Log("Electric");
         int i = 0;
-        while (place != AvailablePlaces[i].transform.position && i < AvailablePlaces.Length)
+        while (place != OccupiedPlaces[i].transform.position && i < OccupiedPlaces.Count)
         {
             i++;
         }
-        if (i < AvailablePlaces.Length)
+        if (i < OccupiedPlaces.Count)
         {
             int j = 0;
-            while (j < OccupiedPlaces.Count && OccupiedPlaces[j] != AvailablePlaces[i].name)
+            while (j < OccupiedPlaces.Count && OccupiedPlaces[j] != OccupiedPlaces[i])
             {
                 j++;
             }
@@ -203,7 +195,7 @@ public class SpawnTower : MonoBehaviour
             {
                 place.y += 5.8f;
                 Instantiate(Tower[pTowers[0].TowerID - 1], place, Quaternion.identity);
-                OccupiedPlaces.Add(AvailablePlaces[i].name);
+                OccupiedPlaces.Add(OccupiedPlaces[i]);
                 Electricbutton.enabled = false;
             }
             place = new Vector3(0, -100, 0);

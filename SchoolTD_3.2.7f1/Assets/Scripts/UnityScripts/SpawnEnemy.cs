@@ -103,6 +103,7 @@ public class SpawnEnemy : MonoBehaviour
                 Em.Hp = GetEnemies[0].BaseHP;
                 Em.Def = GetEnemies[0].BaseDef;
                 Em.SPD = GetEnemies[0].BaseSpeed;
+                Debug.Log(GetEnemies[0].BaseSpeed);
                 break;
             case 1:
                 Em.Hp = GetEnemies[1].BaseHP;
@@ -136,6 +137,7 @@ public class SpawnEnemy : MonoBehaviour
     public void Enemies() {
         //GetLevel = db.SelectLevel(1);
         GetWaves = db.SelectWave(waveIds[currentWave]);
+        Debug.Log($"{waveIds[currentWave]} | { currentWave }");
         GetEffects = db.SelectEffects();
         GetEnemies = db.SelectOrigami();
         max = GetWaves[0].EnemyTotal;

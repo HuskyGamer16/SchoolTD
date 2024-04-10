@@ -18,7 +18,7 @@ public class EnemyMovement : MonoBehaviour
 
     void Start(){
         agent = GetComponent<NavMeshAgent>();
-        EndPos = GameObject.Find("KeepAlive");
+        EndPos = GameObject.Find("Projector_Screen_done");
     }
     void Update()
     {
@@ -26,7 +26,7 @@ public class EnemyMovement : MonoBehaviour
         agent.destination = EndPos.transform.position;
         if (Hp <= 0) {
             Destroy(gameObject);
-        }switch (effect.Id) { 
+        }/*switch (effect.Id) { 
             case 2:
                 break; 
             case 3:
@@ -45,9 +45,10 @@ public class EnemyMovement : MonoBehaviour
                 break;
             case 10:
                 break;
-            default: 
+            default:
+                effect.Id = effect.Id;
                 break;
-        }
+        }*/
         if (IsShot) {
             Hp -= DMG;
             DMG = 0;

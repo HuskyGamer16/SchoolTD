@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Desk
   - Tower
+  - Bok
   layers:
   - Default
   - TransparentFX
