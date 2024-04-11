@@ -53,11 +53,10 @@ public class SpawnTower : MonoBehaviour
 
     private void Availability(GameObject gameObject)
     {
-        if (gameObject.CompareTag("Bok")  && OccupiedPlaces.Count < max) {
+        if (gameObject.CompareTag("Bok")) {
             Debug.Log("Könyv: " + gameObject.name);
             place = gameObject.transform.position;
             placeObj = gameObject;
-            OccupiedPlaces.Add(gameObject);
         }
     }
     public static effects GiveEffect(int effectid) {
@@ -71,7 +70,7 @@ public class SpawnTower : MonoBehaviour
     }
     public void GetCannon() {
         Cannonbutton.enabled = true;
-        BuyTower.SetActive(false);
+       //BuyTower.SetActive(false);
     }
     public void Cannon()
     {
@@ -91,7 +90,7 @@ public class SpawnTower : MonoBehaviour
             {
                 place.y += 5.8f;
                 Instantiate(Tower[pTowers[0].TowerID - 1], place, Quaternion.identity);
-                OccupiedPlaces.Add(OccupiedPlaces[i]);
+                OccupiedPlaces.Add(placeObj);
             }
             Cannonbutton.enabled = false;
             place = new Vector3(0, -100, 0);

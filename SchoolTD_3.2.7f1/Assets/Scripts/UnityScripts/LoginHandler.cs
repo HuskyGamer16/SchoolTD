@@ -7,6 +7,9 @@ using TMPro;
 
 public class LoginHandler : MonoBehaviour
 {
+    public float Delay = 5f;
+    private float TimeTo;
+    public bool stop = true;
     public LoginHandler instance;
     public int playerid;
     private bool IsGood;
@@ -23,11 +26,22 @@ public class LoginHandler : MonoBehaviour
     //Yes, it is a vulnerability to not have functional database enccryption and passwords, but we had to save time, it is what it is. If we gonna make this a proper game we'd do it but this is a demo at best 
     void Start()
     {
+        TimeTo = Delay;
         ResetInputs();
     }
-    private void FixedUpdate()
+    private void Update()
     {
-        if (Input.GetKey(KeyCode.Escape)) {
+        if (!stop) {
+            TimeTo -= Time.deltaTime;
+            Debug.Log(TimeTo);
+            if (TimeTo <= 0)
+            {
+                Debug.Log("We here");
+                stop = true;
+            }
+        }
+        if (Input.GetKey(KeyCode.Escape))
+        {
             BackToMain();
         }
     }
@@ -75,12 +89,14 @@ public class LoginHandler : MonoBehaviour
             {
                 i++;
             }
-            if (i < players.Count) {
+            if (i < players.Count)
+            {
                 string pass = players[i].Pw;
                 byte[] data = Encoding.UTF8.GetBytes(pwInput.text);
                 data = new SHA512Managed().ComputeHash(data);
                 string hash = Encoding.UTF8.GetString(data);
-                if (pass == hash) {
+                if (pass == hash)
+                {
                     Debug.Log("Azonos!");
                     IsGood = true;
                     playerid = players[i].Id;
@@ -106,24 +122,17 @@ public class LoginHandler : MonoBehaviour
         }
         else
         {
+            stop = !stop;
             sLog.text = "Successful Entrance!";
             pwError.text = "";
             pwError.enabled = true;
             boulder.SetActive(true);
+            gameObject.SetActive(false);
             cam.GetComponent<Animator>().enabled = true;
-            SendToSelect();
         }
     }
-    public void SendToSelect(){
-        Animator ani = cam.GetComponent<Animator>();
-        ani.speed = 1;
-        if (!ani.GetComponent<Animation>().isPlaying)
-            {
-            ani.enabled = false;
-            panelFrom.SetActive(false);
-        }
-    }
-    public void BackToMain() { 
+    public void BackToMain()
+    {
         Animator ani = cam.GetComponent<Animator>();
         //somehow i have to make it transition backwards, or make a new anim with the reverse of the orig 
         //ani.speed = -1;

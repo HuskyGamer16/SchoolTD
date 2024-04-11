@@ -11,4 +11,11 @@ public class MainMenu : MonoBehaviour
     public void StopGame() { 
         Application.Quit();
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.activeSelf && other.CompareTag("Player"))
+        {
+            Debug.Log("Entered!");
+        }
+    }
 }
