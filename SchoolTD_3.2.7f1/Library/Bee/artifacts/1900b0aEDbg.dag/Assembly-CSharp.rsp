@@ -402,12 +402,14 @@
 "Assets/Scripts/playerTower.cs"
 "Assets/Scripts/TotalTower.cs"
 "Assets/Scripts/UnityScripts/bulletGo.cs"
+"Assets/Scripts/UnityScripts/CamCheck.cs"
 "Assets/Scripts/UnityScripts/CamSwitch.cs"
 "Assets/Scripts/UnityScripts/CheckPlayerHP.cs"
 "Assets/Scripts/UnityScripts/DbConnect.cs"
 "Assets/Scripts/UnityScripts/EnemyMovement.cs"
 "Assets/Scripts/UnityScripts/Explosion.cs"
 "Assets/Scripts/UnityScripts/FireProjectile.cs"
+"Assets/Scripts/UnityScripts/GoSelectLvl.cs"
 "Assets/Scripts/UnityScripts/LevelManager.cs"
 "Assets/Scripts/UnityScripts/LoginHandler.cs"
 "Assets/Scripts/UnityScripts/MainMenu.cs"
@@ -460,6 +462,7 @@
 "Assets/TextMesh Pro/Examples & Extras/Scripts/VertexShakeB.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/VertexZoom.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/WarpTextExample.cs"
+"Assets/toTowerScene.cs"
 -langversion:9.0
 
 /deterministic

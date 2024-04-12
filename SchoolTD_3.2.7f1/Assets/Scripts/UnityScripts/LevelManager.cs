@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
+    static DbConnect db = new DbConnect("127.0.0.1", "schooltd", "root", "");
+    int playerid;
+    bool test;
+    List<clearedLevel> AllLevels;
+    public GameObject[] Tower;
     public string Menu;
     public string Level1;
     public string Level2;
@@ -12,17 +17,117 @@ public class LevelManager : MonoBehaviour
     public string Level4;
     public string Level5;
     public string Level6;
+    public GameObject tolvl2;
+    public GameObject tolvl3;
+    public GameObject tolvl4;
+    public GameObject tolvl5;
+    public GameObject tolvl6;
     public GameObject[] Doors;
     // Start is called before the first frame update
     void Start()
     {
-        
+        //playerid = LoginHandler.playerid;
+        playerid = 1;
+        test = true;
+    }
+    
+    public void CheckLevel()
+    { 
+        AllLevels = db.SelectLevels(playerid);
+        switch (AllLevels.Count) {
+            case 1:
+            Debug.Log("max lvl2");
+                if (!tolvl2.activeSelf) { 
+                tolvl2.SetActive(true);
+                }
+                tolvl3.SetActive(false);
+
+                break;
+            case 2:
+                Debug.Log("max lvl3");
+                if (!tolvl2.activeSelf)
+                {
+                    tolvl2.SetActive(true);
+                }
+                if (!tolvl3.activeSelf)
+                {
+                    tolvl3.SetActive(true);
+                }
+                tolvl4.SetActive(false);
+                break;
+            case 3:
+                Debug.Log("max lvl4");
+                if (!tolvl2.activeSelf)
+                {
+                    tolvl2.SetActive(true);
+                }
+                if (!tolvl3.activeSelf)
+                {
+                    tolvl3.SetActive(true);
+                }
+                if (!tolvl4.activeSelf)
+                {
+                    tolvl4.SetActive(true);
+                }
+                tolvl5.SetActive(false);
+                break;
+            case 4:
+                Debug.Log("max lvl5");
+                if (!tolvl2.activeSelf)
+                {
+                    tolvl2.SetActive(true);
+                }
+                if (!tolvl3.activeSelf)
+                {
+                    tolvl3.SetActive(true);
+                }
+                if (!tolvl4.activeSelf)
+                {
+                    tolvl4.SetActive(true);
+                }
+                if (!tolvl5.activeSelf)
+                {
+                    tolvl5.SetActive(true);
+                }
+                tolvl6.SetActive(false);
+                break;
+            case 5:
+                Debug.Log("max lvl6");
+                if (!tolvl2.activeSelf)
+                {
+                    tolvl2.SetActive(true);
+                }
+                if (!tolvl3.activeSelf)
+                {
+                    tolvl3.SetActive(true);
+                }
+                if (!tolvl4.activeSelf)
+                {
+                    tolvl4.SetActive(true);
+                }
+                if (!tolvl5.activeSelf)
+                {
+                    tolvl5.SetActive(true);
+                }
+                if (!tolvl6.activeSelf)
+                {
+                    tolvl6.SetActive(true);
+                }
+                break;
+            default:
+                Debug.Log("Nincs");
+                tolvl2.SetActive(false);
+                break;
+        }
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
-        
+        if (test) {
+            CheckLevel();
+            test = !test;
+        }
     }
     public void Exit()
     {

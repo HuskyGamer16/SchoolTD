@@ -11,7 +11,7 @@ public class LoginHandler : MonoBehaviour
     private float TimeTo;
     public bool stop = true;
     public LoginHandler instance;
-    public int playerid;
+    public static int playerid;
     private bool IsGood;
     public AnimationClip CamMovementReverse;
     public GameObject boulder;

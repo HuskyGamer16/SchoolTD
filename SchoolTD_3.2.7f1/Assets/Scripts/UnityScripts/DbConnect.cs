@@ -191,7 +191,7 @@ public class DbConnect
             MySqlCommand cmd = new MySqlCommand(query, con);
             cmd.Parameters.AddWithValue("@towerID", temp.TowerID);
             cmd.Parameters.AddWithValue("@playerID", temp.PlayerID);
-            cmd.Parameters.AddWithValue("@currentXP", temp.CurrentXP);
+            cmd.Parameters.AddWithValue("@EXP", temp.CurrentXP);
             cmd.ExecuteNonQuery();
             Connect_close();
         }
@@ -214,7 +214,7 @@ public class DbConnect
         List<playerTower> temp = new();
         if (Connect())
         {
-            string query = "SELECT * FROM playertower WHERE playerID = @playerID;";
+            string query = "SELECT * FROM playertower WHERE playerID = @playerID order by towerID desc;";
             MySqlCommand cmd = new MySqlCommand(query, con);
             cmd.Parameters.AddWithValue("@playerID", playerid);
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -351,10 +351,33 @@ public class DbConnect
         }
         return temp;
     }
+    public List<clearedLevel> SelectLevels(int playerid)
+    {
+        List<clearedLevel> temp = new();
+        if (Connect())
+        {
+            string query = "SELECT * FROM clearLevels WHERE playerId = @pid order by lvlId asc;";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+            cmd.Parameters.AddWithValue("@pid", playerid);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                temp.Add(new(
+                    reader.GetInt32(0),
+                    reader.GetInt32(1),
+                    reader.GetInt32(2),
+                    reader.GetInt32(3),
+                    reader.GetInt32(4)
+                    ));
+            }
+            Connect_close();
+        }
+        return temp;
+    }
 
     public void TowerLvlUP(int towerid, int playerid) {
         if (Connect()) {
-            string query = "UPDATE playertower SET WHERE towerID = @towerid AND playerID = @playerid";
+            string query = "UPDATE playertower SET towerid = towerid + 1, currentXP = 0 WHERE towerID = @towerid AND playerID = @playerid";
             MySqlCommand cmd = new MySqlCommand(query, con);
             cmd.Parameters.AddWithValue("@towerid", towerid);
             cmd.Parameters.AddWithValue("@playerid", playerid);
@@ -379,6 +402,74 @@ public class DbConnect
                     reader.GetInt32(2),
                     reader.GetInt32(3)
                     ));
+            }
+            Connect_close();
+        }
+        return temp;
+    }
+    public int Getlvl(int Towerid) {
+        int temp =  0;
+        if (Connect())
+        {
+            string query = "SELECT currentLVL FROM totaltower WHERE id = @id;";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+            cmd.Parameters.AddWithValue("@id", Towerid);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                temp = reader.GetInt32(0);
+            }
+            Connect_close();
+        }
+        return temp;
+    }
+    public int GetMaxlvl(int Towerid)
+    {
+        int temp = 0;
+        if (Connect())
+        {
+            string query = "SELECT towerMaxLVL FROM totaltower WHERE id = @id;";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+            cmd.Parameters.AddWithValue("@id", Towerid);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                temp = reader.GetInt32(0);
+            }
+            Connect_close();
+        }
+        return temp;
+    }
+    public int GetLVLup(int Towerid)
+    {
+        int temp = 0;
+        if (Connect())
+        {
+            string query = "SELECT LVLup FROM totaltower WHERE id = @id;";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+            cmd.Parameters.AddWithValue("@id", Towerid);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                temp = reader.GetInt32(0);
+            }
+            Connect_close();
+        }
+        return temp;
+    }
+    public int GetExp(int playerid, int Towerid)
+    {
+        int temp = 0;
+        if (Connect())
+        {
+            string query = "SELECT currentXP FROM playertower WHERE playerID = @pid AND towerID = @towerid order by id desc limit 1;";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+            cmd.Parameters.AddWithValue("@pid", playerid);
+            cmd.Parameters.AddWithValue("@towerid", Towerid);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                temp = reader.GetInt32(0);
             }
             Connect_close();
         }

@@ -35,7 +35,7 @@ public class SpawnTower : MonoBehaviour
         level = db.SelectLevel(1)[0];
         max = level.MaxBuildables;
         AllPlaces = GameObject.FindGameObjectsWithTag("Bok");
-        //playerid = GetComponent<LoginHandler>().playerid;
+        //playerid = LoginHandler.playerid;
         AllEffects = db.SelectEffects();
         OccupiedPlaces.Clear();
         BuyTower.SetActive(false);
