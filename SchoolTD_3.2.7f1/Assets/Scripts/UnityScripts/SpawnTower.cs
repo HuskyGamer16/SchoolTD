@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
-using MySql.Data.MySqlClient;
 using System;
 
 public class SpawnTower : MonoBehaviour
@@ -14,12 +12,15 @@ public class SpawnTower : MonoBehaviour
     int playerid = 1;
     public int baseDMG = 25;
     public GameObject BuyTower;
+    public GameObject Menu;
     public Vector3 place;
     public GameObject placeObj;
+    public GameObject TowerDownBtn;
     int max;
     public GameObject[] AllPlaces;
     public List<GameObject> OccupiedPlaces;
     List<playerTower> GetPlayerTowers;
+    List<playerTower> UsedTowers;
     List<TotalTower> Towers;
     List<playerTower> pTowers;
     List<effects> AllEffects;
@@ -34,31 +35,72 @@ public class SpawnTower : MonoBehaviour
     {
         level = db.SelectLevel(1)[0];
         max = level.MaxBuildables;
+        GetPlayerTowers = db.SelectPlayerTower(playerid);
+        Towers = db.SelectAllTower();
         AllPlaces = GameObject.FindGameObjectsWithTag("Bok");
         //playerid = LoginHandler.playerid;
         AllEffects = db.SelectEffects();
         OccupiedPlaces.Clear();
-        BuyTower.SetActive(false);
-        Basic();
+        //BuyTower.SetActive(false);
+        if (Menu.activeSelf)
+        {
+            Basic();
+        }
+        TowerDownBtn.SetActive(false);
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
             if (LookForGamObject(out RaycastHit hit))
                 Availability(hit.collider.gameObject);
         }
     }
-
+    
     private void Availability(GameObject gameObject)
     {
         if (gameObject.CompareTag("Bok")) {
-            Debug.Log("Könyv: " + gameObject.name);
+            TowerSelect(gameObject);
             place = gameObject.transform.position;
             placeObj = gameObject;
         }
+        else
+        {
+            if (!gameObject.TryGetComponent<Button>(out Button btn)) {
+                if (Menu.activeSelf)
+                {
+                    Menu.SetActive(false);
+                }
+            }
+        }
     }
+
+    private void TowerSelect(GameObject obj)
+    {
+        if (Time.timeScale != 0)
+        {
+            if (placeObj == obj)
+            {
+                if (Menu.activeSelf)
+                {
+                    Menu.SetActive(false);
+                }
+                else
+                {
+                    Menu.SetActive(true);
+                }
+            }
+            else
+            {
+                if (!Menu.activeSelf)
+                {
+                    Menu.SetActive(true);
+                }
+            }
+        }
+    }
+
     public static effects GiveEffect(int effectid) {
         effects eff = db.SelectEffect(effectid)[0];
         return eff;
@@ -68,143 +110,67 @@ public class SpawnTower : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         return Physics.Raycast(ray, out hit);
     }
-    public void GetCannon() {
-        Cannonbutton.enabled = true;
-       //BuyTower.SetActive(false);
+    public void PlaceTower(string param)
+    {
+        float y = 0;
+        switch (param)
+        {
+            case "cannon":
+                pTowers = db.SelectEffectTower(playerid, db.GetEffectID("nothing"));
+                y = 9.8f;
+                break;
+            case "fire":
+                pTowers = db.SelectEffectTower(playerid, db.GetEffectID(param));
+                y = 11.3f;
+                break;
+            case "water":
+                pTowers = db.SelectEffectTower(playerid, db.GetEffectID(param));
+                y = 9.8f;
+                break;
+            case "ice":
+                pTowers = db.SelectEffectTower(playerid, db.GetEffectID(param));
+                y = 9.8f;
+                break;
+            case "electric":
+                pTowers = db.SelectEffectTower(playerid, db.GetEffectID(param));
+                y = 9.8f;
+                break;
+        }
+        if (OccupiedPlaces.Count <= max)
+        {
+            place.y = y;
+            Instantiate(Tower[pTowers[0].TowerID - 1], place, Quaternion.identity);
+            Basic();
+            OccupiedPlaces.Add(placeObj);
+            place = new Vector3(0, -100, 0);
+            placeObj.SetActive(false);
+            Menu.SetActive(false);
+        }
     }
     public void Cannon()
     {
-        pTowers = db.SelectEffectTower(playerid,db.GetEffectID("nothing"));
-        int i = 0;
-        while (place != OccupiedPlaces[i].transform.position && i < OccupiedPlaces.Count)
-        {
-            i++;
-        }
-        if (i < OccupiedPlaces.Count)
-        {
-            int j =0;
-            while (j < OccupiedPlaces.Count && OccupiedPlaces[j] != OccupiedPlaces[i]) { 
-            j++;
-            }
-            if (j >= OccupiedPlaces.Count)
-            {
-                place.y += 5.8f;
-                Instantiate(Tower[pTowers[0].TowerID - 1], place, Quaternion.identity);
-                OccupiedPlaces.Add(placeObj);
-            }
-            Cannonbutton.enabled = false;
-            place = new Vector3(0, -100, 0);
-        }
+        PlaceTower("cannon");
     }
 
     public void Water()
     { 
-        pTowers = db.SelectEffectTower(playerid, db.GetEffectID("water"));
-        Debug.Log("Water");
-        int i = 0;
-        while (place != OccupiedPlaces[i].transform.position && i < OccupiedPlaces.Count)
-        {
-            i++;
-        }
-        if (i < OccupiedPlaces.Count)
-        {
-            int j = 0;
-            while (j < OccupiedPlaces.Count && OccupiedPlaces[j] != OccupiedPlaces[i])
-            {
-                j++;
-            }
-            if (j >= OccupiedPlaces.Count)
-            {
-                place.y += 5.8f;
-                Tower[pTowers[0].TowerID - 1].GetComponent<TowerDMG>().level = Towers[pTowers[0].TowerID-1].CurrentLVL;
-                Instantiate(Tower[pTowers[0].TowerID - 1], place, Quaternion.identity);
-                OccupiedPlaces.Add(OccupiedPlaces[i]);
-            }
-            Waterbutton.enabled = false;
-            place = new Vector3(0, -100, 0);
-        }
+        PlaceTower("water");
     }
     public void Ice()
     {
-        
-        pTowers = db.SelectEffectTower(playerid, db.GetEffectID("ice"));
-        Debug.Log("Ice");
-        int i = 0;
-        while (place != OccupiedPlaces[i].transform.position && i < OccupiedPlaces.Count) { 
-            i++;
-        }
-        if (i <OccupiedPlaces.Count) {
-            int j = 0;
-            while (j < OccupiedPlaces.Count && OccupiedPlaces[j] != OccupiedPlaces[i])
-            {
-                j++;
-            }
-            if (j >= OccupiedPlaces.Count)
-            {
-                place.y += 5.8f;
-                Instantiate(Tower[pTowers[0].TowerID - 1], place, Quaternion.identity);
-                OccupiedPlaces.Add(OccupiedPlaces[i]);
-            }
-            Icebutton.enabled = false;
-            place = new Vector3(0, -100, 0);
-        }
+        PlaceTower("ice");
     }
     public void Fire()
     {
-        pTowers = db.SelectEffectTower(playerid, db.GetEffectID("fire"));
-        Debug.Log("Fire");
-        int i = 0;
-        while (place != OccupiedPlaces[i].transform.position && i < OccupiedPlaces.Count) { 
-            i++;
-        }
-        if (i < OccupiedPlaces.Count)
-        {
-            int j = 0;
-            while (j < OccupiedPlaces.Count && OccupiedPlaces[j] != OccupiedPlaces[i])
-            {
-                j++;
-            }
-            if (j >= OccupiedPlaces.Count)
-            {
-                place.y += 6.8f;
-                Instantiate(Tower[pTowers[0].TowerID - 1], place, Quaternion.identity);
-                OccupiedPlaces.Add(OccupiedPlaces[i]);
-            }
-            Firebutton.enabled = false;
-            place = new Vector3(0, -100, 0);
-        }
+        PlaceTower("fire");
     }
     public void Electric()
     {
-        pTowers = db.SelectEffectTower(playerid, db.GetEffectID("electric")); ;
-        Debug.Log("Electric");
-        int i = 0;
-        while (place != OccupiedPlaces[i].transform.position && i < OccupiedPlaces.Count)
-        {
-            i++;
-        }
-        if (i < OccupiedPlaces.Count)
-        {
-            int j = 0;
-            while (j < OccupiedPlaces.Count && OccupiedPlaces[j] != OccupiedPlaces[i])
-            {
-                j++;
-            }
-            if (j >= OccupiedPlaces.Count)
-            {
-                place.y += 5.8f;
-                Instantiate(Tower[pTowers[0].TowerID - 1], place, Quaternion.identity);
-                OccupiedPlaces.Add(OccupiedPlaces[i]);
-                Electricbutton.enabled = false;
-            }
-            place = new Vector3(0, -100, 0);
-        }
+        PlaceTower("electric");
     }
 
     public void Basic()
     {
-        GetPlayerTowers = db.SelectPlayerTower(playerid);
-        Towers = db.SelectAllTower();
         if (GetPlayerTowers.Count == 0 || GetPlayerTowers == null)
         {
             Electricbutton.enabled = false;
@@ -217,14 +183,8 @@ public class SpawnTower : MonoBehaviour
             Waterbutton.gameObject.SetActive(false);
             Firebutton.gameObject.SetActive(false);
             Icebutton.gameObject.SetActive(false);
-            BuyTower.SetActive(true);
         }
         else {
-            Electricbutton.gameObject.SetActive(true);
-            Cannonbutton.gameObject.SetActive(true);
-            Waterbutton.gameObject.SetActive(true);
-            Firebutton.gameObject.SetActive(true);
-            Icebutton.gameObject.SetActive(true);
             for (int i = 0; i < GetPlayerTowers.Count; i++)
             {
                 int j = 0;
@@ -235,18 +195,23 @@ public class SpawnTower : MonoBehaviour
                     switch (Towers[j].EffectID) {
                         case 1:
                             Cannonbutton.enabled = true;
+                            Cannonbutton.gameObject.SetActive(true);
                             break;
                         case 2:
                             Firebutton.enabled = true;
+                            Firebutton.gameObject.SetActive(true);
                             break;
                         case 3: 
                             Waterbutton.enabled = true;
+                            Waterbutton.gameObject.SetActive(true);
                             break;
                         case 4: 
                             Electricbutton.enabled = true;
+                            Electricbutton.gameObject.SetActive(true);
                             break;
                         case 5:
                             Icebutton.enabled = true;
+                            Icebutton.gameObject.SetActive(true);
                             break;
                     }
                 }

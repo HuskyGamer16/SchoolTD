@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EndPos: {fileID: 0}
-  Hp: 85
+  Hp: 105
   Def: 50
   SPD: 90
   DMG: 0

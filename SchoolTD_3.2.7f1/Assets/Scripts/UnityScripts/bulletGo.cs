@@ -6,15 +6,16 @@ using UnityEngine.AI;
 public class bulletGo : MonoBehaviour
 {
     public float speed = 25f;
-    private GameObject EndPos;
+    public GameObject EndPos;
     private NavMeshAgent agent;
-    public float lifetime = .75f;
+    public float lifetime = 3f;
     public int DMG;
     void Start()
     {
         DMG = 50;
         agent = GetComponent<NavMeshAgent>();
         EndPos = GameObject.FindGameObjectWithTag("Enemy");
+        Destroy(gameObject, lifetime);
     }
     void Update()
     {
@@ -38,4 +39,5 @@ public class bulletGo : MonoBehaviour
             Destroy(gameObject,lifetime);
         }
     }
+
 }

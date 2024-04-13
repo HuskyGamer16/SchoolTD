@@ -5383,6 +5383,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b1e13a35b197f44861049111266d93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Delay: 5
+  stop: 1
+  instance: {fileID: 0}
   CamMovementReverse: {fileID: 7400000, guid: b623554e8d3cb0b4dbb7a566a933a1ea, type: 2}
   boulder: {fileID: 248131791}
   panelFrom: {fileID: 762617695}

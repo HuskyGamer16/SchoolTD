@@ -61,7 +61,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if (other.gameObject.activeSelf && other.CompareTag("projectile")) {
             Destroy(other.gameObject);
-            DMG = other.GetComponent<bulletGo>().DMG;
+            DMG = other.GetComponent<BulletBehavior>().DMG;
             IsShot = true;
         }
     }

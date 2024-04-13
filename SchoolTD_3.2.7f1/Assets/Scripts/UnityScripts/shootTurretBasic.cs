@@ -5,38 +5,54 @@ using UnityEngine;
 public class shootTurretBasic : MonoBehaviour
 {
     [SerializeField]private GameObject Bullet;
+    public List<GameObject> targets;
+    public float bulletspeed;
     private  float timeToSpawn;
     private float spawnCooldown;
-    private int amount;
+
     void Start()
     {
-        amount = 0;
-        timeToSpawn = 3f;
+        timeToSpawn = 2f;
         spawnCooldown = timeToSpawn;
+    }
+    private void Update()
+    {
+        try
+        {
+            Shoot();
+        }
+        catch (MissingReferenceException) {
+            targets.Remove(targets[0]);
+            Shoot();
+        }
+    }
+    public void Shoot() {
+        if (targets.Count != 0)
+        {
+            transform.LookAt(targets[0].transform);
+            spawnCooldown -= Time.deltaTime;
+            Vector3 spawnPos = transform.position;
+            spawnPos.y += 1.5f;
+            if (spawnCooldown <= 0)
+            {
+                GameObject NewBullet = Instantiate(Bullet, spawnPos, transform.rotation);
+                NewBullet.GetComponent<Rigidbody>().AddForce(this.transform.forward * bulletspeed);
+                spawnCooldown = timeToSpawn;
+            }
+        }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.activeSelf)
-        { 
-        
+        {
+            targets.Remove(other.gameObject);
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.activeSelf && other.CompareTag("Enemy")) {
-            spawnCooldown -= Time.deltaTime;
-            if (amount == 0)
-            {
-                Instantiate(Bullet, transform.position, Quaternion.identity);
-                spawnCooldown = timeToSpawn;
-                amount = 1;
-            }
-                if (spawnCooldown <= 0)
-            {
-                Instantiate(Bullet,transform.position,Quaternion.identity);
-                spawnCooldown = timeToSpawn;
-            }
+            targets.Add(other.gameObject);
         }
     }
 }

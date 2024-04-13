@@ -401,6 +401,7 @@
 "Assets/Scripts/player.cs"
 "Assets/Scripts/playerTower.cs"
 "Assets/Scripts/TotalTower.cs"
+"Assets/Scripts/UnityScripts/BulletBehavior.cs"
 "Assets/Scripts/UnityScripts/bulletGo.cs"
 "Assets/Scripts/UnityScripts/CamCheck.cs"
 "Assets/Scripts/UnityScripts/CamSwitch.cs"
@@ -420,10 +421,12 @@
 "Assets/Scripts/UnityScripts/RegistryHandler.cs"
 "Assets/Scripts/UnityScripts/ResolutionChange.cs"
 "Assets/Scripts/UnityScripts/Settings_scenes.cs"
+"Assets/Scripts/UnityScripts/ShootTuretAriaDmg.cs"
 "Assets/Scripts/UnityScripts/shootTurretBasic.cs"
 "Assets/Scripts/UnityScripts/SounsSettings.cs"
 "Assets/Scripts/UnityScripts/SpawnEnemy.cs"
 "Assets/Scripts/UnityScripts/SpawnTower.cs"
+"Assets/Scripts/UnityScripts/toTowerScene.cs"
 "Assets/Scripts/UnityScripts/TowerDMG.cs"
 "Assets/Scripts/UnityScripts/TowerMenu.cs"
 "Assets/Scripts/UnityScripts/TurretControl.cs"
@@ -462,7 +465,6 @@
 "Assets/TextMesh Pro/Examples & Extras/Scripts/VertexShakeB.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/VertexZoom.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/WarpTextExample.cs"
-"Assets/toTowerScene.cs"
 -langversion:9.0
 
 /deterministic

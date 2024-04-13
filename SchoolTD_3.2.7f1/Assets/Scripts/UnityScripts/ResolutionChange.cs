@@ -17,13 +17,13 @@ public class ResolutionChange : MonoBehaviour
 
     private RefreshRate currentRefRate;
     private int currentResIndex = 0;
-    private GameObject Settings;
+    public GameObject Settings;
     
     private void Start()
     {
         Resol = Screen.resolutions;
         filteredRes = new List<Resolution>();
-        resDropDown.ClearOptions();
+        //resDropDown.ClearOptions();
         currentRefRate = Screen.currentResolution.refreshRateRatio;
         for (int i = 0; i < Resol.Length; i++)
         {
@@ -48,7 +48,7 @@ public class ResolutionChange : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Escape)){
+        if (Input.GetKeyUp(KeyCode.Escape)){
             if (Time.timeScale == 0)
             {
                 Time.timeScale = 1f;

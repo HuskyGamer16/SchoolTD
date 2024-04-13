@@ -30,7 +30,6 @@ public class SpawnEnemy : MonoBehaviour
     }
     private void Update()
     {
-
         if (currentWave < waveIds.Length)
         {
             if (!waveFinished && tillWaveSpawn <=0)
