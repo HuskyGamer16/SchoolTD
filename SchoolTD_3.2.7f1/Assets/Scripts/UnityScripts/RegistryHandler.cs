@@ -17,7 +17,6 @@ public class RegistryHandler : MonoBehaviour
     [SerializeField] private TMP_Text pwError;
     [SerializeField] private TMP_Text sReg;
     DbConnect db = new DbConnect("127.0.0.1", "schooltd", "root", "");
-    //Yes, it is a vulnerability to not have functional database enccryption and passwords, but we had to save time, it is what it is. If we gonna make this a proper game we'd do it but this is a demo at best 
     void Start()
     {
         Delay = 0;
@@ -60,7 +59,6 @@ public class RegistryHandler : MonoBehaviour
             {
                 pwError.enabled = false;
                 pwError.text = "";
-                Debug.Log($"this part works, you can do it, there is {count} amount of same usernames");
             }
         }
     }
@@ -94,7 +92,6 @@ public class RegistryHandler : MonoBehaviour
             {
                 pwError.enabled = false;
                 IsGood = true;
-                Debug.Log("isverygud (tm)");
             }
         }
     }
@@ -110,9 +107,7 @@ public class RegistryHandler : MonoBehaviour
             byte[] data = Encoding.UTF8.GetBytes(pwInput.text);
             data = new SHA512Managed().ComputeHash(data);
             string hash = Encoding.UTF8.GetString(data);
-            Debug.Log(hash);
             db.InsertPlayer(new player(nameInput.text, hash));
-            //This is not safe by any means, but time is running low, so we have to deal with it, desperate times calls for desperate measures.
             sReg.text = "Succesful Enrollment!";
             Delay = 1050f;
         }

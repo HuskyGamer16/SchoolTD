@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class TowerMenu : MonoBehaviour
 {
@@ -178,6 +179,7 @@ public class TowerMenu : MonoBehaviour
         CanBuy = false;
         CanBuyThis();
         playerTowers = db.SelectPlayerTower(playerid);
+        CheckSlider();
     }
     public void UpgradeTower()
     {
@@ -185,9 +187,11 @@ public class TowerMenu : MonoBehaviour
         CanUpg = false;
         CanUpThis();
         playerTowers = db.SelectPlayerTower(playerid);
+        CheckSlider();
     }
     public void Exit()
     {
+        LoginHandler.playerid = playerid; 
         SceneManager.LoadScene(Menu);
     }
     public void right()

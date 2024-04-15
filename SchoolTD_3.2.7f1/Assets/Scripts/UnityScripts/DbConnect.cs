@@ -475,4 +475,16 @@ public class DbConnect
         }
         return temp;
     }
+    public void TowerXPgain(int playerid,int xp)
+    {
+        if (Connect())
+        {
+            string query = "UPDATE playertower SET currentXP = currentXP + @xp WHERE playerID = @playerid";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+            cmd.Parameters.AddWithValue("@xp", xp);
+            cmd.Parameters.AddWithValue("@playerid", playerid);
+            cmd.ExecuteNonQuery();
+            Connect_close();
+        }
+    }
 }

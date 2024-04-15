@@ -1,0 +1,167 @@
+<linker>
+	<assembly fullname="Assembly-CSharp" ignoreIfMissing="1">
+		<type fullname="CheckPlayerHP">
+			<method name="ExitLose"/>
+			<method name="ExitLose"/>
+			<method name="ExitLose"/>
+			<method name="ExitLose"/>
+			<method name="ExitLose"/>
+			<method name="ExitLose"/>
+			<method name="ExitLose"/>
+			<method name="ExitLose"/>
+			<method name="ExitLose"/>
+			<method name="ExitLose"/>
+			<method name="ExitLose"/>
+			<method name="ExitLose"/>
+			<method name="QuitLose"/>
+			<method name="QuitLose"/>
+			<method name="QuitLose"/>
+			<method name="QuitLose"/>
+			<method name="QuitLose"/>
+			<method name="QuitLose"/>
+			<method name="QuitWin"/>
+			<method name="QuitWin"/>
+			<method name="QuitWin"/>
+			<method name="QuitWin"/>
+			<method name="QuitWin"/>
+			<method name="QuitWin"/>
+		</type>
+		<type fullname="GoSelectLvl">
+			<method name="ToLevelSelect"/>
+		</type>
+		<type fullname="LevelManager">
+			<method name="lvl1"/>
+			<method name="Quit"/>
+			<method name="TowerShop"/>
+		</type>
+		<type fullname="LoginHandler">
+			<method name="CheckPW"/>
+			<method name="Login"/>
+			<method name="ResetInputs"/>
+			<method name="ResetInputs"/>
+			<method name="UsernameGood"/>
+		</type>
+		<type fullname="MainMenu">
+			<method name="PlayGame"/>
+			<method name="StopGame"/>
+			<method name="StopGame"/>
+		</type>
+		<type fullname="miniLVLManager">
+			<method name="Quit"/>
+			<method name="Quit"/>
+			<method name="Quit"/>
+			<method name="Quit"/>
+			<method name="Quit"/>
+			<method name="Quit"/>
+			<method name="QuitToDesktop"/>
+			<method name="QuitToDesktop"/>
+			<method name="QuitToDesktop"/>
+			<method name="QuitToDesktop"/>
+			<method name="QuitToDesktop"/>
+			<method name="QuitToDesktop"/>
+		</type>
+		<type fullname="RegistryHandler">
+			<method name="CheckPW"/>
+			<method name="IsPwLongEnough"/>
+			<method name="Register"/>
+			<method name="ResetInputs"/>
+			<method name="UsernameGood"/>
+		</type>
+		<type fullname="SounsSettings">
+			<method name="SetVolumeOnSlider"/>
+			<method name="SetVolumeOnSlider"/>
+			<method name="SetVolumeOnSlider"/>
+			<method name="SetVolumeOnSlider"/>
+			<method name="SetVolumeOnSlider"/>
+			<method name="SetVolumeOnSlider"/>
+			<method name="SetVolumeOnSlider"/>
+		</type>
+		<type fullname="SpawnTower">
+			<method name="Cannon"/>
+			<method name="Cannon"/>
+			<method name="Cannon"/>
+			<method name="Cannon"/>
+			<method name="Cannon"/>
+			<method name="Cannon"/>
+			<method name="Electric"/>
+			<method name="Electric"/>
+			<method name="Electric"/>
+			<method name="Electric"/>
+			<method name="Electric"/>
+			<method name="Electric"/>
+			<method name="Fire"/>
+			<method name="Fire"/>
+			<method name="Fire"/>
+			<method name="Fire"/>
+			<method name="Fire"/>
+			<method name="Fire"/>
+			<method name="Ice"/>
+			<method name="Ice"/>
+			<method name="Ice"/>
+			<method name="Ice"/>
+			<method name="Ice"/>
+			<method name="Ice"/>
+			<method name="Water"/>
+			<method name="Water"/>
+			<method name="Water"/>
+			<method name="Water"/>
+			<method name="Water"/>
+			<method name="Water"/>
+		</type>
+		<type fullname="TowerMenu">
+			<method name="BuyTower"/>
+			<method name="Exit"/>
+			<method name="left"/>
+			<method name="right"/>
+			<method name="UpgradeTower"/>
+		</type>
+	</assembly>
+	<assembly fullname="UnityEngine.CoreModule" ignoreIfMissing="1">
+		<type fullname="UnityEngine.GameObject">
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+		</type>
+	</assembly>
+</linker>

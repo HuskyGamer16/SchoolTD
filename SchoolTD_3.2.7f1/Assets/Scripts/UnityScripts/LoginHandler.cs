@@ -23,7 +23,6 @@ public class LoginHandler : MonoBehaviour
     [SerializeField] private TMP_Text sLog;
     [SerializeField] private Camera cam;
     DbConnect db = new DbConnect("127.0.0.1", "schooltd", "root", "");
-    //Yes, it is a vulnerability to not have functional database enccryption and passwords, but we had to save time, it is what it is. If we gonna make this a proper game we'd do it but this is a demo at best 
     void Start()
     {
         TimeTo = Delay;
@@ -33,10 +32,8 @@ public class LoginHandler : MonoBehaviour
     {
         if (!stop) {
             TimeTo -= Time.deltaTime;
-            Debug.Log(TimeTo);
             if (TimeTo <= 0)
             {
-                Debug.Log("We here");
                 stop = true;
             }
         }
@@ -47,12 +44,19 @@ public class LoginHandler : MonoBehaviour
     }
     public void ResetInputs()
     {
+        if (playerid != 0)
+        {
+            IsGood = true;
+            Login();
+        }
+        else { 
         playerid = 0;
         sLog.text = "To enter, show Student ID";
         nameInput.text = "";
         pwInput.text = "";
         IsGood = false;
         pwError.enabled = false;
+        }
     }
     public void UsernameGood()
     {
@@ -63,7 +67,6 @@ public class LoginHandler : MonoBehaviour
             {
                 pwError.enabled = false;
                 pwError.text = "";
-                Debug.Log($"this part works, you can do it, there is {count} amount of same usernames");
             }
             else if (count <= 0)
             {
@@ -97,13 +100,8 @@ public class LoginHandler : MonoBehaviour
                 string hash = Encoding.UTF8.GetString(data);
                 if (pass == hash)
                 {
-                    Debug.Log("Azonos!");
                     IsGood = true;
                     playerid = players[i].Id;
-                }
-                else
-                {
-                    Debug.Log("u stupid");
                 }
             }
         }
@@ -113,7 +111,7 @@ public class LoginHandler : MonoBehaviour
         if (!IsGood)
         {
             pwError.enabled = true;
-            if (pwInput.text != null && nameInput.text != null)
+            if (pwInput.text != "" && nameInput.text != "")
             {
                 pwError.text = "Student name, and/or password do not match!";
             }
@@ -129,12 +127,12 @@ public class LoginHandler : MonoBehaviour
             boulder.SetActive(true);
             gameObject.SetActive(false);
             cam.GetComponent<Animator>().enabled = true;
+            MainPanel.SetActive(true);
         }
     }
     public void BackToMain()
     {
         Animator ani = cam.GetComponent<Animator>();
-        //somehow i have to make it transition backwards, or make a new anim with the reverse of the orig 
         //ani.speed = -1;
         ani.enabled = true;
         ani.GetComponent<Animation>().AddClip(CamMovementReverse, "CamMovementReverse");

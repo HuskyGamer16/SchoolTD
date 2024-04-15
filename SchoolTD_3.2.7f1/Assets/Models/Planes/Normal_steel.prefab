@@ -119,10 +119,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EndPos: {fileID: 0}
-  Hp: 180
+  MaxHp: 0
+  Hp: 165
   Def: 70
   SPD: 50
   DMG: 0
+  EXP: 200
+  effectCoolDown: 0
+  CoolDownTime: 0
+  Score: {fileID: 0}
+  ElecPlus: 0
+  Melt: 0
+  EffectPrefabs:
+  - {fileID: 7814408195886807230, guid: e5d418566c2705a45a9d5e52de2e05be, type: 3}
+  - {fileID: 2195757278440158366, guid: ff73e828183b9e348aa26b5506b9d741, type: 3}
+  - {fileID: 5843757322822635217, guid: b229b961e9dd5474fb0074f916f5bdbc, type: 3}
+  - {fileID: 7758981855886941875, guid: 7c1dd61d6fe84ae49a4279b4e50e21c7, type: 3}
+  - {fileID: 6830077725755153591, guid: 73f8e6c10bafef141a7ad03ba9f8a5c3, type: 3}
 --- !u!1001 &797726295955210687
 PrefabInstance:
   m_ObjectHideFlags: 0

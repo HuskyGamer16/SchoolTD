@@ -17,31 +17,35 @@ public class shootTurretBasic : MonoBehaviour
     }
     private void Update()
     {
+        Shoot();
+    }
+    public void Shoot()
+    {
         try
         {
-            Shoot();
+            if (targets.Count != 0)
+            {
+                transform.LookAt(targets[0].transform);
+                spawnCooldown -= Time.deltaTime;
+                Vector3 spawnPos = transform.position;
+                spawnPos.y += 1.5f;
+                if (spawnCooldown <= 0)
+                {
+                    Animator Anim = gameObject.GetComponent<Animator>();
+                    Anim.SetTrigger("shoot");
+                    GameObject NewBullet = Instantiate(Bullet, spawnPos, transform.rotation);
+                    NewBullet.GetComponent<Rigidbody>().AddForce(this.transform.forward * bulletspeed);
+                    spawnCooldown = timeToSpawn;
+                }
+            }
         }
-        catch (MissingReferenceException) {
+        catch (MissingReferenceException)
+        {
             targets.Remove(targets[0]);
             Shoot();
         }
     }
-    public void Shoot() {
-        if (targets.Count != 0)
-        {
-            transform.LookAt(targets[0].transform);
-            spawnCooldown -= Time.deltaTime;
-            Vector3 spawnPos = transform.position;
-            spawnPos.y += 1.5f;
-            if (spawnCooldown <= 0)
-            {
-                GameObject NewBullet = Instantiate(Bullet, spawnPos, transform.rotation);
-                NewBullet.GetComponent<Rigidbody>().AddForce(this.transform.forward * bulletspeed);
-                spawnCooldown = timeToSpawn;
-            }
-        }
-    }
-    private void OnTriggerExit(Collider other)
+private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.activeSelf)
         {

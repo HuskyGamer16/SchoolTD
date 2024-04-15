@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GoSelectLvl : MonoBehaviour
 {
-    public string name;
+    public string name2;
     public void ToLevelSelect() {
-        SceneManager.LoadScene(name);
+        SceneManager.LoadScene(name2);
     }
 }

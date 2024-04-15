@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-
-public class TotalTower : MonoBehaviour
+public class TotalTower 
 {
     private int id;
     private int towerMaxLVL;

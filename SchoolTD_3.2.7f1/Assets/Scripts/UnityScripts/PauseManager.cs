@@ -12,6 +12,7 @@ public class PauseManager : MonoBehaviour
     {
         if ( instance == null)
         {
+            IsPaused = false;
             instance = this;
         }
     }
