@@ -1,0 +1,1361 @@
+Using pre-set license
+Built from '2023.2/staging' branch; Version is '2023.2.7f1 (0a9195b3d453) revision 692629'; Using compiler version '193431935'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Enterprise' Language: 'hu' Physical Memory: 16334 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+E:\!--THE GAME--!\--Unity--\Unity 2023.2.7f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+E:/!--THE GAME--!/--Unity--/SchoolTD/SchoolTD_3.2.7f1
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+53728
+-job-worker-count
+5
+-background-job-worker-count
+8
+-asset-garbage-collectors
+1
+Successfully changed project path to: E:/!--THE GAME--!/--Unity--/SchoolTD/SchoolTD_3.2.7f1
+E:/!--THE GAME--!/--Unity--/SchoolTD/SchoolTD_3.2.7f1
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [42380] Host "[IP] 192.168.1.217 [Port] 0 [Flags] 2 [Guid] 496145690 [EditorId] 496145690 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-TNVQD86) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [42380] Host "[IP] 192.168.1.217 [Port] 0 [Flags] 2 [Guid] 496145690 [EditorId] 496145690 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-TNVQD86) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 5
+[Physics::Module] Initialized MultithreadedJobDispatcher with 5 workers.
+Library Redirect Path: Library/
+Refreshing native plugins compatible for Editor in 1.17 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2023.2.7f1 (0a9195b3d453)
+[Subsystems] Discovering subsystems at path E:/!--THE GAME--!/--Unity--/Unity 2023.2.7f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path E:/!--THE GAME--!/--Unity--/SchoolTD/SchoolTD_3.2.7f1/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Radeon RX 590 Series (ID=0x67df)
+    Vendor:   ATI
+    VRAM:     8170 MB
+    Driver:   31.0.21905.1001
+Initialize mono
+Mono path[0] = 'E:/!--THE GAME--!/--Unity--/Unity 2023.2.7f1/Editor/Data/Managed'
+Mono path[1] = 'E:/!--THE GAME--!/--Unity--/Unity 2023.2.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'E:/!--THE GAME--!/--Unity--/Unity 2023.2.7f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56904
+Begin MonoManager ReloadAssembly
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+Registering precompiled unity dll's ...
+Register platform support module: E:/!--THE GAME--!/--Unity--/Unity 2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.003172 seconds.
+- Loaded All Assemblies, in  0.592 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+- Finished resetting the current domain, in  0.546 seconds
+Domain Reload Profiling: 1138ms
+	BeginReloadAssembly (213ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (55ms)
+	RebuildNativeTypeToScriptingClass (21ms)
+	initialDomainReloadingComplete (72ms)
+	LoadAllAssembliesAndSetupDomain (230ms)
+		LoadAssemblies (211ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (227ms)
+			TypeCache.Refresh (225ms)
+				TypeCache.ScanAssembly (207ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (546ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (460ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (14ms)
+			SetLoadedEditorAssemblies (10ms)
+			BeforeProcessingInitializeOnLoad (12ms)
+			ProcessInitializeOnLoadAttributes (336ms)
+			ProcessInitializeOnLoadMethodAttributes (87ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Import Worker Mode flag is 0x00
+Begin MonoManager ReloadAssembly
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+Symbol file LoadedFromMemory doesn't match image E:\!--THE GAME--!\--Unity--\SchoolTD\SchoolTD_3.2.7f1\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image E:\!--THE GAME--!\--Unity--\SchoolTD\SchoolTD_3.2.7f1\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  1.206 seconds
+Refreshing native plugins compatible for Editor in 0.86 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.996 seconds
+Domain Reload Profiling: 2201ms
+	BeginReloadAssembly (487ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (10ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (38ms)
+	RebuildCommonClasses (51ms)
+	RebuildNativeTypeToScriptingClass (19ms)
+	initialDomainReloadingComplete (52ms)
+	LoadAllAssembliesAndSetupDomain (595ms)
+		LoadAssemblies (488ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (262ms)
+			TypeCache.Refresh (222ms)
+				TypeCache.ScanAssembly (205ms)
+			BuildScriptInfoCaches (30ms)
+			ResolveRequiredComponents (7ms)
+	FinalizeReload (997ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (718ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			SetLoadedEditorAssemblies (7ms)
+			BeforeProcessingInitializeOnLoad (121ms)
+			ProcessInitializeOnLoadAttributes (551ms)
+			ProcessInitializeOnLoadMethodAttributes (31ms)
+			AfterProcessingInitializeOnLoad (4ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (8ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
+Refreshing native plugins compatible for Editor in 0.92 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 66 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 3369 unused Assets / (3.0 MB). Loaded Objects now: 3971.
+Memory consumption went from 136.4 MB to 133.4 MB.
+Total: 9.994300 ms (FindLiveObjects: 0.646300 ms CreateObjectMapping: 0.662900 ms MarkObjects: 6.090600 ms  DeleteObjects: 2.593100 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 240859.070633 seconds.
+  path: Assets/Models/New Prefab.prefab
+  artifactKey: Guid(76317314fa87be44489f64757e13c282) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/New Prefab.prefab using Guid(76317314fa87be44489f64757e13c282) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '94e67b805cb2adb7a53609ff3657d63f') in 0.1702458 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.240524 seconds.
+  path: Assets/Chalkboard-Regular SDF.asset
+  artifactKey: Guid(aa15ed7cf0432c6418e7cce9757ae245) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chalkboard-Regular SDF.asset using Guid(aa15ed7cf0432c6418e7cce9757ae245) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '843196bea24af7a8f0fae37fccf01c35') in 0.0780777 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.422093 seconds.
+  path: Assets/Materials/Glass 1.mat
+  artifactKey: Guid(eecdfab383a4d6546a2a911230e7d0b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Glass 1.mat using Guid(eecdfab383a4d6546a2a911230e7d0b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6b741044173b8947c27502b8655e9aee') in 0.0146217 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 70.301867 seconds.
+  path: Assets/Models/effects/Water.prefab
+  artifactKey: Guid(f34275bea976043458bb424a6a7371bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/effects/Water.prefab using Guid(f34275bea976043458bb424a6a7371bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd03f1560c27a29c12e1c1900d2b360ab') in 0.01242 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+Symbol file LoadedFromMemory doesn't match image E:\!--THE GAME--!\--Unity--\SchoolTD\SchoolTD_3.2.7f1\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image E:\!--THE GAME--!\--Unity--\SchoolTD\SchoolTD_3.2.7f1\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.891 seconds
+Refreshing native plugins compatible for Editor in 0.67 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.995 seconds
+Domain Reload Profiling: 1887ms
+	BeginReloadAssembly (257ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (8ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (55ms)
+	RebuildCommonClasses (58ms)
+	RebuildNativeTypeToScriptingClass (22ms)
+	initialDomainReloadingComplete (33ms)
+	LoadAllAssembliesAndSetupDomain (522ms)
+		LoadAssemblies (497ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (173ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (157ms)
+			ResolveRequiredComponents (7ms)
+	FinalizeReload (995ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (707ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (7ms)
+			BeforeProcessingInitializeOnLoad (113ms)
+			ProcessInitializeOnLoadAttributes (540ms)
+			ProcessInitializeOnLoadMethodAttributes (35ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (13ms)
+Refreshing native plugins compatible for Editor in 0.79 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 3368 unused Assets / (3.0 MB). Loaded Objects now: 4018.
+Memory consumption went from 127.9 MB to 124.8 MB.
+Total: 7.963200 ms (FindLiveObjects: 0.510600 ms CreateObjectMapping: 0.380000 ms MarkObjects: 5.245700 ms  DeleteObjects: 1.825900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 138.793180 seconds.
+  path: Assets/Models/effects/Water.prefab
+  artifactKey: Guid(f34275bea976043458bb424a6a7371bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/effects/Water.prefab using Guid(f34275bea976043458bb424a6a7371bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3d5d35f85c75d9ab8dd1663e6a8e5d6d') in 0.1298234 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.598500 seconds.
+  path: Assets/Models/effects/Water_attack 1.prefab
+  artifactKey: Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/effects/Water_attack 1.prefab using Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7d6c1e9035e084972e0b3ec1d78bf5b1') in 0.0173303 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.178821 seconds.
+  path: Assets/Models/effects/Water.prefab
+  artifactKey: Guid(f34275bea976043458bb424a6a7371bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/effects/Water.prefab using Guid(f34275bea976043458bb424a6a7371bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9c780f60874f149983fc942d92c11b22') in 0.0075863 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 25.784074 seconds.
+  path: Assets/Models/effects/Water_attack 1.prefab
+  artifactKey: Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/effects/Water_attack 1.prefab using Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd4245226fc2cff924ef5363f6e1993f1') in 0.0071238 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.264206 seconds.
+  path: Assets/Models/effects/Water_attack 1.prefab
+  artifactKey: Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/effects/Water_attack 1.prefab using Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e71c53c81ae2ca31b39f3e13888893a1') in 0.0081501 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.067840 seconds.
+  path: Assets/Models/effects/Water_attack 1.prefab
+  artifactKey: Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/effects/Water_attack 1.prefab using Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e6cf4e20e18551bcd9b153a51ba097c4') in 0.0074901 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.748241 seconds.
+  path: Assets/Models/effects/Water_attack 1.prefab
+  artifactKey: Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/effects/Water_attack 1.prefab using Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '312d493e5e1718eb327c6b831a118e11') in 0.0071711 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 28.266368 seconds.
+  path: Assets/Models/effects/Water_attack 1.prefab
+  artifactKey: Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/effects/Water_attack 1.prefab using Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '223de7efbad4116f81c76a2e98919f0c') in 0.0075758 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.176430 seconds.
+  path: Assets/Models/effects/Water_attack 1.prefab
+  artifactKey: Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/effects/Water_attack 1.prefab using Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1568dab058881014e52c98b0965e103d') in 0.0071968 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.198592 seconds.
+  path: Assets/Models/effects/Water_attack 1.prefab
+  artifactKey: Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/effects/Water_attack 1.prefab using Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'de85d8607ec9fe1090bded497b6c1244') in 0.007548 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.260117 seconds.
+  path: Assets/Models/effects/Water_attack 1.prefab
+  artifactKey: Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/effects/Water_attack 1.prefab using Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '74378f42fd0aa0bc071fe3e2501c67da') in 0.0079782 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.068527 seconds.
+  path: Assets/Models/effects/Water_attack 1.prefab
+  artifactKey: Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/effects/Water_attack 1.prefab using Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '054c7819a196e3c67c37172b1feeb632') in 0.0081002 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 22.568396 seconds.
+  path: Assets/Models/effects/Water_attack 1.prefab
+  artifactKey: Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/effects/Water_attack 1.prefab using Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'df80537c7242305dac757d26a40ccf1b') in 0.0075483 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.928300 seconds.
+  path: Assets/Models/effects/Water_attack 1.prefab
+  artifactKey: Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/effects/Water_attack 1.prefab using Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8f72bb5a2a5a2683b923078314b9e8e2') in 0.0069 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.003234 seconds.
+  path: Assets/Models/effects/Water_attack 1.prefab
+  artifactKey: Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/effects/Water_attack 1.prefab using Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'afced41e464df64c1ed80b25c019f4a6') in 0.0070644 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.651476 seconds.
+  path: Assets/Models/effects/Water_attack 1.prefab
+  artifactKey: Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/effects/Water_attack 1.prefab using Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '913efdb9ec03ca125a4cf34b34448ffa') in 0.0071472 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 20.104646 seconds.
+  path: Assets/Models/effects/Water_attack 1.prefab
+  artifactKey: Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/effects/Water_attack 1.prefab using Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ceacaa2ffed7dc0b70614402d3681ea3') in 0.0075137 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.352951 seconds.
+  path: Assets/Models/effects/Water_attack 1.prefab
+  artifactKey: Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/effects/Water_attack 1.prefab using Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b44c5caf74f64a57dd8eea374c636203') in 0.0077523 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 19.216396 seconds.
+  path: Assets/Models/effects/Water_attack 1.prefab
+  artifactKey: Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/effects/Water_attack 1.prefab using Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3b8c6d6400a8e830c2f6338919e7cfd0') in 0.0077432 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 25.106244 seconds.
+  path: Assets/Models/effects/Water_attack 1.prefab
+  artifactKey: Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/effects/Water_attack 1.prefab using Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a0b34b0f26b47ade1118b19991393ffb') in 0.0072017 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.035488 seconds.
+  path: Assets/Models/effects/Water_attack 1.prefab
+  artifactKey: Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/effects/Water_attack 1.prefab using Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '225de0cae4b648c7160b8751272c9ed0') in 0.0068367 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.268667 seconds.
+  path: Assets/Models/effects/Water_attack 1.prefab
+  artifactKey: Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/effects/Water_attack 1.prefab using Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'de003b6a9e34244d7701cfb58f674bcd') in 0.0069459 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.329367 seconds.
+  path: Assets/Models/effects/Water_attack 1.prefab
+  artifactKey: Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/effects/Water_attack 1.prefab using Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f8962ec9e1429a80ff1e42e71e967d0b') in 0.00888 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.905609 seconds.
+  path: Assets/Models/effects/Water_attack 1.prefab
+  artifactKey: Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/effects/Water_attack 1.prefab using Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9ffe7e933829f8fa1e46dd82b90628af') in 0.0073432 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 23.840986 seconds.
+  path: Assets/Models/effects/Water_attack 1.prefab
+  artifactKey: Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/effects/Water_attack 1.prefab using Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd78b38c12be59b5f1fadd57bcb09f1dd') in 0.0075012 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.671947 seconds.
+  path: Assets/Models/effects/Water_attack 1.prefab
+  artifactKey: Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/effects/Water_attack 1.prefab using Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '14d03ae9829c1628fbc57ca39a6e4f28') in 0.0079908 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.460814 seconds.
+  path: Assets/Models/effects/Water_attack 1.prefab
+  artifactKey: Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/effects/Water_attack 1.prefab using Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '175a7c14c8ef6c02393d8b1268f471fe') in 0.0071836 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.164676 seconds.
+  path: Assets/Models/effects/Water_attack 1.prefab
+  artifactKey: Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/effects/Water_attack 1.prefab using Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7a498c0dfe9649ce2c2c40fdbfa6d5b0') in 0.0085226 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 16.380683 seconds.
+  path: Assets/Models/effects/Water_attack 1.prefab
+  artifactKey: Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/effects/Water_attack 1.prefab using Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5736c683b4c89b6d6d6e49c7a26fa01f') in 0.0070495 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.156764 seconds.
+  path: Assets/Models/effects/Water_attack 1.prefab
+  artifactKey: Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/effects/Water_attack 1.prefab using Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7745f31a6a70c80f5cd10f8b82a345b3') in 0.0073583 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.203313 seconds.
+  path: Assets/Models/effects/Water_attack 1.prefab
+  artifactKey: Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/effects/Water_attack 1.prefab using Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '836e6e4d57d257a5ae7077e620323b37') in 0.0072645 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.433965 seconds.
+  path: Assets/Models/effects/Water_attack 1.prefab
+  artifactKey: Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/effects/Water_attack 1.prefab using Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '28114359a064c3ebd8652aa0018dd14f') in 0.0074367 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.684243 seconds.
+  path: Assets/Models/effects/Water_attack 1.prefab
+  artifactKey: Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/effects/Water_attack 1.prefab using Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '720722ae0bd2ca5d82e6c761c566835c') in 0.0072361 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 52.191249 seconds.
+  path: Assets/Models/effects/Water droplets.prefab
+  artifactKey: Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/effects/Water droplets.prefab using Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '365b1b70914227c000bb3e3197d90996') in 0.0067874 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+Symbol file LoadedFromMemory doesn't match image E:\!--THE GAME--!\--Unity--\SchoolTD\SchoolTD_3.2.7f1\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image E:\!--THE GAME--!\--Unity--\SchoolTD\SchoolTD_3.2.7f1\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.899 seconds
+Refreshing native plugins compatible for Editor in 0.61 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.061 seconds
+Domain Reload Profiling: 1961ms
+	BeginReloadAssembly (299ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (9ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (56ms)
+	RebuildCommonClasses (56ms)
+	RebuildNativeTypeToScriptingClass (19ms)
+	initialDomainReloadingComplete (34ms)
+	LoadAllAssembliesAndSetupDomain (491ms)
+		LoadAssemblies (498ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (177ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (160ms)
+			ResolveRequiredComponents (7ms)
+	FinalizeReload (1062ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (748ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (5ms)
+			SetLoadedEditorAssemblies (8ms)
+			BeforeProcessingInitializeOnLoad (127ms)
+			ProcessInitializeOnLoadAttributes (570ms)
+			ProcessInitializeOnLoadMethodAttributes (33ms)
+			AfterProcessingInitializeOnLoad (4ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (11ms)
+Refreshing native plugins compatible for Editor in 0.76 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 3373 unused Assets / (3.2 MB). Loaded Objects now: 4019.
+Memory consumption went from 129.9 MB to 126.7 MB.
+Total: 7.727900 ms (FindLiveObjects: 0.574600 ms CreateObjectMapping: 0.383800 ms MarkObjects: 4.642900 ms  DeleteObjects: 2.125200 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 119.357233 seconds.
+  path: Assets/Models/effects/Water droplets.prefab
+  artifactKey: Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/effects/Water droplets.prefab using Guid(7c1dd61d6fe84ae49a4279b4e50e21c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9ae7e4281c1a1e0356fc81a38fec5161') in 0.105449 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+Symbol file LoadedFromMemory doesn't match image E:\!--THE GAME--!\--Unity--\SchoolTD\SchoolTD_3.2.7f1\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image E:\!--THE GAME--!\--Unity--\SchoolTD\SchoolTD_3.2.7f1\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.900 seconds
+Refreshing native plugins compatible for Editor in 0.67 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.131 seconds
+Domain Reload Profiling: 2032ms
+	BeginReloadAssembly (283ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (8ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (71ms)
+	RebuildCommonClasses (53ms)
+	RebuildNativeTypeToScriptingClass (22ms)
+	initialDomainReloadingComplete (39ms)
+	LoadAllAssembliesAndSetupDomain (503ms)
+		LoadAssemblies (479ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (180ms)
+			TypeCache.Refresh (9ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (161ms)
+			ResolveRequiredComponents (7ms)
+	FinalizeReload (1131ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (828ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (7ms)
+			BeforeProcessingInitializeOnLoad (126ms)
+			ProcessInitializeOnLoadAttributes (650ms)
+			ProcessInitializeOnLoadMethodAttributes (35ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (13ms)
+Refreshing native plugins compatible for Editor in 0.71 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 3370 unused Assets / (2.9 MB). Loaded Objects now: 4019.
+Memory consumption went from 131.8 MB to 128.9 MB.
+Total: 8.568300 ms (FindLiveObjects: 0.600500 ms CreateObjectMapping: 0.350600 ms MarkObjects: 5.633900 ms  DeleteObjects: 1.981800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 152.122149 seconds.
+  path: Assets/Scripts/levels.cs
+  artifactKey: Guid(6c9d78ca7171d51439253ffa9db01bd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/levels.cs using Guid(6c9d78ca7171d51439253ffa9db01bd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a8e77fddb52f3b106b3bb0992c726c0a') in 0.0021985 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.919223 seconds.
+  path: Assets/Scripts/UnityScripts/BulletBehavior.cs
+  artifactKey: Guid(64887eac0a879854b851696c9eeb3f0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/UnityScripts/BulletBehavior.cs using Guid(64887eac0a879854b851696c9eeb3f0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '371c34e88d7d1598074728a219bf85fd') in 0.0005299 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 18.569512 seconds.
+  path: Assets/Scripts/UnityScripts/EnemyMovement.cs
+  artifactKey: Guid(ff8d897b02af2344e916cdde518fd5b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/UnityScripts/EnemyMovement.cs using Guid(ff8d897b02af2344e916cdde518fd5b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'adcced6d7cc8612ad7cc6d5332688da7') in 0.0005308 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.72 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 12 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 3360 unused Assets / (2.9 MB). Loaded Objects now: 4019.
+Memory consumption went from 131.4 MB to 128.5 MB.
+Total: 8.143700 ms (FindLiveObjects: 0.550700 ms CreateObjectMapping: 0.402400 ms MarkObjects: 5.119200 ms  DeleteObjects: 2.070200 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+Symbol file LoadedFromMemory doesn't match image E:\!--THE GAME--!\--Unity--\SchoolTD\SchoolTD_3.2.7f1\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image E:\!--THE GAME--!\--Unity--\SchoolTD\SchoolTD_3.2.7f1\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.913 seconds
+Refreshing native plugins compatible for Editor in 0.62 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.891 seconds
+Domain Reload Profiling: 1805ms
+	BeginReloadAssembly (261ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (9ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (52ms)
+	RebuildCommonClasses (64ms)
+	RebuildNativeTypeToScriptingClass (27ms)
+	initialDomainReloadingComplete (41ms)
+	LoadAllAssembliesAndSetupDomain (521ms)
+		LoadAssemblies (499ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (178ms)
+			TypeCache.Refresh (11ms)
+				TypeCache.ScanAssembly (3ms)
+			BuildScriptInfoCaches (157ms)
+			ResolveRequiredComponents (7ms)
+	FinalizeReload (892ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (640ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			SetLoadedEditorAssemblies (7ms)
+			BeforeProcessingInitializeOnLoad (116ms)
+			ProcessInitializeOnLoadAttributes (478ms)
+			ProcessInitializeOnLoadMethodAttributes (28ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (9ms)
+Refreshing native plugins compatible for Editor in 0.74 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 3368 unused Assets / (2.8 MB). Loaded Objects now: 4019.
+Memory consumption went from 133.7 MB to 130.9 MB.
+Total: 7.348900 ms (FindLiveObjects: 0.538100 ms CreateObjectMapping: 0.392000 ms MarkObjects: 4.725200 ms  DeleteObjects: 1.692400 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.68 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 12 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 3360 unused Assets / (2.7 MB). Loaded Objects now: 4019.
+Memory consumption went from 133.7 MB to 131.0 MB.
+Total: 7.597600 ms (FindLiveObjects: 0.519000 ms CreateObjectMapping: 0.286600 ms MarkObjects: 4.788500 ms  DeleteObjects: 2.001800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+Symbol file LoadedFromMemory doesn't match image E:\!--THE GAME--!\--Unity--\SchoolTD\SchoolTD_3.2.7f1\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image E:\!--THE GAME--!\--Unity--\SchoolTD\SchoolTD_3.2.7f1\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.897 seconds
+Refreshing native plugins compatible for Editor in 0.65 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.904 seconds
+Domain Reload Profiling: 1801ms
+	BeginReloadAssembly (259ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (9ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (56ms)
+	RebuildCommonClasses (62ms)
+	RebuildNativeTypeToScriptingClass (20ms)
+	initialDomainReloadingComplete (37ms)
+	LoadAllAssembliesAndSetupDomain (519ms)
+		LoadAssemblies (478ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (190ms)
+			TypeCache.Refresh (10ms)
+				TypeCache.ScanAssembly (2ms)
+			BuildScriptInfoCaches (167ms)
+			ResolveRequiredComponents (8ms)
+	FinalizeReload (904ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (638ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (8ms)
+			BeforeProcessingInitializeOnLoad (127ms)
+			ProcessInitializeOnLoadAttributes (466ms)
+			ProcessInitializeOnLoadMethodAttributes (30ms)
+			AfterProcessingInitializeOnLoad (4ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (9ms)
+Refreshing native plugins compatible for Editor in 0.68 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 3368 unused Assets / (2.8 MB). Loaded Objects now: 4019.
+Memory consumption went from 135.6 MB to 132.8 MB.
+Total: 6.287700 ms (FindLiveObjects: 0.498200 ms CreateObjectMapping: 0.296200 ms MarkObjects: 4.085400 ms  DeleteObjects: 1.406700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 134.438595 seconds.
+  path: Assets/Scripts/UnityScripts/GoSelectLvl.cs
+  artifactKey: Guid(9623912d514a6054f964980fbc15659e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/UnityScripts/GoSelectLvl.cs using Guid(9623912d514a6054f964980fbc15659e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd18dafc87ec4f24543738b77e0be18c2') in 0.0020311 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.820349 seconds.
+  path: Assets/Scripts/UnityScripts/LevelManager.cs
+  artifactKey: Guid(4637b28fae4521c408c7c4edbbd22069) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/UnityScripts/LevelManager.cs using Guid(4637b28fae4521c408c7c4edbbd22069) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '46bac6b3fe336d0d8a506a660ee7a4fb') in 0.0005746 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.68 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 12 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 3360 unused Assets / (2.5 MB). Loaded Objects now: 4019.
+Memory consumption went from 135.3 MB to 132.8 MB.
+Total: 7.035300 ms (FindLiveObjects: 0.560200 ms CreateObjectMapping: 0.308200 ms MarkObjects: 4.526200 ms  DeleteObjects: 1.639000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 11.057026 seconds.
+  path: Assets/Scripts/UnityScripts/LevelManager.cs
+  artifactKey: Guid(4637b28fae4521c408c7c4edbbd22069) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/UnityScripts/LevelManager.cs using Guid(4637b28fae4521c408c7c4edbbd22069) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '37281af035dc50cb6483bd18a5058bec') in 0.0007897 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+Symbol file LoadedFromMemory doesn't match image E:\!--THE GAME--!\--Unity--\SchoolTD\SchoolTD_3.2.7f1\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image E:\!--THE GAME--!\--Unity--\SchoolTD\SchoolTD_3.2.7f1\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.918 seconds
+Refreshing native plugins compatible for Editor in 1.01 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.003 seconds
+Domain Reload Profiling: 1924ms
+	BeginReloadAssembly (306ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (8ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (77ms)
+	RebuildCommonClasses (54ms)
+	RebuildNativeTypeToScriptingClass (21ms)
+	initialDomainReloadingComplete (32ms)
+	LoadAllAssembliesAndSetupDomain (505ms)
+		LoadAssemblies (473ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (203ms)
+			TypeCache.Refresh (12ms)
+				TypeCache.ScanAssembly (3ms)
+			BuildScriptInfoCaches (176ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (1004ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (731ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (133ms)
+			ProcessInitializeOnLoadAttributes (551ms)
+			ProcessInitializeOnLoadMethodAttributes (31ms)
+			AfterProcessingInitializeOnLoad (5ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (9ms)
+Refreshing native plugins compatible for Editor in 0.84 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 3368 unused Assets / (2.6 MB). Loaded Objects now: 4019.
+Memory consumption went from 137.5 MB to 134.9 MB.
+Total: 9.308500 ms (FindLiveObjects: 0.827400 ms CreateObjectMapping: 0.668100 ms MarkObjects: 5.571800 ms  DeleteObjects: 2.239300 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.75 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 12 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 3360 unused Assets / (2.6 MB). Loaded Objects now: 4019.
+Memory consumption went from 137.5 MB to 134.9 MB.
+Total: 6.512100 ms (FindLiveObjects: 0.484100 ms CreateObjectMapping: 0.277800 ms MarkObjects: 4.220100 ms  DeleteObjects: 1.529100 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 132.492339 seconds.
+  path: Assets/Scripts/UnityScripts/LoginHandler.cs
+  artifactKey: Guid(80b1e13a35b197f44861049111266d93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/UnityScripts/LoginHandler.cs using Guid(80b1e13a35b197f44861049111266d93) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '37e501d6f4c2e9566eb1ae152baebb77') in 0.0021734 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+Symbol file LoadedFromMemory doesn't match image E:\!--THE GAME--!\--Unity--\SchoolTD\SchoolTD_3.2.7f1\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image E:\!--THE GAME--!\--Unity--\SchoolTD\SchoolTD_3.2.7f1\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.840 seconds
+Refreshing native plugins compatible for Editor in 0.69 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.905 seconds
+Domain Reload Profiling: 1746ms
+	BeginReloadAssembly (243ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (9ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (49ms)
+	RebuildCommonClasses (52ms)
+	RebuildNativeTypeToScriptingClass (20ms)
+	initialDomainReloadingComplete (33ms)
+	LoadAllAssembliesAndSetupDomain (493ms)
+		LoadAssemblies (442ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (191ms)
+			TypeCache.Refresh (10ms)
+				TypeCache.ScanAssembly (2ms)
+			BuildScriptInfoCaches (168ms)
+			ResolveRequiredComponents (9ms)
+	FinalizeReload (905ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (644ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			SetLoadedEditorAssemblies (8ms)
+			BeforeProcessingInitializeOnLoad (123ms)
+			ProcessInitializeOnLoadAttributes (478ms)
+			ProcessInitializeOnLoadMethodAttributes (27ms)
+			AfterProcessingInitializeOnLoad (4ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (9ms)
+Refreshing native plugins compatible for Editor in 0.87 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 3368 unused Assets / (2.7 MB). Loaded Objects now: 4019.
+Memory consumption went from 139.4 MB to 136.7 MB.
+Total: 6.903000 ms (FindLiveObjects: 0.505200 ms CreateObjectMapping: 0.362300 ms MarkObjects: 4.414900 ms  DeleteObjects: 1.619600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 9.999661 seconds.
+  path: Assets/Scripts/UnityScripts/RotationScript.cs
+  artifactKey: Guid(08d34cea2de25de489123edc761e5a54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/UnityScripts/RotationScript.cs using Guid(08d34cea2de25de489123edc761e5a54) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fad9e05816e356357db81868f498038e') in 0.0019343 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.599908 seconds.
+  path: Assets/Scripts/UnityScripts/ResolutionChange.cs
+  artifactKey: Guid(c4991769325322040aef4311d1771548) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/UnityScripts/ResolutionChange.cs using Guid(c4991769325322040aef4311d1771548) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '54007ba201e1214d738f37b8f8f10bf0') in 0.0005663 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.95 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 12 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 3360 unused Assets / (2.7 MB). Loaded Objects now: 4019.
+Memory consumption went from 139.1 MB to 136.5 MB.
+Total: 7.869600 ms (FindLiveObjects: 0.527100 ms CreateObjectMapping: 0.309200 ms MarkObjects: 4.974100 ms  DeleteObjects: 2.058000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 133.078151 seconds.
+  path: Assets/Scripts/UnityScripts/RegistryHandler.cs
+  artifactKey: Guid(a27f8e1f9b36094479726d3680d5965c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/UnityScripts/RegistryHandler.cs using Guid(a27f8e1f9b36094479726d3680d5965c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '06f565107fc9e6bc47c358406a65a142') in 0.0007479 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+Symbol file LoadedFromMemory doesn't match image E:\!--THE GAME--!\--Unity--\SchoolTD\SchoolTD_3.2.7f1\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image E:\!--THE GAME--!\--Unity--\SchoolTD\SchoolTD_3.2.7f1\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.838 seconds
+Refreshing native plugins compatible for Editor in 0.67 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.968 seconds
+Domain Reload Profiling: 1807ms
+	BeginReloadAssembly (236ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (8ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (49ms)
+	RebuildCommonClasses (49ms)
+	RebuildNativeTypeToScriptingClass (21ms)
+	initialDomainReloadingComplete (36ms)
+	LoadAllAssembliesAndSetupDomain (497ms)
+		LoadAssemblies (449ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (185ms)
+			TypeCache.Refresh (11ms)
+				TypeCache.ScanAssembly (2ms)
+			BuildScriptInfoCaches (164ms)
+			ResolveRequiredComponents (7ms)
+	FinalizeReload (969ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (707ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (7ms)
+			BeforeProcessingInitializeOnLoad (137ms)
+			ProcessInitializeOnLoadAttributes (519ms)
+			ProcessInitializeOnLoadMethodAttributes (34ms)
+			AfterProcessingInitializeOnLoad (6ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (10ms)
+Refreshing native plugins compatible for Editor in 0.84 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 3368 unused Assets / (2.9 MB). Loaded Objects now: 4019.
+Memory consumption went from 141.4 MB to 138.5 MB.
+Total: 7.418100 ms (FindLiveObjects: 0.510100 ms CreateObjectMapping: 0.310000 ms MarkObjects: 4.491300 ms  DeleteObjects: 2.105400 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.85 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 12 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 3360 unused Assets / (2.6 MB). Loaded Objects now: 4019.
+Memory consumption went from 141.4 MB to 138.8 MB.
+Total: 7.711700 ms (FindLiveObjects: 0.544100 ms CreateObjectMapping: 0.345300 ms MarkObjects: 5.329900 ms  DeleteObjects: 1.490400 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+Symbol file LoadedFromMemory doesn't match image E:\!--THE GAME--!\--Unity--\SchoolTD\SchoolTD_3.2.7f1\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image E:\!--THE GAME--!\--Unity--\SchoolTD\SchoolTD_3.2.7f1\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.935 seconds
+Refreshing native plugins compatible for Editor in 0.94 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.977 seconds
+Domain Reload Profiling: 1913ms
+	BeginReloadAssembly (297ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (9ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (62ms)
+	RebuildCommonClasses (59ms)
+	RebuildNativeTypeToScriptingClass (24ms)
+	initialDomainReloadingComplete (39ms)
+	LoadAllAssembliesAndSetupDomain (517ms)
+		LoadAssemblies (492ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (199ms)
+			TypeCache.Refresh (12ms)
+				TypeCache.ScanAssembly (2ms)
+			BuildScriptInfoCaches (176ms)
+			ResolveRequiredComponents (7ms)
+	FinalizeReload (978ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (701ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (121ms)
+			ProcessInitializeOnLoadAttributes (531ms)
+			ProcessInitializeOnLoadMethodAttributes (35ms)
+			AfterProcessingInitializeOnLoad (5ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (9ms)
+Refreshing native plugins compatible for Editor in 0.66 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 3368 unused Assets / (2.7 MB). Loaded Objects now: 4019.
+Memory consumption went from 143.3 MB to 140.6 MB.
+Total: 6.309100 ms (FindLiveObjects: 0.486700 ms CreateObjectMapping: 0.280500 ms MarkObjects: 3.965100 ms  DeleteObjects: 1.575500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.69 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 12 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 3360 unused Assets / (2.8 MB). Loaded Objects now: 4019.
+Memory consumption went from 143.3 MB to 140.5 MB.
+Total: 8.936300 ms (FindLiveObjects: 0.574100 ms CreateObjectMapping: 0.461800 ms MarkObjects: 5.461500 ms  DeleteObjects: 2.437400 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+Symbol file LoadedFromMemory doesn't match image E:\!--THE GAME--!\--Unity--\SchoolTD\SchoolTD_3.2.7f1\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image E:\!--THE GAME--!\--Unity--\SchoolTD\SchoolTD_3.2.7f1\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.897 seconds
+Refreshing native plugins compatible for Editor in 0.59 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.871 seconds
+Domain Reload Profiling: 1769ms
+	BeginReloadAssembly (277ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (8ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (58ms)
+	RebuildCommonClasses (69ms)
+	RebuildNativeTypeToScriptingClass (22ms)
+	initialDomainReloadingComplete (37ms)
+	LoadAllAssembliesAndSetupDomain (493ms)
+		LoadAssemblies (466ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (190ms)
+			TypeCache.Refresh (11ms)
+				TypeCache.ScanAssembly (2ms)
+			BuildScriptInfoCaches (168ms)
+			ResolveRequiredComponents (7ms)
+	FinalizeReload (872ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (619ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (115ms)
+			ProcessInitializeOnLoadAttributes (463ms)
+			ProcessInitializeOnLoadMethodAttributes (28ms)
+			AfterProcessingInitializeOnLoad (4ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (9ms)
+Refreshing native plugins compatible for Editor in 0.73 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 3368 unused Assets / (2.8 MB). Loaded Objects now: 4019.
+Memory consumption went from 145.2 MB to 142.4 MB.
+Total: 6.938800 ms (FindLiveObjects: 0.550400 ms CreateObjectMapping: 0.322000 ms MarkObjects: 4.436700 ms  DeleteObjects: 1.628000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 0.73 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 12 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 3360 unused Assets / (3.0 MB). Loaded Objects now: 4019.
+Memory consumption went from 145.2 MB to 142.2 MB.
+Total: 9.531400 ms (FindLiveObjects: 0.615200 ms CreateObjectMapping: 0.530100 ms MarkObjects: 5.791100 ms  DeleteObjects: 2.593500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 1.00 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 12 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 3360 unused Assets / (2.5 MB). Loaded Objects now: 4019.
+Memory consumption went from 145.2 MB to 142.7 MB.
+Total: 8.056000 ms (FindLiveObjects: 0.532700 ms CreateObjectMapping: 0.316200 ms MarkObjects: 5.250700 ms  DeleteObjects: 1.954500 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+Symbol file LoadedFromMemory doesn't match image E:\!--THE GAME--!\--Unity--\SchoolTD\SchoolTD_3.2.7f1\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image E:\!--THE GAME--!\--Unity--\SchoolTD\SchoolTD_3.2.7f1\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  0.841 seconds
+Refreshing native plugins compatible for Editor in 0.66 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.098 seconds
+Domain Reload Profiling: 1941ms
+	BeginReloadAssembly (242ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (8ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (50ms)
+	RebuildCommonClasses (53ms)
+	RebuildNativeTypeToScriptingClass (20ms)
+	initialDomainReloadingComplete (36ms)
+	LoadAllAssembliesAndSetupDomain (491ms)
+		LoadAssemblies (442ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (191ms)
+			TypeCache.Refresh (12ms)
+				TypeCache.ScanAssembly (3ms)
+			BuildScriptInfoCaches (166ms)
+			ResolveRequiredComponents (9ms)
+	FinalizeReload (1098ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (805ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (7ms)
+			BeforeProcessingInitializeOnLoad (119ms)
+			ProcessInitializeOnLoadAttributes (626ms)
+			ProcessInitializeOnLoadMethodAttributes (42ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (12ms)
+Refreshing native plugins compatible for Editor in 0.66 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 14 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 3368 unused Assets / (2.9 MB). Loaded Objects now: 4019.
+Memory consumption went from 147.1 MB to 144.2 MB.
+Total: 7.412600 ms (FindLiveObjects: 0.513500 ms CreateObjectMapping: 0.366400 ms MarkObjects: 4.553400 ms  DeleteObjects: 1.978200 ms)
+
+Prepare: number of updated asset objects reloaded= 0

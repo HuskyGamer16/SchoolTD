@@ -8,6 +8,9 @@ using TMPro;
 public class RegistryHandler : MonoBehaviour
 {
     private float Delay;
+    private bool chPw;
+    private bool chLength;
+    private bool chName;
     private bool IsGood;
     public GameObject panelFrom;
     public GameObject panelTo;
@@ -42,6 +45,9 @@ public class RegistryHandler : MonoBehaviour
         pwInput.text = "";
         pwAgainInput.text = "";
         IsGood = false;
+        chName = false;
+        chLength = false;
+        chPw = false;
         Delay = 0;
         pwError.enabled = false;
     }
@@ -59,6 +65,8 @@ public class RegistryHandler : MonoBehaviour
             {
                 pwError.enabled = false;
                 pwError.text = "";
+                chName = true;
+                CheckAll();
             }
         }
     }
@@ -75,6 +83,8 @@ public class RegistryHandler : MonoBehaviour
             {
                 pwError.text = "";
                 pwError.enabled = false;
+                chLength = true;
+                CheckAll();
             }
         }
     }
@@ -91,8 +101,14 @@ public class RegistryHandler : MonoBehaviour
             else
             {
                 pwError.enabled = false;
-                IsGood = true;
+                chPw = true;
+                CheckAll();
             }
+        }
+    }
+    public void CheckAll(){
+        if(chPw && chName && chLength){
+            IsGood = true;
         }
     }
     public void Register()
