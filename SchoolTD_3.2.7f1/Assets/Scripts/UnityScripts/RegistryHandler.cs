@@ -60,6 +60,9 @@ public class RegistryHandler : MonoBehaviour
             {
                 pwError.enabled = true;
                 pwError.text = "This (user)name is already in use!";
+                chName = false;
+                IsGood = false;
+                CheckAll();
             }
             else
             {
@@ -78,6 +81,9 @@ public class RegistryHandler : MonoBehaviour
             {
                 pwError.text = "The password is not long enough! (4-16 characters)";
                 pwError.enabled = true;
+                chLength = false;
+                IsGood = false;
+                CheckAll();
             }
             else
             {
@@ -97,6 +103,9 @@ public class RegistryHandler : MonoBehaviour
             {
                 pwError.text = "The passwords are not matching!";
                 pwError.enabled = true;
+                chPw = false;
+                IsGood = false;
+                CheckAll();
             }
             else
             {
