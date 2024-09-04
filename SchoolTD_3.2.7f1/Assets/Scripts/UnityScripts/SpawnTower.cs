@@ -26,7 +26,7 @@ public class SpawnTower : MonoBehaviour
     
     List<TotalTower> Towers;
     
-    List<effects> AllEffects;
+
     levels level;
     public UnityEngine.UI.Button Firebutton;
     public UnityEngine.UI.Button Waterbutton;
@@ -39,13 +39,12 @@ public class SpawnTower : MonoBehaviour
     {
         UsedTowerIDs = new();
         paused = false;
-        level = db.SelectLevel(1)[0];
+        level = new levels(1, 10, 100, 5);  //db.SelectLevel(1)[0]; //Itt ennek egy normális megoldást kéne csinálni majd valamikor :shrug:
         max = level.MaxBuildables;
         GetPlayerTowers = db.SelectPlayerTower(playerid);
         Towers = db.SelectAllTower();
         AllPlaces = GameObject.FindGameObjectsWithTag("Bok");
         playerid = LoginHandler.playerid;
-        AllEffects = db.SelectEffects();
         OccupiedPlaces.Clear();
         if (Menu.activeSelf)
         {
@@ -118,8 +117,8 @@ public class SpawnTower : MonoBehaviour
         }
     }
 
-    public static effects GiveEffect(int effectid) {
-        effects eff = db.SelectEffect(effectid)[0];
+    public static effects GiveEffect(int num) {
+        effects eff = new effects("nam","aff");
         return eff;
     }
     private bool LookForGamObject(out RaycastHit hit)
@@ -133,20 +132,20 @@ public class SpawnTower : MonoBehaviour
         switch (param)
         {
             case "cannon":
-                pTowers = db.SelectEffectTower(playerid, db.GetEffectID("nothing"));
+                pTowers = db.SelectPlayerTower(playerid, "CANNON");
                 break;
             case "fire":
-                pTowers = db.SelectEffectTower(playerid, db.GetEffectID(param));
+                pTowers = db.SelectPlayerTower(playerid, "FIRE");
                 yPos += 1.5f;
                 break;
             case "water":
-                pTowers = db.SelectEffectTower(playerid, db.GetEffectID(param));
+                pTowers = db.SelectPlayerTower(playerid, "WATER");
                 break;
             case "ice":
-                pTowers = db.SelectEffectTower(playerid, db.GetEffectID(param));
+                pTowers = db.SelectPlayerTower(playerid,"ICE");
                 break;
             case "electric":
-                pTowers = db.SelectEffectTower(playerid, db.GetEffectID(param));
+                pTowers = db.SelectPlayerTower(playerid, "ELECTRIC");
                 break;
         }
         if (OccupiedPlaces.Count < max)
@@ -220,20 +219,20 @@ public class SpawnTower : MonoBehaviour
                 j++;
                 }
                 if (j < Towers.Count) {
-                    switch (Towers[j].EffectID) {
-                        case 1:
+                    switch (Towers[j].Name) {
+                        case "CANNON":
                             Cannonbutton.enabled = true;
                             break;
-                        case 2:
+                        case "FIRE":
                             Firebutton.enabled = true;
                             break;
-                        case 3: 
+                        case "WATER": 
                             Waterbutton.enabled = true;
                             break;
-                        case 4: 
+                        case "ELECTRIC": 
                             Electricbutton.enabled = true;
                             break;
-                        case 5:
+                        case "ICE":
                             Icebutton.enabled = true;
                             break;
                     }

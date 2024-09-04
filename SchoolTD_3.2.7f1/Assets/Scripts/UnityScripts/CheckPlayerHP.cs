@@ -79,14 +79,14 @@ public class CheckPlayerHP : MonoBehaviour
     {
         xp = Mathf.FloorToInt(score * gradeAvg);
         db.TowerXPgain(playerid, xp);
-        db.LevelCleared(new clearedLevel(playerid, lvlId, 1, score));
+        db.LevelCleared(playerid, score);
         miniLVLManager.Quit();
     }
     public void QuitWin()
     {
         xp = Mathf.FloorToInt(score * gradeAvg);
         db.TowerXPgain(playerid, xp);
-        db.LevelCleared(new clearedLevel(playerid, lvlId, 1, score));
+        db.LevelCleared(playerid, score);
         miniLVLManager.QuitToDesktop();
     }
     public void WriteAvg() { 

@@ -34,89 +34,14 @@ public class DbConnect
             return false;
         }
     }
-    public int GetMaxBuild(int lvlid) {
-        int max = 0;
-        if (Connect()) {
-            string query = "Select MaxBuildables from levels where id = @id;";
-            MySqlCommand cmd = new MySqlCommand(query, con);
-            cmd.Parameters.AddWithValue("@id", lvlid);
-            MySqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                max = reader.GetInt32(0);
-            }
-                Connect_close();
-        }
-        return max;
-    }
-    public List<waves> SelectWave(int id) {
-        List<waves> temp = new();
-        if (Connect())
-        {
-            string query = "SELECT * FROM waves WHERE id = @id;";
-            MySqlCommand cmd = new MySqlCommand(query, con);
-            cmd.Parameters.AddWithValue("@id",id);
-            MySqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                temp.Add(new(
-                    reader.GetInt32(0),
-                    reader.GetInt32(1),
-                    reader.GetInt32(2)
-                    ));
-            }
-            Connect_close();
-        }
-        return temp;
-    }
-    public List<effects> SelectEffect(int effectid)
-    {
-        List<effects> temp = new();
-        if (Connect())
-        {
-            string query = "SELECT * FROM effects WHERE id = @id";
-            MySqlCommand cmd = new MySqlCommand(query, con);
-            cmd.Parameters.AddWithValue("@id", effectid);
-            MySqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                temp.Add(new(
-                    reader.GetInt32(0),
-                    reader.GetString(1),
-                    reader.GetString(2)
-                    ));
-            }
-            Connect_close();
-        }
-        return temp;
-    }
-    public List<effects> SelectEffects() {
-        List<effects> temp = new();
-        if (Connect())
-        {
-            string query = "SELECT * FROM effects";
-            MySqlCommand cmd = new MySqlCommand(query, con);
-            MySqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                temp.Add(new(
-                    reader.GetInt32(0),
-                    reader.GetString(1),
-                    reader.GetString(2)
-                    ));
-            }
-            Connect_close();
-        }
-        return temp;
-    }
     public void InsertPlayer(player temp)
     {
         if (Connect())
         {
-            string query = "INSERT INTO player(username,pw) VALUES(@username,@pw);";
+            string query = "INSERT INTO player(username,password) VALUES(@username,@password);";
             MySqlCommand cmd = new MySqlCommand(query, con);
             cmd.Parameters.AddWithValue("@username", temp.Username);
-            cmd.Parameters.AddWithValue("@pw", temp.Pw);
+            cmd.Parameters.AddWithValue("@password", temp.Pw);
             cmd.ExecuteNonQuery();
             Connect_close();
         }
@@ -152,46 +77,46 @@ public class DbConnect
                 temp.Add(new player(
                     reader.GetInt32(0),
                     reader.GetString(1),
-                    reader.GetString(2)
+                    reader.GetString(2),
+                    reader.GetInt32(3),
+                    reader.GetInt32(4)
                     ));
             }
             Connect_close();
         }
         return temp;
     }
-    public void InsertHighscore(highscores temp) {
-        if (Connect())
-        {
-            string query = "INSERT INTO highscores(playerId,score) VALUES(@playerId,@score);";
-            MySqlCommand cmd = new MySqlCommand(query, con);
-            cmd.Parameters.AddWithValue("@playerId", temp.PlayerId);
-            cmd.Parameters.AddWithValue("@score", temp.Score);
+    public void TowerXPgain(int playerid, int xp) {
+        if (Connect()) {
+            string query = "Update player set Xp = xp + @xp,crntlevel = crntlevel+1 where id = @id";
+            MySqlCommand cmd = new(query, con);
+            cmd.Parameters.AddWithValue("@id",playerid);
+            cmd.Parameters.AddWithValue("@xp",xp);
             cmd.ExecuteNonQuery();
-            Connect_close();
+            Connect_close ();
         }
     }
-    public void LevelCleared(clearedLevel temp)
+
+    public void LevelCleared(int playerid,int lvlscore)
     {
         if (Connect())
         {
-            string query = "INSERT INTO clearlevels(playerId,lvlId,dif,score) VALUES(@playerId,@lvlId,@dif,@score);";
+            //string query = "UPDATE playertower SET towerid = towerid + 1, currentXP = 0 WHERE towerID = @towerid AND playerID = @playerid";
+            string query = "Update player set score = score + @lvlscore where id = @Id";
             MySqlCommand cmd = new MySqlCommand(query, con);
-            cmd.Parameters.AddWithValue("@playerId", temp.PlayerID);
-            cmd.Parameters.AddWithValue("@lvlId", temp.LevelID);
-            cmd.Parameters.AddWithValue("@dif", temp.Dif);
-            cmd.Parameters.AddWithValue("@score", temp.Score);
+            cmd.Parameters.AddWithValue("@Id", playerid);
+            cmd.Parameters.AddWithValue("@lvlscore", lvlscore);
             cmd.ExecuteNonQuery();
             Connect_close();
         }
     }
     public void InsertPlayerTower(playerTower temp){
         if(Connect()){
-
-            string query = "INSERT INTO playertower(towerID,playerID,currentXP) VALUES(@towerID,@playerID,@EXP);";
+            string query = "INSERT INTO ptowers(playerID,towerID,XP) VALUES(@playerID,@towerID,@EXP);";
             MySqlCommand cmd = new MySqlCommand(query, con);
             cmd.Parameters.AddWithValue("@towerID", temp.TowerID);
             cmd.Parameters.AddWithValue("@playerID", temp.PlayerID);
-            cmd.Parameters.AddWithValue("@EXP", temp.CurrentXP);
+            cmd.Parameters.AddWithValue("@EXP", temp.Exp);
             cmd.ExecuteNonQuery();
             Connect_close();
         }
@@ -199,13 +124,12 @@ public class DbConnect
     public void InsertTower(TotalTower temp) {
         if (Connect())
         {
-
-            string query = "INSERT INTO totaltower(towerMaxLVL,LVLup,currentLVL,effectID) VALUES(@towerMaxLVL,@LVLup,@currentLVL,@effectID);";
+            string query = "INSERT INTO towers(name,dmg,LVL,XP) VALUES(@name,@dmg,@lvl,@xp);";
             MySqlCommand cmd = new MySqlCommand(query, con);
-            cmd.Parameters.AddWithValue("@towerMaxLVL", temp.TowerMaxLVL);
-            cmd.Parameters.AddWithValue("@LVLup", temp.LvlUP);
-            cmd.Parameters.AddWithValue("@currentLVL", temp.CurrentLVL);
-            cmd.Parameters.AddWithValue("@effectID", temp.EffectID);
+            cmd.Parameters.AddWithValue("@name", temp.Name);
+            cmd.Parameters.AddWithValue("@dmg", temp.Dmg);
+            cmd.Parameters.AddWithValue("@lvl", temp.Lvl);
+            cmd.Parameters.AddWithValue("@xp", temp.Exp);
             cmd.ExecuteNonQuery();
             Connect_close();
         }
@@ -214,7 +138,7 @@ public class DbConnect
         List<playerTower> temp = new();
         if (Connect())
         {
-            string query = "SELECT * FROM playertower WHERE playerID = @playerID order by towerID desc;";
+            string query = "SELECT * FROM ptowers WHERE playerID = @playerID order by towerID desc;";
             MySqlCommand cmd = new MySqlCommand(query, con);
             cmd.Parameters.AddWithValue("@playerID", playerid);
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -231,168 +155,77 @@ public class DbConnect
         }
             return temp;
     }
-
-    public List<TotalTower> SelectTower(int towerid)
-    {
-        List<TotalTower> temp = new();
+    public int GetMaxLvl(int towerid) {
+        int max = 0;
+        string temp = "";
+        if (Connect()) {
+            string query = "Select name from towers where id = @towerid;";
+            MySqlCommand cmd = new MySqlCommand(query,con);
+            cmd.Parameters.AddWithValue("@towerid",towerid);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read()) {
+                temp = reader.GetString(0);
+            }
+            Connect_close();
+            if (Connect()) {
+                query = "Select Lvl from towers where name like @name order by lvl desc limit 1;";
+                cmd = new MySqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@name", temp);
+                reader = cmd.ExecuteReader();
+                while (reader.Read()) { 
+                max = reader.GetInt32(0);
+                }
+                Connect_close();
+            }
+        }
+        return max;
+    }
+    public float GetReqXp(int towerid, int playerid) {
+        int lvl = 0;
         if (Connect())
         {
-            string query = "SELECT * FROM totaltower WHERE id = @id;";
+            string query = "Select towers.xp, ptowers.xp from towers inner join ptowers (towers.id = ptowers.towerid) where idkblahblahblah";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+
+            Connect_close();
+        }
+        return lvl;
+    }
+    public float GetLvlXp(int towerid, int playerid) {
+        int lvl = 0;
+        if (Connect())
+        {
+            
+            Connect_close();
+        }
+        return lvl;
+    }
+    public int GetLvl(int towerid)
+    {
+        int lvl = 0;
+        if (Connect())
+        {
+            string query = "Select lvl from towers where id = @id;";
             MySqlCommand cmd = new MySqlCommand(query, con);
             cmd.Parameters.AddWithValue("@id", towerid);
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                temp.Add(new(
-                    reader.GetInt32(0),
-                    reader.GetInt32(1),
-                    reader.GetInt32(2),
-                    reader.GetInt32(3),
-                    reader.GetInt32(4)
-                    ));
+                lvl = reader.GetInt32(0);
             }
             Connect_close();
         }
-        return temp;
+        return lvl;
     }
-    public int GetEffectID(string effectname) {
-        int effectid = 0;
-        if (Connect())
-        {
-            string query = "SELECT id FROM effects WHERE name like @name;";
-            MySqlCommand cmd = new MySqlCommand(query, con);
-            cmd.Parameters.AddWithValue("@name", effectname);
-            MySqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                effectid = reader.GetInt32(0);
-            }
-            Connect_close();
-        }
-                return effectid;
-    }
-    public List<TotalTower> SelectAllTower()
+    public List<playerTower> SelectPlayerTower(int playerid, string towername)
     {
-        List<TotalTower> temp = new();
-        if (Connect())
-        {
-            string query = "SELECT * FROM totaltower;";
-            MySqlCommand cmd = new MySqlCommand(query, con);
-            MySqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                temp.Add(new(
-                    reader.GetInt32(0),
-                    reader.GetInt32(1),
-                    reader.GetInt32(2),
-                    reader.GetInt32(3),
-                    reader.GetInt32(4)
-                    ));
-            }
-            Connect_close();
-        }
-        return temp;
-    }
-    public void InsertOrigami(origami temp) {
-        if (Connect())
-        {
-
-            string query = "INSERT INTO origami(baseHp,baseSpeed,baseDef,effectID,Exp) VALUES(@baseHp,@baseSpeed,@baseDef,@effectID,@Exp);";
-            MySqlCommand cmd = new MySqlCommand(query, con);
-            cmd.Parameters.AddWithValue("@baseHp", temp.BaseHP);
-            cmd.Parameters.AddWithValue("@baseSpeed", temp.BaseSpeed);
-            cmd.Parameters.AddWithValue("@baseDef", temp.BaseDef);
-            cmd.Parameters.AddWithValue("@effectID", temp.EffectID);
-            cmd.Parameters.AddWithValue("@Exp", temp.EXP);
-            cmd.ExecuteNonQuery();
-            Connect_close();
-        }
-    }
-    public List<origami> SelectOrigami() {
-        List<origami> temp = new();
-        if (Connect())
-        {
-            string query = "SELECT * FROM origami WHERE id > 1;";
-            MySqlCommand cmd = new MySqlCommand(query, con);
-            MySqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                temp.Add(new(
-                    reader.GetInt32(0),
-                    reader.GetInt32(1),
-                    reader.GetInt32(2),
-                    reader.GetInt32(3),
-                    reader.GetInt32(4),
-                    reader.GetInt32(5)
-                    ));
-            }
-            Connect_close();
-        }
-        return temp;
-    }
-    public List<levels> SelectLevel(int levelid) {
-        List<levels> temp = new();
-        if (Connect()) {
-            string query = "SELECT * FROM levels WHERE id = @id;";
-            MySqlCommand cmd = new MySqlCommand(query, con);
-            cmd.Parameters.AddWithValue("@id", levelid);
-            MySqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                temp.Add(new(
-                    reader.GetInt32(0),
-                    reader.GetInt32(1),
-                    reader.GetInt32(2),
-                    reader.GetInt32(3),
-                    reader.GetInt32(4)
-                    ));
-            }
-            Connect_close();
-        }
-        return temp;
-    }
-    public List<clearedLevel> SelectLevels(int playerid)
-    {
-        List<clearedLevel> temp = new();
-        if (Connect())
-        {
-            string query = "SELECT * FROM clearLevels WHERE playerId = @pid order by lvlId asc;";
-            MySqlCommand cmd = new MySqlCommand(query, con);
-            cmd.Parameters.AddWithValue("@pid", playerid);
-            MySqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                temp.Add(new(
-                    reader.GetInt32(0),
-                    reader.GetInt32(1),
-                    reader.GetInt32(2),
-                    reader.GetInt32(3),
-                    reader.GetInt32(4)
-                    ));
-            }
-            Connect_close();
-        }
-        return temp;
-    }
-
-    public void TowerLvlUP(int towerid, int playerid) {
-        if (Connect()) {
-            string query = "UPDATE playertower SET towerid = towerid + 1, currentXP = 0 WHERE towerID = @towerid AND playerID = @playerid";
-            MySqlCommand cmd = new MySqlCommand(query, con);
-            cmd.Parameters.AddWithValue("@towerid", towerid);
-            cmd.Parameters.AddWithValue("@playerid", playerid);
-            cmd.ExecuteNonQuery();
-            Connect_close();
-        }
-    }
-    public List<playerTower> SelectEffectTower(int playerid, int effectid) {
         List<playerTower> temp = new();
         if (Connect())
         {
-            string query = "SELECT playertower.id,playertower.towerid,playertower.playerid,playertower.currentXP FROM playertower inner join totaltower on playertower.towerID = totaltower.id WHERE playertower.playerID = @id AND totaltower.effectID = @effectid;";
+            string query = "SELECT * FROM ptowers left join towers on (ptowers.towerid = towers.id) WHERE ptowers.playerID = @playerID and towers.name=@TowerName, order by towerID desc;";
             MySqlCommand cmd = new MySqlCommand(query, con);
-            cmd.Parameters.AddWithValue("@id", playerid);
-            cmd.Parameters.AddWithValue("@effectid", effectid);
+            cmd.Parameters.AddWithValue("@playerID", playerid);
+            cmd.Parameters.AddWithValue("@TowerName", towername);
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
@@ -407,82 +240,107 @@ public class DbConnect
         }
         return temp;
     }
-    public int Getlvl(int Towerid) {
-        int temp =  0;
+
+    public List<TotalTower> SelectTower(int towerid)
+    {
+        List<TotalTower> temp = new();
         if (Connect())
         {
-            string query = "SELECT currentLVL FROM totaltower WHERE id = @id;";
+            string query = "SELECT * FROM towers WHERE id = @id;";
             MySqlCommand cmd = new MySqlCommand(query, con);
-            cmd.Parameters.AddWithValue("@id", Towerid);
+            cmd.Parameters.AddWithValue("@id", towerid);
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                temp = reader.GetInt32(0);
+                temp.Add(new(
+                    reader.GetInt32(0),
+                    reader.GetString(1),
+                    reader.GetInt32(2),
+                    reader.GetInt32(3),
+                    reader.GetInt32(4)
+                    ));
             }
             Connect_close();
         }
         return temp;
     }
-    public int GetMaxlvl(int Towerid)
+   
+    public List<TotalTower> SelectAllTower()
     {
-        int temp = 0;
+        List<TotalTower> temp = new();
         if (Connect())
         {
-            string query = "SELECT towerMaxLVL FROM totaltower WHERE id = @id;";
+            string query = "SELECT * FROM towers;";
             MySqlCommand cmd = new MySqlCommand(query, con);
-            cmd.Parameters.AddWithValue("@id", Towerid);
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                temp = reader.GetInt32(0);
+                temp.Add(new(
+                    reader.GetInt32(0),
+                    reader.GetString(1),
+                    reader.GetInt32(2),
+                    reader.GetInt32(3),
+                    reader.GetInt32(4)
+                    ));
             }
             Connect_close();
         }
         return temp;
     }
-    public int GetLVLup(int Towerid)
-    {
-        int temp = 0;
+    public void InsertOrigami(origami temp) {
         if (Connect())
         {
-            string query = "SELECT LVLup FROM totaltower WHERE id = @id;";
+            string query = "INSERT INTO origami(baseHp,baseSpeed,baseDef,Exp) VALUES(@baseHp,@baseSpeed,@baseDef,@Exp);";
             MySqlCommand cmd = new MySqlCommand(query, con);
-            cmd.Parameters.AddWithValue("@id", Towerid);
+            cmd.Parameters.AddWithValue("@baseHp", temp.BaseHP);
+            cmd.Parameters.AddWithValue("@baseSpeed", temp.BaseSpeed);
+            cmd.Parameters.AddWithValue("@baseDef", temp.BaseDef);
+            cmd.Parameters.AddWithValue("@Exp", temp.EXP);
+            cmd.ExecuteNonQuery();
+            Connect_close();
+        }
+    }
+    public int GetLevels(int playerid) {
+        int ret = 0;
+        if (Connect())
+        {
+            string query = "SELECT crntlevel FROM player WHERE id = @id;";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+            cmd.Parameters.AddWithValue("@id",playerid);
             MySqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                temp = reader.GetInt32(0);
+                ret = reader.GetInt32(0);
+            }
+            Connect_close();
+        }
+        return ret;
+    }
+    public List<origami> SelectOrigami() {
+        List<origami> temp = new();
+        if (Connect())
+        {
+            string query = "SELECT * FROM origami;";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                temp.Add(new(
+                    reader.GetInt32(0),
+                    reader.GetInt32(1),
+                    reader.GetInt32(2),
+                    reader.GetInt32(3),
+                    reader.GetInt32(4)
+                    ));
             }
             Connect_close();
         }
         return temp;
     }
-    public int GetExp(int playerid, int Towerid)
-    {
-        int temp = 0;
-        if (Connect())
-        {
-            string query = "SELECT currentXP FROM playertower WHERE playerID = @pid AND towerID = @towerid order by id desc limit 1;";
+    public void TowerLvlUP(int towerid,int playerid) {
+        if (Connect()) {
+            string query = "";
             MySqlCommand cmd = new MySqlCommand(query, con);
-            cmd.Parameters.AddWithValue("@pid", playerid);
-            cmd.Parameters.AddWithValue("@towerid", Towerid);
-            MySqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                temp = reader.GetInt32(0);
-            }
-            Connect_close();
-        }
-        return temp;
-    }
-    public void TowerXPgain(int playerid,int xp)
-    {
-        if (Connect())
-        {
-            string query = "UPDATE playertower SET currentXP = currentXP + @xp WHERE playerID = @playerid";
-            MySqlCommand cmd = new MySqlCommand(query, con);
-            cmd.Parameters.AddWithValue("@xp", xp);
-            cmd.Parameters.AddWithValue("@playerid", playerid);
             cmd.ExecuteNonQuery();
             Connect_close();
         }

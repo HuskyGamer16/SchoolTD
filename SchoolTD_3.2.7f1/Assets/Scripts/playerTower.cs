@@ -5,25 +5,25 @@ public class playerTower
     private int id;
     private int towerID;
     private int playerID;
-    private int currentXP;
+    private int exp;
 
-    public playerTower(int towerID, int playerID, int currentXP)
+    public playerTower(int towerID, int playerID, int exp)
     {
         this.towerID = towerID;
         this.playerID = playerID;
-        this.currentXP = currentXP;
+        this.exp = exp;
     }
 
-    public playerTower(int id, int towerID, int playerID, int currentXP)
+    public playerTower(int id, int towerID, int playerID, int exp)
     {
         this.id = id;
         this.towerID = towerID;
         this.playerID = playerID;
-        this.currentXP = currentXP;
+        this.exp = exp;
     }
 
     public int Id { get => id; set => id = value; }
     public int TowerID { get => towerID; set => towerID = value; }
     public int PlayerID { get => playerID; set => playerID = value; }
-    public int CurrentXP { get => currentXP; set => currentXP = value; }
+    public int Exp { get => exp; set => exp = value; }
 }

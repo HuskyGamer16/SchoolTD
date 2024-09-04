@@ -31,7 +31,6 @@ public class EnemyMovement : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         EndPos = GameObject.Find("Projector_Screen_done");
         MaxHp = Hp;
-        GetEffects = db.SelectEffects();
         effect = GetEffects[0];
     }
     void Update()

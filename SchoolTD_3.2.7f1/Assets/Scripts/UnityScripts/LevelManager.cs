@@ -8,7 +8,7 @@ public class LevelManager : MonoBehaviour
     static DbConnect db = new DbConnect("127.0.0.1", "schooltd", "root", "");
     int playerid;
     bool test;
-    List<clearedLevel> AllLevels;
+    int AllLevels;
     public GameObject[] Tower;
     public string Level1;
     public string Level2;
@@ -37,8 +37,8 @@ public class LevelManager : MonoBehaviour
         tolvl4.SetActive(true);
         tolvl5.SetActive(true);
         tolvl6.SetActive(true);
-        AllLevels = db.SelectLevels(playerid);
-        switch (AllLevels.Count)
+        AllLevels = db.GetLevels(playerid);
+        switch (AllLevels)
         {
             case 1:
                 Debug.Log("max lvl2");

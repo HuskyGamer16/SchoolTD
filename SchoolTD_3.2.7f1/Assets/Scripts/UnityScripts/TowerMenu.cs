@@ -40,8 +40,8 @@ public class TowerMenu : MonoBehaviour
         Slider SliderAct = Slider.GetComponent<Slider>();
         if (currentTowerid != 0)
         {
-            SliderAct.maxValue = db.GetLVLup(currentTowerid);
-            SliderAct.value = db.GetExp(playerid, currentTowerid);
+            SliderAct.maxValue = db.GetReqXp(currentTowerid,playerid); //max xp a szinten
+            SliderAct.value = db.GetLvlXp(currentTowerid, playerid); //jelen xp
         }
         else {
             SliderAct.value = 0;
@@ -112,8 +112,8 @@ public class TowerMenu : MonoBehaviour
         if (temp.Count != 0)
         {
             currentTowerid = temp[temp.Count - 1].TowerID;
-            int maxlvl = db.GetMaxlvl(currentTowerid);
-            int currentLvl = db.Getlvl(currentTowerid);
+            int maxlvl = db.GetMaxLvl(currentTowerid); //torony max szint
+            int currentLvl = db.GetLvl(currentTowerid); //jelen szint
             if (currentLvl == maxlvl)
             {
                 CanBuy = true;
@@ -183,7 +183,7 @@ public class TowerMenu : MonoBehaviour
     }
     public void UpgradeTower()
     {
-        db.TowerLvlUP(currentTowerid,playerid);
+        db.TowerLvlUP(currentTowerid,playerid); //szint fejlesztés (szint num +1)
         CanUpg = false;
         CanUpThis();
         playerTowers = db.SelectPlayerTower(playerid);

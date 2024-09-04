@@ -3,31 +3,31 @@ using System.Collections.Generic;
 public class TotalTower 
 {
     private int id;
-    private int towerMaxLVL;
-    private int lvlUP;
-    private int currentLVL;
-    private int effectID;
+    private string name;
+    private int dmg;
+    private int lvl;
+    private int exp;
 
-    public TotalTower(int towerMaxLVL, int lvlUP, int currentLVL, int effectID)
+    public TotalTower(string name, int dmg, int lvl, int exp)
     {
-        this.towerMaxLVL = towerMaxLVL;
-        this.lvlUP = lvlUP;
-        this.currentLVL = currentLVL;
-        this.effectID = effectID;
+        this.name = name;
+        this.dmg = dmg;
+        this.lvl = lvl;
+        this.exp = exp;
     }
 
-    public TotalTower(int id, int towerMaxLVL, int lvlUP, int currentLVL, int effectID)
+    public TotalTower(int id, string name, int dmg, int lvl, int exp)
     {
         this.id = id;
-        this.towerMaxLVL = towerMaxLVL;
-        this.lvlUP = lvlUP;
-        this.currentLVL = currentLVL;
-        this.effectID = effectID;
+        this.name = name;
+        this.dmg = dmg;
+        this.lvl = lvl;
+        this.exp = exp;
     }
 
     public int Id { get => id; set => id = value; }
-    public int TowerMaxLVL { get => towerMaxLVL; set => towerMaxLVL = value; }
-    public int LvlUP { get => lvlUP; set => lvlUP = value; }
-    public int CurrentLVL { get => currentLVL; set => currentLVL = value; }
-    public int EffectID { get => effectID; set => effectID = value; }
+    public string Name { get => name; set => name = value; }
+    public int Lvl { get => lvl; set => lvl = value; }
+    public int Dmg { get => dmg; set => dmg = value; }
+    public int Exp { get => exp; set => exp = value; }
 }
