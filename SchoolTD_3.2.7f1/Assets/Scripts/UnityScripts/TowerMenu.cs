@@ -139,6 +139,7 @@ public class TowerMenu : MonoBehaviour
         if (CanBuy)
         {
             Buy.SetActive(true);
+            Upgrade.SetActive(false);
         }
         else { 
         Buy.SetActive(false);
@@ -149,6 +150,7 @@ public class TowerMenu : MonoBehaviour
         if (CanUpg)
         {
             Upgrade.SetActive(true);
+            Buy.SetActive(false);
         }
         else
         {
