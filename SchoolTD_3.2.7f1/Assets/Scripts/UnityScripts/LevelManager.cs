@@ -10,12 +10,7 @@ public class LevelManager : MonoBehaviour
     bool test;
     int AllLevels;
     public GameObject[] Tower;
-    public string Level1;
-    public string Level2;
-    public string Level3;
-    public string Level4;
-    public string Level5;
-    public string Level6;
+    public int lvlnum;
     public string TowerSelect;
     public string Exit;
     public GameObject tolvl2;
@@ -29,6 +24,7 @@ public class LevelManager : MonoBehaviour
     {
         playerid = LoginHandler.playerid;
         test = true;
+        lvlnum = 0;
     }
     public void CheckLevel()
     {
@@ -134,35 +130,13 @@ public class LevelManager : MonoBehaviour
             test = !test;
         }
     }
-    public void lvl1()
-    {
-        lvlId = 1;
-        SceneManager.LoadScene(Level1);
+    public void AddLvlNum() {
+    if(lvlnum<5)
+        lvlnum++;
     }
-    public void lvl2()
-    {
-        lvlId = 2;
-        SceneManager.LoadScene(Level2);
-    }
-    public void lvl3()
-    {
-        lvlId = 3;
-        SceneManager.LoadScene(Level3);
-    }
-    public void lvl4()
-    {
-        lvlId = 4;
-        SceneManager.LoadScene(Level4);
-    }
-    public void lvl5()
-    {
-        lvlId = 5;
-        SceneManager.LoadScene(Level5);
-    }
-    public void lvl6()
-    {
-        lvlId = 6;
-        SceneManager.LoadScene(Level6);
+    public void SubLvlNum() {
+        if(lvlnum>1)
+        lvlnum--;
     }
     public void TowerShop()
     {
@@ -176,5 +150,9 @@ public class LevelManager : MonoBehaviour
     public void QuitToDesktop()
     {
         Application.Quit();
+    }
+    public void Level()
+    {
+        SceneManager.LoadScene("Lvl" + (lvlnum + 1));
     }
 }

@@ -88,7 +88,7 @@ public class DbConnect
     }
     public void TowerXPgain(int playerid, int xp) {
         if (Connect()) {
-            string query = "Update player set Xp = xp + @xp,crntlevel = crntlevel+1 where id = @id";
+            string query = "Update player set Xp = xp + @xp where id = @id";
             MySqlCommand cmd = new(query, con);
             cmd.Parameters.AddWithValue("@id",playerid);
             cmd.Parameters.AddWithValue("@xp",xp);
