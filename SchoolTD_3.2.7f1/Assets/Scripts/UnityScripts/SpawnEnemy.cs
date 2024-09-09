@@ -27,10 +27,10 @@ public class SpawnEnemy : MonoBehaviour
     int amount = 0;
     int currentWave = 0;
     public int[] enemyWeight = new int[] {80,20,20};
-    public int[] waveIds;
+    public int[] waves;
     void Start()
     {
-        lvlId = LevelManager.lvlId;
+        lvlId = (LevelManager.lvlnum+1);
         spawnCooldown = timeToSpawn;
         Enemies();
     }
@@ -38,7 +38,7 @@ public class SpawnEnemy : MonoBehaviour
     {
         try
         {
-            if (currentWave < waveIds.Length)
+            if (currentWave < waves.Length)
             {
                 if (!waveFinished && tillWaveSpawn <= 0)
                 {
@@ -155,19 +155,20 @@ public class SpawnEnemy : MonoBehaviour
     }
     public void Enemies() {
         //GetLevel = db.LevelSelect(lvlId);
-        waveIds = GetWaveIds();
-        //GetWaves = db.SelectWave(waveIds[currentWave]);
-        Debug.Log($"{waveIds[currentWave]} | { currentWave }");
+        waves = Getwaves();
+        //GetWaves = db.SelectWave(waves[currentWave]);
+        Debug.Log($"{waves[currentWave]} | { currentWave }");
         //GetEffects = db.SelectEffects();
         GetEnemies = db.SelectOrigami();
-        max = GetWaves[0].EnemyTotal;
+        max = waves[currentWave];
     }
-    private int[] GetWaveIds()
+    private int[] Getwaves()
     {
-        int[] temp = new int[GetLevel[0].WaveTotal];
-        for (int i = 0; i < GetLevel[0].WaveTotal; i++)
+        int waveMax = 4 + (2 * lvlId);
+        int[] temp = new int[waveMax];
+        for (int i = 0; i < waveMax; i++)
         {
-            temp[i] = GetLevel[0].WaveID + i;
+            temp[i] = 3 * (i+1) + lvlId;
         }
         return temp;
     }

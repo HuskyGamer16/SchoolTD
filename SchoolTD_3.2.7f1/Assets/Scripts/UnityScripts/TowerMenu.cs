@@ -34,6 +34,8 @@ public class TowerMenu : MonoBehaviour
         playerTowers = db.SelectPlayerTower(playerid);
         TowerLvlCannon();
         CheckSlider();
+        Debug.Log(playerid);
+        Debug.Log("");
     }
     public void CheckSlider()
     {

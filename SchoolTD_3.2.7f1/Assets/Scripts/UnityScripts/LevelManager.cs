@@ -10,7 +10,7 @@ public class LevelManager : MonoBehaviour
     bool test;
     int AllLevels;
     public GameObject[] Tower;
-    public int lvlnum;
+    static public int lvlnum;
     public string TowerSelect;
     public string Exit;
     public GameObject tolvl2;
@@ -18,13 +18,13 @@ public class LevelManager : MonoBehaviour
     public GameObject tolvl4;
     public GameObject tolvl5;
     public GameObject tolvl6;
-    public GameObject[] Doors;
     public static int lvlId;
     void Start()
     {
         playerid = LoginHandler.playerid;
         test = true;
         lvlnum = 0;
+        Debug.Log(playerid);
     }
     public void CheckLevel()
     {
@@ -153,6 +153,7 @@ public class LevelManager : MonoBehaviour
     }
     public void Level()
     {
-        SceneManager.LoadScene("Lvl" + (lvlnum + 1));
+        Debug.Log("Lvl" + (lvlnum + 1));
+        //SceneManager.LoadScene("Lvl" + (lvlnum + 1));
     }
 }

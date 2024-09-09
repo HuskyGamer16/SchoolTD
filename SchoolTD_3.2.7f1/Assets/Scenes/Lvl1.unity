@@ -18884,9 +18884,10 @@ MonoBehaviour:
   timeToSpawn: 1
   spawnCooldown: 1
   StartPoint: {fileID: 224792564}
+  EffectPrefabs: []
   score: {fileID: 19710918}
   enemyWeight: 500000001400000014000000
-  waveIds: 0400000005000000060000000700000008000000090000000a0000000b0000000c0000000d000000
+  waveIds: 
 --- !u!4 &2122675687
 Transform:
   m_ObjectHideFlags: 0
@@ -19193,6 +19194,7 @@ MonoBehaviour:
   gradeSum: 0
   avgText: {fileID: 320696194}
   LosePanel: {fileID: 1800175992}
+  lvlId: 0
 --- !u!65 &543450653002554159
 BoxCollider:
   m_ObjectHideFlags: 0
