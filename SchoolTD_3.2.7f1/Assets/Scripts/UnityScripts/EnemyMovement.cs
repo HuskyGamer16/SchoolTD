@@ -31,7 +31,7 @@ public class EnemyMovement : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         EndPos = GameObject.Find("Projector_Screen_done");
         MaxHp = Hp;
-        effect = GetEffects[0];
+        //effect = GetEffects[0];
     }
     void Update()
     {
@@ -52,7 +52,7 @@ public class EnemyMovement : MonoBehaviour
         {
             DMG = Mathf.FloorToInt(DMG * 1.25f);
         }
-        switch (effect.Id)
+        /*switch (effect.Id)
         {
             case 2:
                 if (transform.childCount < 2)
@@ -167,7 +167,7 @@ public class EnemyMovement : MonoBehaviour
                     ElecPlus = true;
                 }
                 break;
-        }
+        }*/
         if (DMG > 0)
         {
             if (ElecPlus)
@@ -183,7 +183,7 @@ public class EnemyMovement : MonoBehaviour
         }
         if (CoolDownTime < 0)
         {
-            effect = GetEffects[0];
+            //effect = GetEffects[0];
             CoolDownTime = effectCoolDown;
         }
     }

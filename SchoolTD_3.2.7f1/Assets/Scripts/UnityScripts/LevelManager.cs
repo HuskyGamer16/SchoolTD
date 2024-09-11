@@ -153,7 +153,7 @@ public class LevelManager : MonoBehaviour
     }
     public void Level()
     {
-        Debug.Log("Lvl" + (lvlnum + 1));
-        //SceneManager.LoadScene("Lvl" + (lvlnum + 1));
+        //Debug.Log("Lvl" + (lvlnum + 1));
+        SceneManager.LoadScene("Lvl" + (lvlnum + 1));
     }
 }

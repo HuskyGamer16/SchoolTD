@@ -157,7 +157,7 @@ public class SpawnEnemy : MonoBehaviour
         //GetLevel = db.LevelSelect(lvlId);
         waves = Getwaves();
         //GetWaves = db.SelectWave(waves[currentWave]);
-        Debug.Log($"{waves[currentWave]} | { currentWave }");
+        Debug.Log($"{waves[currentWave]} | { currentWave+1 }");
         //GetEffects = db.SelectEffects();
         GetEnemies = db.SelectOrigami();
         max = waves[currentWave];

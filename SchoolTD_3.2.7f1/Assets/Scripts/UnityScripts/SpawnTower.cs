@@ -39,7 +39,8 @@ public class SpawnTower : MonoBehaviour
     {
         UsedTowerIDs = new();
         paused = false;
-        level = LevelManager.lvlnum+1 //Itt ennek egy norm�lis megold�st k�ne csin�lni majd valamikor :shrug:
+        level = LevelManager.lvlnum + 1; //Itt ennek egy norm�lis megold�st k�ne csin�lni majd valamikor :shrug:
+        //Elvileg ez most egy normalis megoldas, de dunno
         max = level*2+3;
         GetPlayerTowers = db.SelectPlayerTower(playerid);
         Towers = db.SelectAllTower();
