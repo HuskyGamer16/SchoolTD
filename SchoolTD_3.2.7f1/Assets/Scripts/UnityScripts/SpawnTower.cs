@@ -27,7 +27,7 @@ public class SpawnTower : MonoBehaviour
     List<TotalTower> Towers;
     
 
-    levels level;
+    int level;
     public UnityEngine.UI.Button Firebutton;
     public UnityEngine.UI.Button Waterbutton;
     public UnityEngine.UI.Button Icebutton;
@@ -39,8 +39,8 @@ public class SpawnTower : MonoBehaviour
     {
         UsedTowerIDs = new();
         paused = false;
-        level = new levels(1, 10, 100, 5);  //db.SelectLevel(1)[0]; //Itt ennek egy normális megoldást kéne csinálni majd valamikor :shrug:
-        max = level.MaxBuildables;
+        level = LevelManager.lvlnum+1 //Itt ennek egy normï¿½lis megoldï¿½st kï¿½ne csinï¿½lni majd valamikor :shrug:
+        max = level*2+3;
         GetPlayerTowers = db.SelectPlayerTower(playerid);
         Towers = db.SelectAllTower();
         AllPlaces = GameObject.FindGameObjectsWithTag("Bok");
