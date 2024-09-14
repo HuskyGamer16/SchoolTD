@@ -258,14 +258,34 @@ public class DbConnect
                     reader.GetString(1),
                     reader.GetInt32(2),
                     reader.GetInt32(3),
-                    reader.GetInt32(4)
+                    reader.GetInt32(4),
+                    reader.GetInt32(5)
                     ));
             }
             Connect_close();
         }
         return temp;
     }
-   
+    
+    public List<effect> GetAllEffects(){
+        List<effect> temp = new();
+        If(Connect()){
+            string query = "select * from effects";
+            MySqlCommand cmd = new(con,query);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while(reader){
+                temp.Add(
+                    new(
+                        reader.GetInt32(0),
+                        reader.GetInt32(1),
+                        reader.GetInt32(2),
+                        reader.GetInt32(3)
+                    ));
+            }
+            Connect_close();
+        }
+        return temp;
+    }
     public List<TotalTower> SelectAllTower()
     {
         List<TotalTower> temp = new();
@@ -281,7 +301,8 @@ public class DbConnect
                     reader.GetString(1),
                     reader.GetInt32(2),
                     reader.GetInt32(3),
-                    reader.GetInt32(4)
+                    reader.GetInt32(4),
+                    reader.GetInt32(5)
                     ));
             }
             Connect_close();
