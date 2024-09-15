@@ -266,20 +266,38 @@ public class DbConnect
         }
         return temp;
     }
-    
-    public List<effect> GetAllEffects(){
-        List<effect> temp = new();
-        If(Connect()){
-            string query = "select * from effects";
-            MySqlCommand cmd = new(con,query);
+    public List<effects> SelectEffect(int id) {
+        List<effects> temp = new();
+        if (Connect()) {
+            string query = "Select * from effects where id = @id;";
+            MySqlCommand cmd = new(query, con);
+            cmd.Parameters.AddWithValue("@id", id);
             MySqlDataReader reader = cmd.ExecuteReader();
-            while(reader){
+            while (reader.Read()) { 
+            temp.Add(new(
+                        reader.GetInt32(0),
+                        reader.GetString(1),
+                        reader.GetString(2)
+                    ));
+            }
+        Connect_close();
+        }
+        return temp;
+    }
+
+    public List<effects> GetAllEffects()
+    {
+        List<effects> temp = new();
+        if(Connect()){
+            string query = "select * from effects";
+            MySqlCommand cmd = new MySqlCommand(query,con);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while(reader.Read()){
                 temp.Add(
                     new(
                         reader.GetInt32(0),
-                        reader.GetInt32(1),
-                        reader.GetInt32(2),
-                        reader.GetInt32(3)
+                        reader.GetString(1),
+                        reader.GetString(2)
                     ));
             }
             Connect_close();
@@ -352,7 +370,8 @@ public class DbConnect
                     reader.GetInt32(1),
                     reader.GetInt32(2),
                     reader.GetInt32(3),
-                    reader.GetInt32(4)
+                    reader.GetInt32(4),
+                    reader.GetInt32(5)
                     ));
             }
             Connect_close();

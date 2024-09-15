@@ -117,21 +117,21 @@ public class SpawnEnemy : MonoBehaviour
                 Em.Def = GetEnemies[0].BaseDef;
                 Em.SPD = GetEnemies[0].BaseSpeed;
                 Em.EXP = GetEnemies[0].EXP;
-                //Em.weakness = db.SelectEffect((GetEnemies[0].EffectID))[0];
+                Em.weakness = db.SelectEffect((GetEnemies[0].Eff))[0];
                 break;
             case 1:
                 Em.Hp = GetEnemies[1].BaseHP;
                 Em.Def = GetEnemies[1].BaseDef;
                 Em.SPD = GetEnemies[1].BaseSpeed;
                 Em.EXP = GetEnemies[1].EXP;
-                //Em.weakness = db.SelectEffect((GetEnemies[1].EffectID))[0];
+                Em.weakness = db.SelectEffect((GetEnemies[1].Eff))[0];
                 break;
             case 2:
                 Em.Hp = GetEnemies[2].BaseHP;
                 Em.Def = GetEnemies[2].BaseDef;
                 Em.SPD = GetEnemies[2].BaseSpeed;
                 Em.EXP = GetEnemies[2].EXP;
-                //Em.weakness = db.SelectEffect((GetEnemies[2].EffectID))[0];
+                Em.weakness = db.SelectEffect((GetEnemies[2].Eff))[0];
                 break;
         }
         switch (a/3) {
