@@ -154,6 +154,7 @@ public class SpawnTower : MonoBehaviour
             if (UsedTowerIDs.Count == 0)
             {
                 place.y = yPos;
+                //Debug.Log(Tower[pTowers[0].TowerID - 1].GetComponent<>);
                 Instantiate(Tower[pTowers[0].TowerID - 1], place, Quaternion.identity);
                 Basic();
                 OccupiedPlaces.Add(placeObj);

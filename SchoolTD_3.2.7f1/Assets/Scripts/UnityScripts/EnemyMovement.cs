@@ -172,11 +172,11 @@ public class EnemyMovement : MonoBehaviour
         {
             if (ElecPlus)
             {
-                DMG += 20;
+                DMG = Mathf.FloorToInt(DMG*1.3f);
             }
             if (Melt)
             {
-                DMG += 5;
+                DMG = Mathf.FloorToInt(DMG*1.15f);
             }
             Hp -= DMG;
             DMG = 0;

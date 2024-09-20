@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class shootTurretBasic : MonoBehaviour
 {
+    DbConnect db = new DbConnect("127.0.0.1", "schooltd", "root", "");
     [SerializeField]private GameObject Bullet;
     public List<GameObject> targets;
     public float bulletspeed;
     private  float timeToSpawn;
     private float spawnCooldown;
+    int towerLvl;
 
     void Start()
     {
@@ -34,7 +36,8 @@ public class shootTurretBasic : MonoBehaviour
                     Animator Anim = gameObject.GetComponent<Animator>();
                     Anim.SetTrigger("shoot");
                     GameObject NewBullet = Instantiate(Bullet, spawnPos, transform.rotation);
-                    NewBullet.GetComponent<Rigidbody>().AddForce(this.transform.forward * bulletspeed);
+                    //NewBullet.GetComponent<BulletBehavior>().DMG = db.GetBulletDmg(towerLvl)
+                    NewBullet.GetComponent<Rigidbody>().AddForce(this.transform.forward * bulletspeed * 4);
                     spawnCooldown = timeToSpawn;
                 }
             }

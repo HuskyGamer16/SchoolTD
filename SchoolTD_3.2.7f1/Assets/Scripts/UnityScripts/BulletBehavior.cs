@@ -5,11 +5,15 @@ using UnityEngine;
 public class BulletBehavior : MonoBehaviour
 {
     public float lifetime = 3f;
-    public int DMG;
+    public int DMG = 500;
 
     void Start()
     {
-        DMG = 50;
+        if (DMG == 0){
+        DMG = 500;
+        }
+        Debug.Log("shot: " + DMG);
+        //Temporarily dmg = 500, for easier testing
         Destroy(gameObject, lifetime);
     }
 }

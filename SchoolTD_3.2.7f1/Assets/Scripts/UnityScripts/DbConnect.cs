@@ -356,6 +356,20 @@ public class DbConnect
         }
         return ret;
     }
+    public int GetBulletDmg(int towerlvl){
+        int dmg = 0;
+        if(Connect()){
+            string query = "Select DMG from towers where name like 'CANNON' and LVL = @towerlvl;";
+            MySqlCommand cmd = new(query,con);
+            cmd.Parameters.AddWithValue("@towerlvl",towerlvl);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while(reader.Read()){
+                dmg = reader.GetInt32(0);
+            }
+            Connect_close();
+        }
+        return dmg;
+    }
     public List<origami> SelectOrigami() {
         List<origami> temp = new();
         if (Connect())
@@ -368,8 +382,8 @@ public class DbConnect
                 temp.Add(new(
                     reader.GetInt32(0),
                     reader.GetInt32(1),
-                    reader.GetInt32(2),
                     reader.GetInt32(3),
+                    reader.GetInt32(2),
                     reader.GetInt32(4),
                     reader.GetInt32(5)
                     ));

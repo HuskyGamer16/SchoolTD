@@ -12,7 +12,7 @@ public class bulletGo : MonoBehaviour
     public int DMG;
     void Start()
     {
-        DMG = 50;
+        DMG = 500;
         agent = GetComponent<NavMeshAgent>();
         EndPos = GameObject.FindGameObjectWithTag("Enemy");
         Destroy(gameObject, lifetime);

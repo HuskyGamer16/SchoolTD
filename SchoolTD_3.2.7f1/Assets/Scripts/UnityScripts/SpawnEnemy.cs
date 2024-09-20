@@ -49,7 +49,7 @@ public class SpawnEnemy : MonoBehaviour
                     if (amount >= max)
                     {
                         waveFinished = true;
-                        tillWaveSpawn = 10;
+                        tillWaveSpawn = 25;
                         currentWave++;
                         Enemies();
                         amount = 0;
