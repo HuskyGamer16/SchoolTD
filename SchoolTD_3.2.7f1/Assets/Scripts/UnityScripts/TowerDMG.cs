@@ -10,7 +10,7 @@ public class TowerDMG : MonoBehaviour
     public int level;
     void Start()
     {
-        
+        // Dot DMG / hp- over time
         isFlameOut = false;
         timeToSpawn = 5f;
         spawnCooldown = timeToSpawn;

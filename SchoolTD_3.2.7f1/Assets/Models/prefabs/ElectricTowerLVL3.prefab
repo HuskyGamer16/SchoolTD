@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 743259695143842049}
   - component: {fileID: 2633023040341420275}
   - component: {fileID: 3607479179236788617}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ElectricTowerLVL3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 8005571688849371915}
   - component: {fileID: 6019537434521033441}
   - component: {fileID: 4897680229282643815}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,7 +185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9197566323068867883}
   - component: {fileID: 5158717654306549695}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Moving
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 7042489869470764498}
   - component: {fileID: 1050262649145131021}
   - component: {fileID: 2716807928367376915}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -318,7 +318,7 @@ GameObject:
   - component: {fileID: 2351119279154613947}
   - component: {fileID: 4885284675090982177}
   - component: {fileID: 8297805256541061539}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Icosphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -403,7 +403,7 @@ GameObject:
   - component: {fileID: 6499367081529955280}
   - component: {fileID: 2876161876961175269}
   - component: {fileID: 6462254329935182245}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Torus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -488,7 +488,7 @@ GameObject:
   - component: {fileID: 476516520792175911}
   - component: {fileID: 7681596999680374010}
   - component: {fileID: 6390810606683519839}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Torus.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -570,6 +570,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1046563533047762531}
     m_Modifications:
+    - target: {fileID: 3684661002486942926, guid: 7841b990c562ee648ab11e2eacc4c74f, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6405463606793740832, guid: 7841b990c562ee648ab11e2eacc4c74f, type: 3}
       propertyPath: lengthInSec
       value: 0.05
@@ -637,6 +641,10 @@ PrefabInstance:
     - target: {fileID: 9075538869883406354, guid: 7841b990c562ee648ab11e2eacc4c74f, type: 3}
       propertyPath: m_Name
       value: Electro_attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 9075538869883406354, guid: 7841b990c562ee648ab11e2eacc4c74f, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9152818189879589620, guid: 7841b990c562ee648ab11e2eacc4c74f, type: 3}
       propertyPath: playOnAwake

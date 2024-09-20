@@ -119,7 +119,7 @@ public class SpawnTower : MonoBehaviour
     }
 
     public static effects GiveEffect(int num) {
-        effects eff = new effects("nam","aff");
+        effects eff = new effects("nam");
         return eff;
     }
     private bool LookForGamObject(out RaycastHit hit)
@@ -134,19 +134,25 @@ public class SpawnTower : MonoBehaviour
         {
             case "cannon":
                 pTowers = db.SelectPlayerTower(playerid, "CANNON");
+                //Debug.Log(db.SelectTower(pTowers[0].TowerID)[0].ToString());
+                Tower[pTowers[0].TowerID - 1].GetComponent<shootTurretBasic>().tower = db.SelectTower(pTowers[0].TowerID)[0];
                 break;
             case "fire":
                 pTowers = db.SelectPlayerTower(playerid, "FIRE");
+                Tower[pTowers[0].TowerID - 1].GetComponent<ShootTurretAriaDmg>().tower = db.SelectTower(pTowers[0].TowerID - 1)[0];
                 yPos += 1.5f;
                 break;
             case "water":
                 pTowers = db.SelectPlayerTower(playerid, "WATER");
+                Tower[pTowers[0].TowerID - 1].GetComponent<ShootTowerWater>().tower = db.SelectTower(pTowers[0].TowerID - 1)[0];
                 break;
             case "ice":
                 pTowers = db.SelectPlayerTower(playerid,"ICE");
+                Tower[pTowers[0].TowerID - 1].GetComponent<ShootTurretAOEDmg>().tower = db.SelectTower(pTowers[0].TowerID - 1)[0];
                 break;
             case "electric":
                 pTowers = db.SelectPlayerTower(playerid, "ELECTRIC");
+                Tower[pTowers[0].TowerID - 1].GetComponent<ShootTurretElectroc>().tower = db.SelectTower(pTowers[0].TowerID - 1)[0];
                 break;
         }
         if (OccupiedPlaces.Count < max)
@@ -154,7 +160,7 @@ public class SpawnTower : MonoBehaviour
             if (UsedTowerIDs.Count == 0)
             {
                 place.y = yPos;
-                //Debug.Log(Tower[pTowers[0].TowerID - 1].GetComponent<>);
+                
                 Instantiate(Tower[pTowers[0].TowerID - 1], place, Quaternion.identity);
                 Basic();
                 OccupiedPlaces.Add(placeObj);

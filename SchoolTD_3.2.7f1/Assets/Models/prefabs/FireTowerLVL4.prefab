@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 193301749448326478}
   - component: {fileID: 3028776281281279835}
   - component: {fileID: 8847464281628310969}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cylinder.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 2580018357062715501}
   - component: {fileID: 8846812588048869575}
   - component: {fileID: 8831007755752981343}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 2830149253390044158}
   - component: {fileID: 8484902071592185611}
   - component: {fileID: 4161369047243469476}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cylinder.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 8524407848387285859}
   - component: {fileID: 4763013511727609120}
   - component: {fileID: 4182266582288785253}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -351,7 +351,7 @@ GameObject:
   - component: {fileID: 1148394998329625563}
   - component: {fileID: 2019270535938887195}
   - component: {fileID: 7515048227530265930}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Circle.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -436,7 +436,7 @@ GameObject:
   - component: {fileID: 3162162976511059881}
   - component: {fileID: 7320890308321488358}
   - component: {fileID: 2509144316073055914}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -520,7 +520,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1598397214697820115}
   - component: {fileID: 4824526288368924392}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FireTowerLVL4
   m_TagString: Tower
   m_Icon: {fileID: 0}
@@ -571,7 +571,7 @@ GameObject:
   - component: {fileID: 8307649008548135497}
   - component: {fileID: 584566041180984179}
   - component: {fileID: 478262284169317012}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Circle.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -656,7 +656,7 @@ GameObject:
   - component: {fileID: 1949788794648537008}
   - component: {fileID: 7736071086343412991}
   - component: {fileID: 113612074993789873}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -739,7 +739,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7985621198301700815}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: towerStationary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -785,7 +785,7 @@ GameObject:
   - component: {fileID: 8533224344417477629}
   - component: {fileID: 1991822285682540426}
   - component: {fileID: 5149973232594654599}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cylinder.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -870,7 +870,7 @@ GameObject:
   - component: {fileID: 5879889617221798819}
   - component: {fileID: 4226368309133832364}
   - component: {fileID: 2802590906045289656}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -955,7 +955,7 @@ GameObject:
   - component: {fileID: 7275683807696807402}
   - component: {fileID: 4692141387362565893}
   - component: {fileID: 8225333225456238694}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cylinder.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1040,7 +1040,7 @@ GameObject:
   - component: {fileID: 7113471343109259344}
   - component: {fileID: 3150312053517822520}
   - component: {fileID: 186844058807463404}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Circle.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1125,7 +1125,7 @@ GameObject:
   - component: {fileID: 4882403508399506293}
   - component: {fileID: 1560212222360418012}
   - component: {fileID: 3877415609013811348}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1210,7 +1210,7 @@ GameObject:
   - component: {fileID: 3095499642651093766}
   - component: {fileID: 7887490994042923729}
   - component: {fileID: 8364796030347076916}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: towerMoving
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1286,7 +1286,7 @@ GameObject:
   - component: {fileID: 1442509255870591433}
   - component: {fileID: 7421505697399624513}
   - component: {fileID: 6496631734548505041}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Circle.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1371,7 +1371,7 @@ GameObject:
   - component: {fileID: 6043388587970296859}
   - component: {fileID: 8288119967103638759}
   - component: {fileID: 4582733392727895793}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cylinder.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1456,7 +1456,7 @@ GameObject:
   - component: {fileID: 9198204791754364926}
   - component: {fileID: 6280237624573123589}
   - component: {fileID: 2801491386624698839}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1541,7 +1541,7 @@ GameObject:
   - component: {fileID: 8308275904934329876}
   - component: {fileID: 36103460476133175}
   - component: {fileID: 7235057521540266108}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cylinder.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1626,7 +1626,7 @@ GameObject:
   - component: {fileID: 4820662722425823741}
   - component: {fileID: 3561480623706545665}
   - component: {fileID: 799760245843508835}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1708,6 +1708,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3095499642651093766}
     m_Modifications:
+    - target: {fileID: 1486333948404164062, guid: 3cb625d1727fe1b4c854ae8e4396c476, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1853733291385616760, guid: 3cb625d1727fe1b4c854ae8e4396c476, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5000001
@@ -1768,6 +1772,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fire_attack (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3938115588218280049, guid: 3cb625d1727fe1b4c854ae8e4396c476, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7705054029270578128, guid: 3cb625d1727fe1b4c854ae8e4396c476, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.67
@@ -1802,6 +1810,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3095499642651093766}
     m_Modifications:
+    - target: {fileID: 1486333948404164062, guid: 3cb625d1727fe1b4c854ae8e4396c476, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1853733291385616760, guid: 3cb625d1727fe1b4c854ae8e4396c476, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5000001
@@ -1861,6 +1873,10 @@ PrefabInstance:
     - target: {fileID: 3938115588218280049, guid: 3cb625d1727fe1b4c854ae8e4396c476, type: 3}
       propertyPath: m_Name
       value: Fire_attack (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3938115588218280049, guid: 3cb625d1727fe1b4c854ae8e4396c476, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7705054029270578128, guid: 3cb625d1727fe1b4c854ae8e4396c476, type: 3}
       propertyPath: m_LocalScale.x

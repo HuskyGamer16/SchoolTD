@@ -10,7 +10,7 @@ public class shootTurretBasic : MonoBehaviour
     public float bulletspeed;
     private  float timeToSpawn;
     private float spawnCooldown;
-    int towerLvl;
+    public TotalTower tower;
 
     void Start()
     {
@@ -36,7 +36,7 @@ public class shootTurretBasic : MonoBehaviour
                     Animator Anim = gameObject.GetComponent<Animator>();
                     Anim.SetTrigger("shoot");
                     GameObject NewBullet = Instantiate(Bullet, spawnPos, transform.rotation);
-                    //NewBullet.GetComponent<BulletBehavior>().DMG = db.GetBulletDmg(towerLvl)
+                    NewBullet.GetComponent<BulletBehavior>().DMG = tower.Dmg;
                     NewBullet.GetComponent<Rigidbody>().AddForce(this.transform.forward * bulletspeed * 4);
                     spawnCooldown = timeToSpawn;
                 }
@@ -44,6 +44,7 @@ public class shootTurretBasic : MonoBehaviour
         }
         catch (MissingReferenceException)
         {
+            db.TowerXPgain(LoginHandler.playerid, tower.Id, targets[0].GetComponent<EnemyMovement>().EXP);
             targets.Remove(targets[0]);
             Shoot();
         }

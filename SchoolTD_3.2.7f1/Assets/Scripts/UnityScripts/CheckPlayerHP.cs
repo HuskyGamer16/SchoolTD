@@ -59,14 +59,10 @@ public class CheckPlayerHP : MonoBehaviour
     }
     public void ExitLose()
     {
-        xp = score;
-        db.TowerXPgain(playerid, xp);
         miniLVLManager.Quit();
     }
     public void QuitLose()
     {
-        xp = score;
-        db.TowerXPgain(playerid, xp);
         miniLVLManager.QuitToDesktop();
     }
 
@@ -78,14 +74,13 @@ public class CheckPlayerHP : MonoBehaviour
     public void ExitWin()
     {
         xp = Mathf.FloorToInt(score * gradeAvg);
-        db.TowerXPgain(playerid, xp);
+
         db.LevelCleared(playerid, score);
         miniLVLManager.Quit();
     }
     public void QuitWin()
     {
         xp = Mathf.FloorToInt(score * gradeAvg);
-        db.TowerXPgain(playerid, xp);
         db.LevelCleared(playerid, score);
         miniLVLManager.QuitToDesktop();
     }

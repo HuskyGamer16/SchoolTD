@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class ShootTowerWater : MonoBehaviour
 {
+    static DbConnect db = new DbConnect("127.0.0.1", "schooltd", "root", "");
+
     public List<GameObject> targets;
     public float dmgRate = 1f;
     private float dmgCooldown;
     public int dmg;
+    public TotalTower tower;
 
     void Start()
     {
@@ -53,6 +56,7 @@ public class ShootTowerWater : MonoBehaviour
         }
         catch (MissingReferenceException)
         {
+            db.TowerXPgain(LoginHandler.playerid, tower.Id, targets[0].GetComponent<EnemyMovement>().EXP);
             targets.Remove(targets[0]);
             Shoot();
         }

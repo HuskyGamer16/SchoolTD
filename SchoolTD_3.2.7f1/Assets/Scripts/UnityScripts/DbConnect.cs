@@ -86,11 +86,12 @@ public class DbConnect
         }
         return temp;
     }
-    public void TowerXPgain(int playerid, int xp) {
+    public void TowerXPgain(int playerid, int towerid ,int xp) {
         if (Connect()) {
-            string query = "Update player set Xp = xp + @xp where id = @id";
+            string query = "Update ptowers set Xp = xp + @xp where pid = @pid and towerid = @tid";
             MySqlCommand cmd = new(query, con);
-            cmd.Parameters.AddWithValue("@id",playerid);
+            cmd.Parameters.AddWithValue("@pid",playerid);
+            cmd.Parameters.AddWithValue("@tid", towerid);
             cmd.Parameters.AddWithValue("@xp",xp);
             cmd.ExecuteNonQuery();
             Connect_close ();
@@ -180,25 +181,38 @@ public class DbConnect
         }
         return max;
     }
-    public float GetReqXp(int towerid, int playerid) {
-        int lvl = 0;
+    public float GetReqXp(int towerid) {
+        float maxxp = 0f;
         if (Connect())
         {
-            string query = "Select towers.xp, ptowers.xp from towers inner join ptowers (towers.id = ptowers.towerid) where idkblahblahblah";
+            string query = "Select xp from towers where id = @tid";
             MySqlCommand cmd = new MySqlCommand(query, con);
-
+            cmd.Parameters.AddWithValue("@tid",towerid);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read()) {
+                maxxp = reader.GetInt32(0);
+            }
             Connect_close();
         }
-        return lvl;
+        return maxxp;
     }
     public float GetLvlXp(int towerid, int playerid) {
-        int lvl = 0;
+        int xp = 0;
+        // current xp of thew player's towers
         if (Connect())
         {
-            
+            string query = "Select xp from ptowers where id = @tid and playerid = @pid";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+            cmd.Parameters.AddWithValue("@tid", towerid);
+            cmd.Parameters.AddWithValue("@pid", playerid);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                xp = reader.GetInt32(0);
+            }
             Connect_close();
         }
-        return lvl;
+        return xp;
     }
     public int GetLvl(int towerid)
     {
@@ -276,8 +290,7 @@ public class DbConnect
             while (reader.Read()) { 
             temp.Add(new(
                         reader.GetInt32(0),
-                        reader.GetString(1),
-                        reader.GetString(2)
+                        reader.GetString(1)
                     ));
             }
         Connect_close();
@@ -296,8 +309,7 @@ public class DbConnect
                 temp.Add(
                     new(
                         reader.GetInt32(0),
-                        reader.GetString(1),
-                        reader.GetString(2)
+                        reader.GetString(1)
                     ));
             }
             Connect_close();
@@ -394,8 +406,10 @@ public class DbConnect
     }
     public void TowerLvlUP(int towerid,int playerid) {
         if (Connect()) {
-            string query = "";
+            string query = "update ptowers set Xp = 0, towerid = towerid+1 where playerid = @pid and towerid = @tid";
             MySqlCommand cmd = new MySqlCommand(query, con);
+            cmd.Parameters.AddWithValue("@pid",playerid);
+            cmd.Parameters.AddWithValue("@tid",towerid);
             cmd.ExecuteNonQuery();
             Connect_close();
         }

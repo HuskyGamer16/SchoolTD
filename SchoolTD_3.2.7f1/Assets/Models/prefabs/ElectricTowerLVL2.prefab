@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9051915631287561598}
   - component: {fileID: 7196903682729661767}
   - component: {fileID: 5238412997391206440}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 8828645156014012686}
   - component: {fileID: 6174455389782405295}
   - component: {fileID: 5333419381881414828}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 5151583995567673557}
   - component: {fileID: 8753841359613182305}
   - component: {fileID: 308137659930304884}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ElectricTowerLVL2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,7 +270,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8709756746277654707}
   - component: {fileID: 2784629074622302937}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Moving
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -318,7 +318,7 @@ GameObject:
   - component: {fileID: 231780092604729487}
   - component: {fileID: 7903216633227102845}
   - component: {fileID: 2228205552738630727}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Torus.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -403,7 +403,7 @@ GameObject:
   - component: {fileID: 1015636347272200312}
   - component: {fileID: 457347643647121677}
   - component: {fileID: 8266808330588579087}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Icosphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -488,7 +488,7 @@ GameObject:
   - component: {fileID: 4952860720866348432}
   - component: {fileID: 1508825827852966355}
   - component: {fileID: 954909174960885024}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Torus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -570,6 +570,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1046563533047762531}
     m_Modifications:
+    - target: {fileID: 3684661002486942926, guid: 7841b990c562ee648ab11e2eacc4c74f, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6724684045573791037, guid: 7841b990c562ee648ab11e2eacc4c74f, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.1502248
@@ -625,6 +629,10 @@ PrefabInstance:
     - target: {fileID: 9075538869883406354, guid: 7841b990c562ee648ab11e2eacc4c74f, type: 3}
       propertyPath: m_Name
       value: Electro_attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 9075538869883406354, guid: 7841b990c562ee648ab11e2eacc4c74f, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

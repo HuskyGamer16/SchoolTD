@@ -64,6 +64,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -5027087094072529567, guid: 6df7b3e44d9b1b04189b9837537e8be6, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3133498875991405556, guid: 6df7b3e44d9b1b04189b9837537e8be6, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -1016495668617897463, guid: 6df7b3e44d9b1b04189b9837537e8be6, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0
@@ -88,13 +96,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -180
       objectReference: {fileID: 0}
+    - target: {fileID: 864536123429166707, guid: 6df7b3e44d9b1b04189b9837537e8be6, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6df7b3e44d9b1b04189b9837537e8be6, type: 3}
       propertyPath: m_Name
       value: CannonLVL1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6df7b3e44d9b1b04189b9837537e8be6, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6df7b3e44d9b1b04189b9837537e8be6, type: 3}
       propertyPath: m_TagString
       value: Tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 2742042159706851663, guid: 6df7b3e44d9b1b04189b9837537e8be6, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -171,7 +191,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 25
+  m_Radius: 35
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &-5876262883859347392
 Animator:

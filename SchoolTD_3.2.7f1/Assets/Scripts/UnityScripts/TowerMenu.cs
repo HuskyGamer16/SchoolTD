@@ -42,7 +42,7 @@ public class TowerMenu : MonoBehaviour
         Slider SliderAct = Slider.GetComponent<Slider>();
         if (currentTowerid != 0)
         {
-            SliderAct.maxValue = db.GetReqXp(currentTowerid,playerid); //max xp a szinten
+            SliderAct.maxValue = db.GetReqXp(currentTowerid); //max xp a szinten
             SliderAct.value = db.GetLvlXp(currentTowerid, playerid); //jelen xp
         }
         else {
