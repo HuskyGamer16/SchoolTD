@@ -34,8 +34,8 @@ public class TowerMenu : MonoBehaviour
         playerTowers = db.SelectPlayerTower(playerid);
         TowerLvlCannon();
         CheckSlider();
-        Debug.Log(playerid);
-        Debug.Log("");
+        //Debug.Log(playerid);
+        //Debug.Log("");
     }
     public void CheckSlider()
     {
@@ -111,10 +111,14 @@ public class TowerMenu : MonoBehaviour
                 break;
         }
         CanBuy = false;
+        //For some reason, only the cannon works, not sure why
+        Debug.Log(playerTowers.Count);
+        Debug.Log(temp.Count);
         if (temp.Count != 0)
         {
             currentTowerid = temp[temp.Count - 1].TowerID;
             int maxlvl = db.GetMaxLvl(currentTowerid); //torony max szint
+            Debug.Log(maxlvl);
             int currentLvl = db.GetLvl(currentTowerid); //jelen szint
             if (currentLvl == maxlvl)
             {

@@ -88,7 +88,7 @@ public class DbConnect
     }
     public void TowerXPgain(int playerid, int towerid ,int xp) {
         if (Connect()) {
-            string query = "Update ptowers set Xp = xp + @xp where pid = @pid and towerid = @tid";
+            string query = "Update ptowers set Xp = xp + @xp where playerid = @pid and towerid = @tid";
             MySqlCommand cmd = new(query, con);
             cmd.Parameters.AddWithValue("@pid",playerid);
             cmd.Parameters.AddWithValue("@tid", towerid);

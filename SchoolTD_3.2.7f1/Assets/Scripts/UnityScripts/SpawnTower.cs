@@ -134,25 +134,31 @@ public class SpawnTower : MonoBehaviour
         {
             case "cannon":
                 pTowers = db.SelectPlayerTower(playerid, "CANNON");
-                //Debug.Log(db.SelectTower(pTowers[0].TowerID)[0].ToString());
-                Tower[pTowers[0].TowerID - 1].GetComponent<shootTurretBasic>().tower = db.SelectTower(pTowers[0].TowerID)[0];
+                //Debug.Log(db.SelectTower(pTowers[0].TowerID)[0]);
+                Tower[pTowers[0].TowerID - 1].GetComponent<shootTurretBasic>().towerid = db.SelectTower(pTowers[0].TowerID)[0].Id;
+                Tower[pTowers[0].TowerID - 1].GetComponent<shootTurretBasic>().towerdmg = db.SelectTower(pTowers[0].TowerID)[0].Dmg;
+                //Debug.Log(Tower[pTowers[0].TowerID - 1].GetComponent<shootTurretBasic>().tower.Dmg);
                 break;
             case "fire":
                 pTowers = db.SelectPlayerTower(playerid, "FIRE");
-                Tower[pTowers[0].TowerID - 1].GetComponent<ShootTurretAriaDmg>().tower = db.SelectTower(pTowers[0].TowerID - 1)[0];
+                Tower[pTowers[0].TowerID - 1].GetComponent<ShootTurretAriaDmg>().towerid = db.SelectTower(pTowers[0].TowerID)[0].Id;
+                Tower[pTowers[0].TowerID - 1].GetComponent<ShootTurretAriaDmg>().towerdmg = db.SelectTower(pTowers[0].TowerID)[0].Dmg;
                 yPos += 1.5f;
                 break;
             case "water":
                 pTowers = db.SelectPlayerTower(playerid, "WATER");
-                Tower[pTowers[0].TowerID - 1].GetComponent<ShootTowerWater>().tower = db.SelectTower(pTowers[0].TowerID - 1)[0];
+                Tower[pTowers[0].TowerID - 1].GetComponent<ShootTowerWater>().towerid = db.SelectTower(pTowers[0].TowerID)[0].Id;
+                Tower[pTowers[0].TowerID - 1].GetComponent<ShootTowerWater>().towerdmg = db.SelectTower(pTowers[0].TowerID)[0].Dmg;
                 break;
             case "ice":
                 pTowers = db.SelectPlayerTower(playerid,"ICE");
-                Tower[pTowers[0].TowerID - 1].GetComponent<ShootTurretAOEDmg>().tower = db.SelectTower(pTowers[0].TowerID - 1)[0];
+                Tower[pTowers[0].TowerID - 1].GetComponent<ShootTurretAOEDmg>().towerid = db.SelectTower(pTowers[0].TowerID)[0].Id;
+                Tower[pTowers[0].TowerID - 1].GetComponent<ShootTurretAOEDmg>().towerdmg = db.SelectTower(pTowers[0].TowerID)[0].Dmg;
                 break;
             case "electric":
                 pTowers = db.SelectPlayerTower(playerid, "ELECTRIC");
-                Tower[pTowers[0].TowerID - 1].GetComponent<ShootTurretElectroc>().tower = db.SelectTower(pTowers[0].TowerID - 1)[0];
+                Tower[pTowers[0].TowerID - 1].GetComponent<ShootTurretElectric>().towerid = db.SelectTower(pTowers[0].TowerID)[0].Id;
+                Tower[pTowers[0].TowerID - 1].GetComponent<ShootTurretElectric>().towerdmg = db.SelectTower(pTowers[0].TowerID)[0].Dmg;
                 break;
         }
         if (OccupiedPlaces.Count < max)

@@ -7,11 +7,12 @@ public class shootTurretBasic : MonoBehaviour
     DbConnect db = new DbConnect("127.0.0.1", "schooltd", "root", "");
     [SerializeField]private GameObject Bullet;
     public List<GameObject> targets;
+    public List<int> targetExps;
     public float bulletspeed;
     private  float timeToSpawn;
     private float spawnCooldown;
-    public TotalTower tower;
-
+    public int towerid;
+    public int towerdmg;
     void Start()
     {
         timeToSpawn = 2f;
@@ -36,7 +37,9 @@ public class shootTurretBasic : MonoBehaviour
                     Animator Anim = gameObject.GetComponent<Animator>();
                     Anim.SetTrigger("shoot");
                     GameObject NewBullet = Instantiate(Bullet, spawnPos, transform.rotation);
-                    NewBullet.GetComponent<BulletBehavior>().DMG = tower.Dmg;
+                    Debug.Log(towerdmg);
+
+                    //NewBullet.GetComponent<BulletBehavior>().DMG = towerdmg;
                     NewBullet.GetComponent<Rigidbody>().AddForce(this.transform.forward * bulletspeed * 4);
                     spawnCooldown = timeToSpawn;
                 }
@@ -44,7 +47,8 @@ public class shootTurretBasic : MonoBehaviour
         }
         catch (MissingReferenceException)
         {
-            db.TowerXPgain(LoginHandler.playerid, tower.Id, targets[0].GetComponent<EnemyMovement>().EXP);
+            db.TowerXPgain(LoginHandler.playerid, towerid, targetExps[0]);
+            targetExps.Remove(targetExps[0]);
             targets.Remove(targets[0]);
             Shoot();
         }
@@ -54,6 +58,7 @@ private void OnTriggerExit(Collider other)
         if (other.gameObject.activeSelf)
         {
             targets.Remove(other.gameObject);
+            targetExps.Remove(other.gameObject.GetComponent<EnemyMovement>().EXP);
         }
     }
 
@@ -61,6 +66,7 @@ private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.activeSelf && other.CompareTag("Enemy")) {
             targets.Add(other.gameObject);
+            targetExps.Add(other.gameObject.GetComponent<EnemyMovement>().EXP);
         }
     }
 }

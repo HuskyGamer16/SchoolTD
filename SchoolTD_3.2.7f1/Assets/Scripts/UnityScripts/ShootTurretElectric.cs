@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootTurretElectroc : MonoBehaviour
+public class ShootTurretElectric : MonoBehaviour
 {
     static DbConnect db = new DbConnect("127.0.0.1", "schooltd", "root", "");
     public List<GameObject> targets;
+    public List<int> targetExps;
     public float dmgRate = 1f;
     private float dmgCooldown;
-    public int dmg;
-    public TotalTower tower;
+    public int towerdmg;
+    public int towerid;
 
     void Start()
     {
@@ -46,7 +47,7 @@ public class ShootTurretElectroc : MonoBehaviour
                                 EM.effect = EnemyMovement.GetEffects[3];
                                 break;
                         }
-                        EM.DMG = dmg;
+                        EM.DMG = towerdmg;
                         EM.ElecPlus = true;
                     }
                     dmgCooldown = dmgRate;
@@ -55,8 +56,9 @@ public class ShootTurretElectroc : MonoBehaviour
         }
         catch (MissingReferenceException)
         {
-            db.TowerXPgain(LoginHandler.playerid, tower.Id, targets[0].GetComponent<EnemyMovement>().EXP);
+            db.TowerXPgain(LoginHandler.playerid, towerid, targetExps[0]);
             targets.Remove(targets[0]);
+            targetExps.Remove(targetExps[0]);
             Shoot();
         }
     }
@@ -65,6 +67,7 @@ public class ShootTurretElectroc : MonoBehaviour
         if (other.gameObject.activeSelf)
         {
             targets.Remove(other.gameObject);
+            targetExps.Remove(other.gameObject.GetComponent<EnemyMovement>().EXP);
         }
     }
 
@@ -73,6 +76,7 @@ public class ShootTurretElectroc : MonoBehaviour
         if (other.gameObject.activeSelf && other.CompareTag("Enemy"))
         {
             targets.Add(other.gameObject);
+            targetExps.Add(other.gameObject.GetComponent<EnemyMovement>().EXP);
         }
     }
 }
