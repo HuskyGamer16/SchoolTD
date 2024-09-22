@@ -393,8 +393,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targets: []
+  targetExps: 
   dmgRate: 0.1
-  dmg: 0
+  towerid: 0
+  towerdmg: 0
 --- !u!65 &7991946074863678854
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1490,6 +1492,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1816904508176588839}
   - component: {fileID: 5605367476335647709}
+  - component: {fileID: 8846149772318088644}
   m_Layer: 2
   m_Name: FireTowerLVL5
   m_TagString: Tower
@@ -1530,6 +1533,23 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!114 &8846149772318088644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8528511742668027225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb3e9f3e489b5474fb50a6a3505c3e16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targets: []
+  targetExps: 
+  dmgRate: 0.1
+  towerid: 0
+  towerdmg: 0
 --- !u!1 &8950307389637191324
 GameObject:
   m_ObjectHideFlags: 0

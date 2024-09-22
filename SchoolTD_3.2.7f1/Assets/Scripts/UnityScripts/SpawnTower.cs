@@ -141,6 +141,10 @@ public class SpawnTower : MonoBehaviour
                 break;
             case "fire":
                 pTowers = db.SelectPlayerTower(playerid, "FIRE");
+                //for (int i = 0; i < pTowers.Count; i++)
+                //{
+                //    Debug.Log(pTowers[i].TowerID);
+                //}
                 Tower[pTowers[0].TowerID - 1].GetComponent<ShootTurretAriaDmg>().towerid = db.SelectTower(pTowers[0].TowerID)[0].Id;
                 Tower[pTowers[0].TowerID - 1].GetComponent<ShootTurretAriaDmg>().towerdmg = db.SelectTower(pTowers[0].TowerID)[0].Dmg;
                 yPos += 1.5f;

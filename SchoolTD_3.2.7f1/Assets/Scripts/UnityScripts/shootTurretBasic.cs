@@ -38,8 +38,7 @@ public class shootTurretBasic : MonoBehaviour
                     Anim.SetTrigger("shoot");
                     GameObject NewBullet = Instantiate(Bullet, spawnPos, transform.rotation);
                     Debug.Log(towerdmg);
-
-                    //NewBullet.GetComponent<BulletBehavior>().DMG = towerdmg;
+                    NewBullet.GetComponent<BulletBehavior>().DMG = towerdmg;
                     NewBullet.GetComponent<Rigidbody>().AddForce(this.transform.forward * bulletspeed * 4);
                     spawnCooldown = timeToSpawn;
                 }

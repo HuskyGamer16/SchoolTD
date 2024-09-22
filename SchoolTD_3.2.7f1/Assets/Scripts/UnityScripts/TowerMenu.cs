@@ -48,6 +48,7 @@ public class TowerMenu : MonoBehaviour
         else {
             SliderAct.value = 0;
         }
+        Debug.Log($"Current xp: {SliderAct.value}; Max: {SliderAct.maxValue}");
         if (SliderAct.value == SliderAct.maxValue)
         {
             CanUpg = true;
@@ -58,8 +59,9 @@ public class TowerMenu : MonoBehaviour
         }
     }
     public void TowerLvlCannon()
-    {
+    {   
         List<playerTower> temp = new();
+        Debug.Log("num: " + num);
         switch (num) {
             case 0:
                 // 1  2  3 (cannon)
@@ -112,13 +114,11 @@ public class TowerMenu : MonoBehaviour
         }
         CanBuy = false;
         //For some reason, only the cannon works, not sure why
-        Debug.Log(playerTowers.Count);
-        Debug.Log(temp.Count);
+        // Edit: Kristof idiot; tried to rewire playerid to towerid and vice versa.  - Kristof
         if (temp.Count != 0)
         {
             currentTowerid = temp[temp.Count - 1].TowerID;
             int maxlvl = db.GetMaxLvl(currentTowerid); //torony max szint
-            Debug.Log(maxlvl);
             int currentLvl = db.GetLvl(currentTowerid); //jelen szint
             if (currentLvl == maxlvl)
             {

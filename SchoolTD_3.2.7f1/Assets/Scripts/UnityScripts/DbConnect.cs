@@ -147,8 +147,8 @@ public class DbConnect
             {
                 temp.Add(new(
                     reader.GetInt32(0),
-                    reader.GetInt32(1),
                     reader.GetInt32(2),
+                    reader.GetInt32(1),
                     reader.GetInt32(3)
                     ));
             }
@@ -201,7 +201,7 @@ public class DbConnect
         // current xp of thew player's towers
         if (Connect())
         {
-            string query = "Select xp from ptowers where id = @tid and playerid = @pid";
+            string query = "Select xp from ptowers where towerid = @tid and playerid = @pid";
             MySqlCommand cmd = new MySqlCommand(query, con);
             cmd.Parameters.AddWithValue("@tid", towerid);
             cmd.Parameters.AddWithValue("@pid", playerid);
@@ -237,7 +237,7 @@ public class DbConnect
         if (Connect())
         {
             string query = "SELECT * FROM ptowers left join towers on (ptowers.TOWERID = towers.id) "
-                 + "WHERE ptowers.playerID = @playerID and towers.name=@TowerName order by ptowers.TOWERID desc;";
+                 + "WHERE ptowers.playerID = @playerID and towers.name like @TowerName order by ptowers.TOWERID desc;";
             MySqlCommand cmd = new MySqlCommand(query, con);
             cmd.Parameters.AddWithValue("@playerID", playerid);
             cmd.Parameters.AddWithValue("@TowerName", towername);
