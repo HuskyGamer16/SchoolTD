@@ -8,7 +8,7 @@ public class ShootTowerWater : MonoBehaviour
 
     public List<GameObject> targets;
     public List<int> targetExps;
-    public float dmgRate = 1f;
+    public float dmgRate = 0.25f;
     private float dmgCooldown;
     public int towerdmg;
     public int towerid;

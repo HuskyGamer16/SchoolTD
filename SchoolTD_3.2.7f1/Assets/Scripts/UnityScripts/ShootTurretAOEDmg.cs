@@ -7,7 +7,7 @@ public class ShootTurretAOEDmg : MonoBehaviour
     static DbConnect db = new DbConnect("127.0.0.1", "schooltd", "root", "");
     public List<GameObject> targets;
     public List<int> targetExps;
-    public float dmgRate = 0.1f;
+    public float dmgRate = 0.2f;
     private float dmgCooldown;
     public int towerdmg;
     public int towerid;
@@ -53,9 +53,15 @@ public class ShootTurretAOEDmg : MonoBehaviour
         }
         catch (MissingReferenceException)
         {
-            db.TowerXPgain(LoginHandler.playerid, towerid, targetExps[0]);
-            targets.Remove(targets[0]);
-            targetExps.Remove(targetExps[0]);
+            if(targetExps.Count>=1)
+            {
+                db.TowerXPgain(LoginHandler.playerid, towerid, targetExps[0]);
+                targetExps.Remove(targetExps[0]);
+            }
+            if (targetExps.Count >= 1)
+            {
+                targets.Remove(targets[0]);
+            }
             Shoot();
         }
     }

@@ -190,8 +190,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targets: []
-  dmgRate: 1
-  dmg: 20
+  targetExps: 
+  dmgRate: 0.25
+  towerdmg: 0
+  towerid: 0
 --- !u!1001 &8482271188324213833
 PrefabInstance:
   m_ObjectHideFlags: 0

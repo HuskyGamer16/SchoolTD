@@ -119,7 +119,7 @@ public class SpawnTower : MonoBehaviour
     }
 
     public static effects GiveEffect(int num) {
-        effects eff = new effects("nam");
+        effects eff = db.GetAllEffects()[num];
         return eff;
     }
     private bool LookForGamObject(out RaycastHit hit)
@@ -129,6 +129,7 @@ public class SpawnTower : MonoBehaviour
     }
     public void PlaceTower(string param)
     {
+        int i = 0;
         float yPos = 9.8f;
         switch (param)
         {
@@ -137,6 +138,7 @@ public class SpawnTower : MonoBehaviour
                 //Debug.Log(db.SelectTower(pTowers[0].TowerID)[0]);
                 Tower[pTowers[0].TowerID - 1].GetComponent<shootTurretBasic>().towerid = db.SelectTower(pTowers[0].TowerID)[0].Id;
                 Tower[pTowers[0].TowerID - 1].GetComponent<shootTurretBasic>().towerdmg = db.SelectTower(pTowers[0].TowerID)[0].Dmg;
+                i = 0;
                 //Debug.Log(Tower[pTowers[0].TowerID - 1].GetComponent<shootTurretBasic>().tower.Dmg);
                 break;
             case "fire":
@@ -145,24 +147,28 @@ public class SpawnTower : MonoBehaviour
                 //{
                 //    Debug.Log(pTowers[i].TowerID);
                 //}
-                Tower[pTowers[0].TowerID - 1].GetComponent<ShootTurretAriaDmg>().towerid = db.SelectTower(pTowers[0].TowerID)[0].Id;
-                Tower[pTowers[0].TowerID - 1].GetComponent<ShootTurretAriaDmg>().towerdmg = db.SelectTower(pTowers[0].TowerID)[0].Dmg;
+                Tower[pTowers[0].TowerID - 1].GetComponentInChildren<ShootTurretAriaDmg>().towerid = db.SelectTower(pTowers[0].TowerID)[0].Id;
+                Tower[pTowers[0].TowerID - 1].GetComponentInChildren<ShootTurretAriaDmg>().towerdmg = db.SelectTower(pTowers[0].TowerID)[0].Dmg;
+                i = 1;
                 yPos += 1.5f;
                 break;
             case "water":
                 pTowers = db.SelectPlayerTower(playerid, "WATER");
-                Tower[pTowers[0].TowerID - 1].GetComponent<ShootTowerWater>().towerid = db.SelectTower(pTowers[0].TowerID)[0].Id;
-                Tower[pTowers[0].TowerID - 1].GetComponent<ShootTowerWater>().towerdmg = db.SelectTower(pTowers[0].TowerID)[0].Dmg;
+                Tower[pTowers[0].TowerID - 1].GetComponentInChildren<ShootTowerWater>().towerid = db.SelectTower(pTowers[0].TowerID)[0].Id;
+                Tower[pTowers[0].TowerID - 1].GetComponentInChildren<ShootTowerWater>().towerdmg = db.SelectTower(pTowers[0].TowerID)[0].Dmg;
+                i = 2;
                 break;
             case "ice":
                 pTowers = db.SelectPlayerTower(playerid,"ICE");
                 Tower[pTowers[0].TowerID - 1].GetComponent<ShootTurretAOEDmg>().towerid = db.SelectTower(pTowers[0].TowerID)[0].Id;
                 Tower[pTowers[0].TowerID - 1].GetComponent<ShootTurretAOEDmg>().towerdmg = db.SelectTower(pTowers[0].TowerID)[0].Dmg;
+                i = 3;
                 break;
             case "electric":
                 pTowers = db.SelectPlayerTower(playerid, "ELECTRIC");
                 Tower[pTowers[0].TowerID - 1].GetComponent<ShootTurretElectric>().towerid = db.SelectTower(pTowers[0].TowerID)[0].Id;
                 Tower[pTowers[0].TowerID - 1].GetComponent<ShootTurretElectric>().towerdmg = db.SelectTower(pTowers[0].TowerID)[0].Dmg;
+                i = 4;
                 break;
         }
         if (OccupiedPlaces.Count < max)
@@ -170,7 +176,7 @@ public class SpawnTower : MonoBehaviour
             if (UsedTowerIDs.Count == 0)
             {
                 place.y = yPos;
-                
+                Debug.Log(OccupiedPlaces.Count);
                 Instantiate(Tower[pTowers[0].TowerID - 1], place, Quaternion.identity);
                 Basic();
                 OccupiedPlaces.Add(placeObj);
@@ -180,13 +186,13 @@ public class SpawnTower : MonoBehaviour
                 Menu.SetActive(false);
             }
             else {
-                int j = 0,i = 0;
+                Debug.Log(OccupiedPlaces.Count);
+                int j = 0;
                 while (j < UsedTowerIDs.Count && UsedTowerIDs[j] != pTowers[i].TowerID)
                 {
                     j++;
                 }
-                if (j >= UsedTowerIDs.Count)
-                {
+                if (j >= UsedTowerIDs.Count) { 
                     place.y = yPos;
                     Instantiate(Tower[pTowers[0].TowerID - 1], place, Quaternion.identity);
                     Basic();

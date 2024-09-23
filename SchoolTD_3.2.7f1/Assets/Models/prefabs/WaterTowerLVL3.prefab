@@ -264,5 +264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targets: []
-  dmgRate: 1
-  dmg: 45
+  targetExps: 
+  dmgRate: 0.15
+  towerdmg: 0
+  towerid: 0

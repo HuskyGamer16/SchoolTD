@@ -238,8 +238,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targets: []
-  dmgRate: 1
-  dmg: 60
+  targetExps: 
+  dmgRate: 0.15
+  towerdmg: 0
+  towerid: 0
 --- !u!1 &6540176868494924729 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6561f88f171f0754b899f2e569e40992, type: 3}

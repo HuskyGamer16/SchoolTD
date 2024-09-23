@@ -242,8 +242,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targets: []
-  dmgRate: 1
-  dmg: 75
+  targetExps: 
+  dmgRate: 0.15
+  towerdmg: 0
+  towerid: 0
 --- !u!4 &4935824984061959701 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -5894863403822994359, guid: 6561f88f171f0754b899f2e569e40992, type: 3}

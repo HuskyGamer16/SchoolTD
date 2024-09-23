@@ -26,12 +26,13 @@ public class EnemyMovement : MonoBehaviour
     public List<GameObject> EffectPrefabs;
     void Start()
     {
+        GetEffects = db.GetAllEffects();
         effectCoolDown = 5f;
         CoolDownTime = effectCoolDown;
         agent = GetComponent<NavMeshAgent>();
         EndPos = GameObject.Find("Projector_Screen_done");
         MaxHp = Hp;
-        //effect = GetEffects[0];
+        effect = GetEffects[0];
     }
     void Update()
     {
@@ -48,11 +49,7 @@ public class EnemyMovement : MonoBehaviour
             CheckPlayerHP.score = currentScore;
             Destroy(gameObject);
         }
-        if (effect == weakness)
-        {
-            DMG = Mathf.FloorToInt(DMG * 1.25f);
-        }
-        /*switch (effect.Id)
+        switch (effect.Id)
         {
             case 2:
                 if (transform.childCount < 2)
@@ -167,7 +164,7 @@ public class EnemyMovement : MonoBehaviour
                     ElecPlus = true;
                 }
                 break;
-        }*/
+        }
         if (DMG > 0)
         {
             if (ElecPlus)
@@ -178,12 +175,16 @@ public class EnemyMovement : MonoBehaviour
             {
                 DMG = Mathf.FloorToInt(DMG*1.15f);
             }
+            if (effect == weakness)
+            {
+                DMG = Mathf.FloorToInt(DMG * 1.25f);
+            }
             Hp -= DMG;
             DMG = 0;
         }
         if (CoolDownTime < 0)
         {
-            //effect = GetEffects[0];
+            effect = GetEffects[0];
             CoolDownTime = effectCoolDown;
         }
     }

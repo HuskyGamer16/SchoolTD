@@ -246,8 +246,8 @@ public class DbConnect
             {
                 temp.Add(new(
                     reader.GetInt32(0),
-                    reader.GetInt32(1),
                     reader.GetInt32(2),
+                    reader.GetInt32(1),
                     reader.GetInt32(3)
                     ));
             }

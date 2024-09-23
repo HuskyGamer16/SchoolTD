@@ -95,7 +95,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1598397214697820115}
   - component: {fileID: 6652779535868269260}
-  - component: {fileID: 5341665833190588483}
   m_Layer: 2
   m_Name: FireTowerLVL2
   m_TagString: Tower
@@ -136,23 +135,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
---- !u!114 &5341665833190588483
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1310353099811738882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb3e9f3e489b5474fb50a6a3505c3e16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targets: []
-  targetExps: 
-  dmgRate: 0.1
-  towerid: 0
-  towerdmg: 0
 --- !u!1 &1475044384557086761
 GameObject:
   m_ObjectHideFlags: 0
