@@ -129,7 +129,6 @@ public class SpawnTower : MonoBehaviour
     }
     public void PlaceTower(string param)
     {
-        int i = 0;
         float yPos = 9.8f;
         switch (param)
         {
@@ -138,7 +137,6 @@ public class SpawnTower : MonoBehaviour
                 //Debug.Log(db.SelectTower(pTowers[0].TowerID)[0]);
                 Tower[pTowers[0].TowerID - 1].GetComponent<shootTurretBasic>().towerid = db.SelectTower(pTowers[0].TowerID)[0].Id;
                 Tower[pTowers[0].TowerID - 1].GetComponent<shootTurretBasic>().towerdmg = db.SelectTower(pTowers[0].TowerID)[0].Dmg;
-                i = 0;
                 //Debug.Log(Tower[pTowers[0].TowerID - 1].GetComponent<shootTurretBasic>().tower.Dmg);
                 break;
             case "fire":
@@ -149,26 +147,22 @@ public class SpawnTower : MonoBehaviour
                 //}
                 Tower[pTowers[0].TowerID - 1].GetComponentInChildren<ShootTurretAriaDmg>().towerid = db.SelectTower(pTowers[0].TowerID)[0].Id;
                 Tower[pTowers[0].TowerID - 1].GetComponentInChildren<ShootTurretAriaDmg>().towerdmg = db.SelectTower(pTowers[0].TowerID)[0].Dmg;
-                i = 1;
                 yPos += 1.5f;
                 break;
             case "water":
                 pTowers = db.SelectPlayerTower(playerid, "WATER");
                 Tower[pTowers[0].TowerID - 1].GetComponentInChildren<ShootTowerWater>().towerid = db.SelectTower(pTowers[0].TowerID)[0].Id;
                 Tower[pTowers[0].TowerID - 1].GetComponentInChildren<ShootTowerWater>().towerdmg = db.SelectTower(pTowers[0].TowerID)[0].Dmg;
-                i = 2;
                 break;
             case "ice":
                 pTowers = db.SelectPlayerTower(playerid,"ICE");
                 Tower[pTowers[0].TowerID - 1].GetComponent<ShootTurretAOEDmg>().towerid = db.SelectTower(pTowers[0].TowerID)[0].Id;
                 Tower[pTowers[0].TowerID - 1].GetComponent<ShootTurretAOEDmg>().towerdmg = db.SelectTower(pTowers[0].TowerID)[0].Dmg;
-                i = 3;
                 break;
             case "electric":
                 pTowers = db.SelectPlayerTower(playerid, "ELECTRIC");
                 Tower[pTowers[0].TowerID - 1].GetComponent<ShootTurretElectric>().towerid = db.SelectTower(pTowers[0].TowerID)[0].Id;
                 Tower[pTowers[0].TowerID - 1].GetComponent<ShootTurretElectric>().towerdmg = db.SelectTower(pTowers[0].TowerID)[0].Dmg;
-                i = 4;
                 break;
         }
         if (OccupiedPlaces.Count < max)
@@ -176,7 +170,6 @@ public class SpawnTower : MonoBehaviour
             if (UsedTowerIDs.Count == 0)
             {
                 place.y = yPos;
-                Debug.Log(OccupiedPlaces.Count);
                 Instantiate(Tower[pTowers[0].TowerID - 1], place, Quaternion.identity);
                 Basic();
                 OccupiedPlaces.Add(placeObj);
@@ -186,12 +179,12 @@ public class SpawnTower : MonoBehaviour
                 Menu.SetActive(false);
             }
             else {
-                Debug.Log(OccupiedPlaces.Count);
                 int j = 0;
-                while (j < UsedTowerIDs.Count && UsedTowerIDs[j] != pTowers[i].TowerID)
+                while (j < UsedTowerIDs.Count && UsedTowerIDs[j] != pTowers[0].TowerID)
                 {
                     j++;
                 }
+                Debug.Log($"J: {j}");
                 if (j >= UsedTowerIDs.Count) { 
                     place.y = yPos;
                     Instantiate(Tower[pTowers[0].TowerID - 1], place, Quaternion.identity);
@@ -205,6 +198,7 @@ public class SpawnTower : MonoBehaviour
             }
         }
     }
+    #region Towers
     public void Cannon()
     {
         PlaceTower("cannon");
@@ -226,9 +220,10 @@ public class SpawnTower : MonoBehaviour
     {
         PlaceTower("electric");
     }
-
+    #endregion
     public void Basic()
-    { 
+    {
+        Debug.Log("Basic commense");
         Electricbutton.enabled = false;
         Cannonbutton.enabled = false;
         Waterbutton.enabled = false;
@@ -236,13 +231,18 @@ public class SpawnTower : MonoBehaviour
         Icebutton.enabled = false;
         if (GetPlayerTowers.Count != 0 && GetPlayerTowers != null)
         {        
+            Debug.Log($"{GetPlayerTowers.Count}");
+            //GetPlayerTowers.Count = 5
+            //Towers.Count = 21
+            //WHYISNOWORK
             for (int i = 0; i < GetPlayerTowers.Count; i++)
             {
                 int j = 0;
                 while (j < Towers.Count && GetPlayerTowers[i].TowerID != Towers[j].Id) { 
-                j++;
+                    j++;
                 }
                 if (j < Towers.Count) {
+                    //Debug.Log($"Basic() Towername: {Towers[j].Name}");
                     switch (Towers[j].Name) {
                         case "CANNON":
                             Cannonbutton.enabled = true;

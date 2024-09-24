@@ -236,8 +236,7 @@ public class DbConnect
         List<playerTower> temp = new();
         if (Connect())
         {
-            string query = "SELECT * FROM ptowers left join towers on (ptowers.TOWERID = towers.id) "
-                 + "WHERE ptowers.playerID = @playerID and towers.name like @TowerName order by ptowers.TOWERID desc;";
+            string query = "SELECT ptowers.id, ptowers.playerid, ptowers.towerid, ptowers.XP FROM ptowers inner join towers on (ptowers.TOWERID = towers.id) WHERE ptowers.playerID = @playerID and towers.name like @TowerName order by ptowers.TOWERID desc;";
             MySqlCommand cmd = new MySqlCommand(query, con);
             cmd.Parameters.AddWithValue("@playerID", playerid);
             cmd.Parameters.AddWithValue("@TowerName", towername);
