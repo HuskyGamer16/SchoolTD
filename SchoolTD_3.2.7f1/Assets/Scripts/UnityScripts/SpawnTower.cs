@@ -37,6 +37,7 @@ public class SpawnTower : MonoBehaviour
     
     void Start()
     {
+        Time.timeScale = 1f;
         UsedTowerIDs = new();
         paused = false;
         level = LevelManager.lvlnum + 1; //Itt ennek egy norm�lis megold�st k�ne csin�lni majd valamikor :shrug:
@@ -49,6 +50,11 @@ public class SpawnTower : MonoBehaviour
         OccupiedPlaces.Clear();
         if (Menu.activeSelf)
         {
+            Electricbutton.enabled = false;
+            Cannonbutton.enabled = false;
+            Waterbutton.enabled = false;
+            Firebutton.enabled = false;
+            Icebutton.enabled = false;
             Basic();
         }
         TowerDownBtn.SetActive(false);
@@ -130,6 +136,7 @@ public class SpawnTower : MonoBehaviour
     public void PlaceTower(string param)
     {
         float yPos = 9.8f;
+        pTowers = new List<playerTower>();
         switch (param)
         {
             case "cannon":
@@ -167,34 +174,21 @@ public class SpawnTower : MonoBehaviour
         }
         if (OccupiedPlaces.Count < max)
         {
-            if (UsedTowerIDs.Count == 0)
+            int j = 0;
+            while (j < UsedTowerIDs.Count && UsedTowerIDs[j] != pTowers[0].TowerID)
             {
+                j++;
+            }
+            Debug.Log($"J: {j}");
+            if (j >= UsedTowerIDs.Count) { 
                 place.y = yPos;
                 Instantiate(Tower[pTowers[0].TowerID - 1], place, Quaternion.identity);
-                Basic();
                 OccupiedPlaces.Add(placeObj);
                 UsedTowerIDs.Add(pTowers[0].TowerID);
                 place = new Vector3(0, -100, 0);
                 placeObj.SetActive(false);
                 Menu.SetActive(false);
-            }
-            else {
-                int j = 0;
-                while (j < UsedTowerIDs.Count && UsedTowerIDs[j] != pTowers[0].TowerID)
-                {
-                    j++;
-                }
-                Debug.Log($"J: {j}");
-                if (j >= UsedTowerIDs.Count) { 
-                    place.y = yPos;
-                    Instantiate(Tower[pTowers[0].TowerID - 1], place, Quaternion.identity);
-                    Basic();
-                    OccupiedPlaces.Add(placeObj);
-                    UsedTowerIDs.Add(pTowers[0].TowerID);
-                    place = new Vector3(0, -100, 0);
-                    placeObj.SetActive(false);
-                    Menu.SetActive(false);
-                }
+                Basic();
             }
         }
     }
@@ -224,25 +218,22 @@ public class SpawnTower : MonoBehaviour
     public void Basic()
     {
         Debug.Log("Basic commense");
-        Electricbutton.enabled = false;
-        Cannonbutton.enabled = false;
-        Waterbutton.enabled = false;
-        Firebutton.enabled = false;
-        Icebutton.enabled = false;
         if (GetPlayerTowers.Count != 0 && GetPlayerTowers != null)
         {        
-            Debug.Log($"{GetPlayerTowers.Count}");
+            //Debug.Log($"{GetPlayerTowers.Count}");
             //GetPlayerTowers.Count = 5
             //Towers.Count = 21
             //WHYISNOWORK
             for (int i = 0; i < GetPlayerTowers.Count; i++)
             {
+                //iterating getPlayerTowers[i]
                 int j = 0;
                 while (j < Towers.Count && GetPlayerTowers[i].TowerID != Towers[j].Id) { 
                     j++;
                 }
                 if (j < Towers.Count) {
                     //Debug.Log($"Basic() Towername: {Towers[j].Name}");
+                    //If there is a type of tower in gPT, unlock its type btn
                     switch (Towers[j].Name) {
                         case "CANNON":
                             Cannonbutton.enabled = true;

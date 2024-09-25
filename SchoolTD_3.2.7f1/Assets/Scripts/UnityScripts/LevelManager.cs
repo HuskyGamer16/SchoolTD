@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     static DbConnect db = new DbConnect("127.0.0.1", "schooltd", "root", "");
-    int playerid;
+    static public int playerid;
     bool test;
     int AllLevels;
     public GameObject[] Tower;

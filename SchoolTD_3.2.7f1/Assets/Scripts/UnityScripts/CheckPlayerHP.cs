@@ -16,7 +16,7 @@ public class CheckPlayerHP : MonoBehaviour
     public int lvlId;
     static public GameObject WinPanel;
     static public int score;
-    int xp;
+    int scoreOut;
     private void Start()
     {
         WinPanel = GameObject.Find("Win");
@@ -73,15 +73,14 @@ public class CheckPlayerHP : MonoBehaviour
     }
     public void ExitWin()
     {
-        xp = Mathf.FloorToInt(score * gradeAvg);
-
-        db.LevelCleared(playerid, score);
+        scoreOut = Mathf.FloorToInt(score * gradeAvg);
+        db.LevelCleared(playerid, scoreOut);
         miniLVLManager.Quit();
     }
     public void QuitWin()
     {
-        xp = Mathf.FloorToInt(score * gradeAvg);
-        db.LevelCleared(playerid, score);
+        scoreOut = Mathf.FloorToInt(score * gradeAvg);
+        db.LevelCleared(playerid, scoreOut);
         miniLVLManager.QuitToDesktop();
     }
     public void WriteAvg() { 
