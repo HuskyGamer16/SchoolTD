@@ -142,9 +142,7 @@
         132,
         133,
         134,
-        135,
-        136,
-        137
+        135
       ],
       "DebugActionIndex": 0
     },
@@ -1088,7 +1086,7 @@
       "DisplayName": "Writing 10030976111979770677.rsp",
       "ActionType": "WriteFile",
       "PayloadOffset": 45328,
-      "PayloadLength": 53724,
+      "PayloadLength": 53674,
       "PayloadDebugContentSnippet": "--allowed-assembly=\"D:/UnityPr",
       "Inputs": [],
       "InputFlags": [],
@@ -4543,7 +4541,7 @@
       "Annotation": "WriteText Library/Bee/artifacts/WinPlayerBuildProgram/Data/app.info",
       "DisplayName": "Writing app.info",
       "ActionType": "WriteFile",
-      "PayloadOffset": 99141,
+      "PayloadOffset": 99091,
       "PayloadLength": 31,
       "PayloadDebugContentSnippet": "DefaultCompany\nSchoolTD_3.2.7f",
       "Inputs": [],
@@ -4582,7 +4580,7 @@
       "DisplayName": "Copying unity default resources",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_development_mono/Data/Resources/unity default resources"
+        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/Data/Resources/unity default resources"
       ],
       "InputFlags": [
         0
@@ -4618,7 +4616,7 @@
       "DisplayName": "Copying mono-2.0-bdwgc.dll",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_development_mono/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll"
+        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll"
       ],
       "InputFlags": [
         0
@@ -4636,7 +4634,7 @@
       "DisplayName": "Copying MonoPosixHelper.dll",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_development_mono/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll"
+        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll"
       ],
       "InputFlags": [
         0
@@ -4654,7 +4652,7 @@
       "DisplayName": "Copying Compat.browser",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_development_mono/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser"
+        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser"
       ],
       "InputFlags": [
         0
@@ -4672,7 +4670,7 @@
       "DisplayName": "Copying DefaultWsdlHelpGenerator.aspx",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_development_mono/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx"
+        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx"
       ],
       "InputFlags": [
         0
@@ -4690,7 +4688,7 @@
       "DisplayName": "Copying machine.config",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_development_mono/MonoBleedingEdge/etc/mono/2.0/machine.config"
+        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/etc/mono/2.0/machine.config"
       ],
       "InputFlags": [
         0
@@ -4708,7 +4706,7 @@
       "DisplayName": "Copying settings.map",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_development_mono/MonoBleedingEdge/etc/mono/2.0/settings.map"
+        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/etc/mono/2.0/settings.map"
       ],
       "InputFlags": [
         0
@@ -4726,7 +4724,7 @@
       "DisplayName": "Copying web.config",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_development_mono/MonoBleedingEdge/etc/mono/2.0/web.config"
+        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/etc/mono/2.0/web.config"
       ],
       "InputFlags": [
         0
@@ -4744,7 +4742,7 @@
       "DisplayName": "Copying Compat.browser",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_development_mono/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser"
+        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser"
       ],
       "InputFlags": [
         0
@@ -4762,7 +4760,7 @@
       "DisplayName": "Copying DefaultWsdlHelpGenerator.aspx",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_development_mono/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx"
+        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx"
       ],
       "InputFlags": [
         0
@@ -4780,7 +4778,7 @@
       "DisplayName": "Copying machine.config",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_development_mono/MonoBleedingEdge/etc/mono/4.0/machine.config"
+        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/etc/mono/4.0/machine.config"
       ],
       "InputFlags": [
         0
@@ -4798,7 +4796,7 @@
       "DisplayName": "Copying settings.map",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_development_mono/MonoBleedingEdge/etc/mono/4.0/settings.map"
+        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/etc/mono/4.0/settings.map"
       ],
       "InputFlags": [
         0
@@ -4816,7 +4814,7 @@
       "DisplayName": "Copying web.config",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_development_mono/MonoBleedingEdge/etc/mono/4.0/web.config"
+        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/etc/mono/4.0/web.config"
       ],
       "InputFlags": [
         0
@@ -4834,7 +4832,7 @@
       "DisplayName": "Copying Compat.browser",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_development_mono/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser"
+        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser"
       ],
       "InputFlags": [
         0
@@ -4852,7 +4850,7 @@
       "DisplayName": "Copying DefaultWsdlHelpGenerator.aspx",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_development_mono/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx"
+        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx"
       ],
       "InputFlags": [
         0
@@ -4870,7 +4868,7 @@
       "DisplayName": "Copying machine.config",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_development_mono/MonoBleedingEdge/etc/mono/4.5/machine.config"
+        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/etc/mono/4.5/machine.config"
       ],
       "InputFlags": [
         0
@@ -4888,7 +4886,7 @@
       "DisplayName": "Copying settings.map",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_development_mono/MonoBleedingEdge/etc/mono/4.5/settings.map"
+        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/etc/mono/4.5/settings.map"
       ],
       "InputFlags": [
         0
@@ -4906,7 +4904,7 @@
       "DisplayName": "Copying web.config",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_development_mono/MonoBleedingEdge/etc/mono/4.5/web.config"
+        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/etc/mono/4.5/web.config"
       ],
       "InputFlags": [
         0
@@ -4924,7 +4922,7 @@
       "DisplayName": "Copying browscap.ini",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_development_mono/MonoBleedingEdge/etc/mono/browscap.ini"
+        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/etc/mono/browscap.ini"
       ],
       "InputFlags": [
         0
@@ -4942,7 +4940,7 @@
       "DisplayName": "Copying config",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_development_mono/MonoBleedingEdge/etc/mono/config"
+        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/etc/mono/config"
       ],
       "InputFlags": [
         0
@@ -4960,7 +4958,7 @@
       "DisplayName": "Copying config.xml",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_development_mono/MonoBleedingEdge/etc/mono/mconfig/config.xml"
+        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/MonoBleedingEdge/etc/mono/mconfig/config.xml"
       ],
       "InputFlags": [
         0
@@ -4978,7 +4976,7 @@
       "DisplayName": "Copying UnityCrashHandler64.exe",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_development_mono/UnityCrashHandler64.exe"
+        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/UnityCrashHandler64.exe"
       ],
       "InputFlags": [
         0
@@ -4996,7 +4994,7 @@
       "DisplayName": "Copying UnityPlayer.dll",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_development_mono/UnityPlayer.dll"
+        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/UnityPlayer.dll"
       ],
       "InputFlags": [
         0
@@ -5008,24 +5006,6 @@
         2
       ],
       "DebugActionIndex": 133
-    },
-    {
-      "Annotation": "CopyFiles School TD/WinPixEventRuntime.dll",
-      "DisplayName": "Copying WinPixEventRuntime.dll",
-      "ActionType": "CopyFiles",
-      "Inputs": [
-        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_development_mono/WinPixEventRuntime.dll"
-      ],
-      "InputFlags": [
-        0
-      ],
-      "Outputs": [
-        "School TD/WinPixEventRuntime.dll"
-      ],
-      "OutputFlags": [
-        2
-      ],
-      "DebugActionIndex": 134
     },
     {
       "Annotation": "CopyFiles School TD/D3D12/D3D12Core.dll",
@@ -5043,25 +5023,7 @@
       "OutputFlags": [
         2
       ],
-      "DebugActionIndex": 135
-    },
-    {
-      "Annotation": "CopyFiles School TD/D3D12/d3d12SDKLayers.dll",
-      "DisplayName": "Copying d3d12SDKLayers.dll",
-      "ActionType": "CopyFiles",
-      "Inputs": [
-        "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/External/AgilitySDK/x64/d3d12SDKLayers.dll"
-      ],
-      "InputFlags": [
-        0
-      ],
-      "Outputs": [
-        "School TD/D3D12/d3d12SDKLayers.dll"
-      ],
-      "OutputFlags": [
-        2
-      ],
-      "DebugActionIndex": 136
+      "DebugActionIndex": 134
     },
     {
       "Annotation": "Player",
@@ -5199,11 +5161,9 @@
         131,
         132,
         133,
-        134,
-        135,
-        136
+        134
       ],
-      "DebugActionIndex": 137
+      "DebugActionIndex": 135
     }
   ],
   "FileSignatures": [
@@ -5333,10 +5293,10 @@
       "File": "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport"
     },
     {
-      "File": "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_development_mono"
+      "File": "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono"
     },
     {
-      "File": "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_development_mono/Data/Resources"
+      "File": "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/Data/Resources"
     },
     {
       "File": "Library/Bee/Playerd374a2ab-inputdata.json"
@@ -5367,11 +5327,11 @@
       "Path": "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport"
     },
     {
-      "Path": "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_development_mono",
+      "Path": "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono",
       "Recurse": 1
     },
     {
-      "Path": "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_development_mono/Data/Resources",
+      "Path": "D:/UnityProjects/2023.2.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/win64_player_nondevelopment_mono/Data/Resources",
       "Recurse": 1
     },
     {
@@ -5420,7 +5380,7 @@
   ],
         "NamedNodes": {
           "all_tundra_nodes": 0,
-          "Player": 137
+          "Player": 135
         }
 ,  "DefaultNodes": [
     0
