@@ -7,11 +7,18 @@ public class CamSwitch : MonoBehaviour
     public GameObject cam1;
     public GameObject cam2;
     public int Manager;
-
-
-    public void ChangeCam() {
+   public void ChangeCam() {
         //CamChange not working, plays once at start, not ever again
         GetComponent<Animator>().SetTrigger("Change");
+    }
+    void Cam1En() {
+        cam1.SetActive(true);
+        cam2.SetActive(false);
+    }
+    void Cam2En()
+    {
+        cam1.SetActive(false);
+        cam2.SetActive(true);
     }
     public void ManageCams() {
         if (Manager == 0)
@@ -23,14 +30,5 @@ public class CamSwitch : MonoBehaviour
             Cam1En();
             Manager = 0;
         }
-    }
-    void Cam1En() {
-        cam1.SetActive(true);
-        cam2.SetActive(false);
-    }
-    void Cam2En()
-    {
-        cam1.SetActive(false);
-        cam2.SetActive(true);
     }
 }

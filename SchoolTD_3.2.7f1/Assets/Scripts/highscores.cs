@@ -5,19 +5,19 @@ using UnityEngine;
 public class highscores : MonoBehaviour
 {
    private int id;
-   private int playerId;
+    private string username;
    private int score;
 
-   public highscores(int id, int playerId, int score){
+   public highscores(int id, string username, int score){
     this.id = id;
-    this.playerId = playerId;
+    this.username = username;
     this.score = score;
    }
-   public highscores(int playerId, int score){
-    this.playerId = playerId;
+   public highscores(string username, int score){
+    this.username = username;
     this.score = score;
    }
    public int Id { get => id; set => id = value; }
-    public int PlayerId{ get => playerId; set => playerId = value; }
+    public string Username { get => username; set => username = value; }
     public int Score { get => score; set => score = value; }
 }

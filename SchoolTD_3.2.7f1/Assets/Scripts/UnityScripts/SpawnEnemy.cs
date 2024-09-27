@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Animations;
-using System.Timers;
 using TMPro;
 using System;
 using Random = UnityEngine.Random;
@@ -19,8 +18,6 @@ public class SpawnEnemy : MonoBehaviour
     DbConnect db = new DbConnect("127.0.0.1", "schooltd", "root", "");
     public List<effects> GetEffects = new();
     List<origami> GetEnemies = new();
-    List<waves> GetWaves = new();
-    List<levels> GetLevel = new();
     private float tillWaveSpawn = 0;
     int lvlId;
     int max;
@@ -28,60 +25,21 @@ public class SpawnEnemy : MonoBehaviour
     int currentWave = 0;
     public int[] enemyWeight = new int[] {80,20,20};
     public int[] waves;
-    void Start()
+    private int[] Getwaves()
     {
-        lvlId = (LevelManager.lvlnum+1);
-        spawnCooldown = timeToSpawn;
-        Enemies();
+        int waveMax = 4 + (2 * lvlId);
+        int[] temp = new int[waveMax];
+        for (int i = 0; i < waveMax; i++)
+        {
+            temp[i] = 3 * (i+1) + lvlId;
+        }
+        return temp;
     }
-    private void Update()
-    {
-        try
-        {
-            if (currentWave < waves.Length)
-            {
-                if (!waveFinished && tillWaveSpawn <= 0)
-                {
-                    if (!waveFinished)
-                    {
-                        Spawn(max);
-                    }
-                    if (amount >= max)
-                    {
-                        waveFinished = true;
-                        tillWaveSpawn = 25;
-                        currentWave++;
-                        Enemies();
-                        amount = 0;
-                    }
-                }
-                if (tillWaveSpawn > 0)
-                {
-                    tillWaveSpawn -= Time.deltaTime;
-                    waveFinished = false;
-                }
-            }
-        }
-        catch (Exception) {
-            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-            while (enemies != null) { 
-            enemies = GameObject.FindGameObjectsWithTag("Enemy");
-            }
-            CheckPlayerHP.WinCondition();
-        }
-    }
-    public void Spawn(int max)
-    {
-        if (amount <= max)
-        {
-            spawnCooldown -= Time.deltaTime;
-        }
-        if (spawnCooldown <= 0)
-        {
-            Instantiate(RandomEnemy(), StartPoint.transform.position, Quaternion.Euler(new Vector3(-90, -180, 0)));
-            spawnCooldown = timeToSpawn;
-            amount++;
-        }
+    public void Enemies() {
+        waves = Getwaves();
+        Debug.Log($"{waves[currentWave]} | { currentWave+1 }");
+        GetEnemies = db.SelectOrigami();
+        max = waves[currentWave];
     }
     public GameObject RandomEnemy()
     {
@@ -153,23 +111,59 @@ public class SpawnEnemy : MonoBehaviour
         Em.Score = score;
         return myPrefabs[a];
     }
-    public void Enemies() {
-        //GetLevel = db.LevelSelect(lvlId);
-        waves = Getwaves();
-        //GetWaves = db.SelectWave(waves[currentWave]);
-        Debug.Log($"{waves[currentWave]} | { currentWave+1 }");
-        //GetEffects = db.SelectEffects();
-        GetEnemies = db.SelectOrigami();
-        max = waves[currentWave];
-    }
-    private int[] Getwaves()
+    public void Spawn(int max)
     {
-        int waveMax = 4 + (2 * lvlId);
-        int[] temp = new int[waveMax];
-        for (int i = 0; i < waveMax; i++)
+        if (amount <= max)
         {
-            temp[i] = 3 * (i+1) + lvlId;
+            spawnCooldown -= Time.deltaTime;
         }
-        return temp;
+        if (spawnCooldown <= 0)
+        {
+            Instantiate(RandomEnemy(), StartPoint.transform.position, Quaternion.Euler(new Vector3(-90, -180, 0)));
+            spawnCooldown = timeToSpawn;
+            amount++;
+        }
+    }
+    void Start()
+    {
+        lvlId = (LevelManager.lvlnum + 1);
+        spawnCooldown = timeToSpawn;
+        Enemies();
+    }
+    private void Update()
+    {
+        try
+        {
+            if (currentWave < waves.Length)
+            {
+                if (!waveFinished && tillWaveSpawn <= 0)
+                {
+                    if (!waveFinished)
+                    {
+                        Spawn(max);
+                    }
+                    if (amount >= max)
+                    {
+                        waveFinished = true;
+                        tillWaveSpawn = 25;
+                        currentWave++;
+                        Enemies();
+                        amount = 0;
+                    }
+                }
+                if (tillWaveSpawn > 0)
+                {
+                    tillWaveSpawn -= Time.deltaTime;
+                    waveFinished = false;
+                }
+            }
+        }
+        catch (Exception) {
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            while (enemies != null) { 
+            enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            }
+            CheckPlayerHP.WinCondition();
+        }
     }
 }

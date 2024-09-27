@@ -48,7 +48,6 @@ public class DbConnect
     }
     public int CountUserPlayer(string tempUser)
     {
-        //dunno?
         int count = 0;
         if (Connect())
         {
@@ -97,7 +96,6 @@ public class DbConnect
             Connect_close ();
         }
     }
-
     public void LevelCleared(int playerid,int lvlscore)
     {
         if (Connect())
@@ -254,7 +252,6 @@ public class DbConnect
         }
         return temp;
     }
-
     public List<TotalTower> SelectTower(int towerid)
     {
         List<TotalTower> temp = new();
@@ -296,7 +293,6 @@ public class DbConnect
         }
         return temp;
     }
-
     public List<effects> GetAllEffects()
     {
         List<effects> temp = new();
@@ -412,5 +408,22 @@ public class DbConnect
             cmd.ExecuteNonQuery();
             Connect_close();
         }
+    }
+    public List<highscores> GetHighScores() {
+        List<highscores> temp = new();
+        if (Connect())
+        {
+            string query = "Select username, score from player where score > 0 order by score desc Limit 10";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read()) {
+                temp.Add(new(
+                    reader.GetString(0),
+                    reader.GetInt32(1)
+                    )) ;
+            }
+            Connect_close();
+        }
+        return temp;
     }
 }

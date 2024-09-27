@@ -5,6 +5,7 @@
 		<type fullname="CheckPlayerHP" preserve="nothing"/>
 		<type fullname="EnemyMovement" preserve="nothing"/>
 		<type fullname="GoSelectLvl" preserve="nothing"/>
+		<type fullname="Hiscore" preserve="nothing"/>
 		<type fullname="LevelManager" preserve="nothing"/>
 		<type fullname="LoginHandler" preserve="nothing"/>
 		<type fullname="MainMenu" preserve="nothing"/>
@@ -15,7 +16,7 @@
 		<type fullname="ShootTurretAOEDmg" preserve="nothing"/>
 		<type fullname="ShootTurretAriaDmg" preserve="nothing"/>
 		<type fullname="shootTurretBasic" preserve="nothing"/>
-		<type fullname="ShootTurretElectroc" preserve="nothing"/>
+		<type fullname="ShootTurretElectric" preserve="nothing"/>
 		<type fullname="SounsSettings" preserve="nothing"/>
 		<type fullname="SpawnEnemy" preserve="nothing"/>
 		<type fullname="SpawnTower" preserve="nothing"/>

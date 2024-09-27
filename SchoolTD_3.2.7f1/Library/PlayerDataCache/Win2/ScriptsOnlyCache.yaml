@@ -6,6 +6,7 @@ ScriptsOnlyBuild:
     - CheckPlayerHP
     - EnemyMovement
     - GoSelectLvl
+    - Hiscore
     - LevelManager
     - LoginHandler
     - MainMenu
@@ -14,7 +15,7 @@ ScriptsOnlyBuild:
     - ShootTowerWater
     - ShootTurretAOEDmg
     - ShootTurretAriaDmg
-    - ShootTurretElectroc
+    - ShootTurretElectric
     - SounsSettings
     - SpawnEnemy
     - SpawnTower
@@ -25,6 +26,8 @@ ScriptsOnlyBuild:
     - Unity.AI.Navigation.Editor.NavigationWindow
     Unity.AI.Navigation.dll:
     - Unity.AI.Navigation.NavMeshSurface
+    Unity.PlasticSCM.Editor.dll:
+    - Unity.PlasticSCM.Editor.PlasticWindow
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro:
@@ -49,6 +52,7 @@ ScriptsOnlyBuild:
     - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateMachineNode
     - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
@@ -175,9 +179,21 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: LoginHandler
     methodName: CheckPW
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
   - assembly: Assembly-CSharp
     fullTypeName: MainMenu
     methodName: StopGame
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.GameObject
+    methodName: SetActive
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
@@ -196,54 +212,93 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: LoginHandler
     methodName: UsernameGood
+  - assembly: Assembly-CSharp
+    fullTypeName: LevelManager
+    methodName: Level
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: LevelManager
+    methodName: SubLvlNum
+  - assembly: Assembly-CSharp
+    fullTypeName: LevelManager
+    methodName: Level
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: LevelManager
+    methodName: AddLvlNum
+  - assembly: Assembly-CSharp
+    fullTypeName: LevelManager
+    methodName: Level
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: LevelManager
+    methodName: SubLvlNum
+  - assembly: Assembly-CSharp
+    fullTypeName: LevelManager
+    methodName: Level
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: LevelManager
+    methodName: SubLvlNum
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: LevelManager
+    methodName: SubLvlNum
+  - assembly: Assembly-CSharp
+    fullTypeName: LevelManager
+    methodName: Level
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: LevelManager
+    methodName: AddLvlNum
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: LevelManager
+    methodName: AddLvlNum
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: LevelManager
+    methodName: AddLvlNum
   - assembly: Assembly-CSharp
     fullTypeName: LevelManager
     methodName: Quit
@@ -255,7 +310,10 @@ ScriptsOnlyBuild:
     methodName: SetActive
   - assembly: Assembly-CSharp
     fullTypeName: LevelManager
-    methodName: lvl1
+    methodName: SubLvlNum
+  - assembly: Assembly-CSharp
+    fullTypeName: LevelManager
+    methodName: Level
   - assembly: Assembly-CSharp
     fullTypeName: LevelManager
     methodName: TowerShop
@@ -265,6 +323,9 @@ ScriptsOnlyBuild:
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
+  - assembly: Assembly-CSharp
+    fullTypeName: LevelManager
+    methodName: AddLvlNum
   - assembly: UnityEngine.CoreModule
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
@@ -300,7 +361,7 @@ ScriptsOnlyBuild:
     methodName: Water
   - assembly: Assembly-CSharp
     fullTypeName: CheckPlayerHP
-    methodName: ExitLose
+    methodName: ExitWin
   - assembly: Assembly-CSharp
     fullTypeName: CheckPlayerHP
     methodName: QuitLose
@@ -326,9 +387,6 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: CheckPlayerHP
-    methodName: QuitWin
-  - assembly: Assembly-CSharp
     fullTypeName: SpawnTower
     methodName: Fire
   - assembly: Assembly-CSharp
@@ -339,7 +397,7 @@ ScriptsOnlyBuild:
     methodName: Water
   - assembly: Assembly-CSharp
     fullTypeName: CheckPlayerHP
-    methodName: ExitLose
+    methodName: ExitWin
   - assembly: Assembly-CSharp
     fullTypeName: CheckPlayerHP
     methodName: QuitLose
@@ -365,9 +423,6 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: CheckPlayerHP
-    methodName: QuitWin
-  - assembly: Assembly-CSharp
     fullTypeName: SpawnTower
     methodName: Fire
   - assembly: Assembly-CSharp
@@ -378,7 +433,7 @@ ScriptsOnlyBuild:
     methodName: Water
   - assembly: Assembly-CSharp
     fullTypeName: CheckPlayerHP
-    methodName: ExitLose
+    methodName: ExitWin
   - assembly: Assembly-CSharp
     fullTypeName: CheckPlayerHP
     methodName: QuitLose
@@ -404,9 +459,6 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: CheckPlayerHP
-    methodName: QuitWin
-  - assembly: Assembly-CSharp
     fullTypeName: SpawnTower
     methodName: Fire
   - assembly: Assembly-CSharp
@@ -417,7 +469,7 @@ ScriptsOnlyBuild:
     methodName: Water
   - assembly: Assembly-CSharp
     fullTypeName: CheckPlayerHP
-    methodName: ExitLose
+    methodName: ExitWin
   - assembly: Assembly-CSharp
     fullTypeName: CheckPlayerHP
     methodName: QuitLose
@@ -443,9 +495,6 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: CheckPlayerHP
-    methodName: QuitWin
-  - assembly: Assembly-CSharp
     fullTypeName: SpawnTower
     methodName: Fire
   - assembly: Assembly-CSharp
@@ -456,7 +505,7 @@ ScriptsOnlyBuild:
     methodName: Water
   - assembly: Assembly-CSharp
     fullTypeName: CheckPlayerHP
-    methodName: ExitLose
+    methodName: ExitWin
   - assembly: Assembly-CSharp
     fullTypeName: CheckPlayerHP
     methodName: QuitLose
@@ -482,9 +531,6 @@ ScriptsOnlyBuild:
     fullTypeName: UnityEngine.GameObject
     methodName: SetActive
   - assembly: Assembly-CSharp
-    fullTypeName: CheckPlayerHP
-    methodName: QuitWin
-  - assembly: Assembly-CSharp
     fullTypeName: SpawnTower
     methodName: Fire
   - assembly: Assembly-CSharp
@@ -495,7 +541,7 @@ ScriptsOnlyBuild:
     methodName: Water
   - assembly: Assembly-CSharp
     fullTypeName: CheckPlayerHP
-    methodName: ExitLose
+    methodName: ExitWin
   - assembly: Assembly-CSharp
     fullTypeName: CheckPlayerHP
     methodName: QuitLose
@@ -554,23 +600,21 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 25120}
+      Script: {instanceID: 25498}
     - Class: 114
-      Script: {instanceID: 26680}
+      Script: {instanceID: 27152}
     - Class: 114
-      Script: {instanceID: 26878}
+      Script: {instanceID: 27368}
     - Class: 114
-      Script: {instanceID: 27086}
+      Script: {instanceID: 27580}
     - Class: 114
-      Script: {instanceID: 27904}
+      Script: {instanceID: 28460}
     - Class: 114
-      Script: {instanceID: 29336}
+      Script: {instanceID: 29956}
     - Class: 114
-      Script: {instanceID: 29978}
+      Script: {instanceID: 30630}
     - Class: 114
-      Script: {instanceID: 30384}
-    - Class: 114
-      Script: {instanceID: 30512}
+      Script: {instanceID: 31186}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -625,57 +669,55 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 24884}
+      Script: {instanceID: 25246}
     - Class: 114
-      Script: {instanceID: 25120}
+      Script: {instanceID: 25498}
     - Class: 114
-      Script: {instanceID: 25186}
+      Script: {instanceID: 25570}
     - Class: 114
-      Script: {instanceID: 26036}
+      Script: {instanceID: 26480}
     - Class: 114
-      Script: {instanceID: 26066}
+      Script: {instanceID: 26510}
     - Class: 114
-      Script: {instanceID: 26232}
+      Script: {instanceID: 26682}
     - Class: 114
-      Script: {instanceID: 26344}
+      Script: {instanceID: 26800}
     - Class: 114
-      Script: {instanceID: 26680}
+      Script: {instanceID: 27152}
     - Class: 114
-      Script: {instanceID: 26878}
+      Script: {instanceID: 27368}
     - Class: 114
-      Script: {instanceID: 27086}
+      Script: {instanceID: 27580}
     - Class: 114
-      Script: {instanceID: 27264}
+      Script: {instanceID: 27772}
     - Class: 114
-      Script: {instanceID: 27608}
+      Script: {instanceID: 28144}
     - Class: 114
-      Script: {instanceID: 27696}
+      Script: {instanceID: 28236}
     - Class: 114
-      Script: {instanceID: 27814}
+      Script: {instanceID: 28362}
     - Class: 114
-      Script: {instanceID: 27874}
+      Script: {instanceID: 28426}
     - Class: 114
-      Script: {instanceID: 28186}
+      Script: {instanceID: 28758}
     - Class: 114
-      Script: {instanceID: 28448}
+      Script: {instanceID: 29030}
     - Class: 114
-      Script: {instanceID: 29316}
+      Script: {instanceID: 29934}
     - Class: 114
-      Script: {instanceID: 29336}
+      Script: {instanceID: 29956}
     - Class: 114
-      Script: {instanceID: 29632}
+      Script: {instanceID: 30268}
     - Class: 114
-      Script: {instanceID: 29890}
+      Script: {instanceID: 30536}
     - Class: 114
-      Script: {instanceID: 29978}
+      Script: {instanceID: 30630}
     - Class: 114
-      Script: {instanceID: 30184}
+      Script: {instanceID: 30840}
     - Class: 114
-      Script: {instanceID: 30534}
+      Script: {instanceID: 31210}
     - Class: 114
-      Script: {instanceID: 31172}
-    - Class: 114
-      Script: {instanceID: 33034}
+      Script: {instanceID: 31876}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -756,57 +798,55 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 24884}
+      Script: {instanceID: 25246}
     - Class: 114
-      Script: {instanceID: 25120}
+      Script: {instanceID: 25498}
     - Class: 114
-      Script: {instanceID: 25186}
+      Script: {instanceID: 25570}
     - Class: 114
-      Script: {instanceID: 26036}
+      Script: {instanceID: 26480}
     - Class: 114
-      Script: {instanceID: 26066}
+      Script: {instanceID: 26510}
     - Class: 114
-      Script: {instanceID: 26232}
+      Script: {instanceID: 26682}
     - Class: 114
-      Script: {instanceID: 26344}
+      Script: {instanceID: 26800}
     - Class: 114
-      Script: {instanceID: 26680}
+      Script: {instanceID: 27152}
     - Class: 114
-      Script: {instanceID: 26878}
+      Script: {instanceID: 27368}
     - Class: 114
-      Script: {instanceID: 27086}
+      Script: {instanceID: 27580}
     - Class: 114
-      Script: {instanceID: 27264}
+      Script: {instanceID: 27772}
     - Class: 114
-      Script: {instanceID: 27608}
+      Script: {instanceID: 28144}
     - Class: 114
-      Script: {instanceID: 27696}
+      Script: {instanceID: 28236}
     - Class: 114
-      Script: {instanceID: 27814}
+      Script: {instanceID: 28362}
     - Class: 114
-      Script: {instanceID: 27874}
+      Script: {instanceID: 28426}
     - Class: 114
-      Script: {instanceID: 28186}
+      Script: {instanceID: 28758}
     - Class: 114
-      Script: {instanceID: 28448}
+      Script: {instanceID: 29030}
     - Class: 114
-      Script: {instanceID: 29316}
+      Script: {instanceID: 29934}
     - Class: 114
-      Script: {instanceID: 29336}
+      Script: {instanceID: 29956}
     - Class: 114
-      Script: {instanceID: 29632}
+      Script: {instanceID: 30268}
     - Class: 114
-      Script: {instanceID: 29890}
+      Script: {instanceID: 30536}
     - Class: 114
-      Script: {instanceID: 29978}
+      Script: {instanceID: 30630}
     - Class: 114
-      Script: {instanceID: 30184}
+      Script: {instanceID: 30840}
     - Class: 114
-      Script: {instanceID: 30534}
+      Script: {instanceID: 31210}
     - Class: 114
-      Script: {instanceID: 31172}
-    - Class: 114
-      Script: {instanceID: 33034}
+      Script: {instanceID: 31876}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -887,57 +927,55 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 24884}
+      Script: {instanceID: 25246}
     - Class: 114
-      Script: {instanceID: 25120}
+      Script: {instanceID: 25498}
     - Class: 114
-      Script: {instanceID: 25186}
+      Script: {instanceID: 25570}
     - Class: 114
-      Script: {instanceID: 26036}
+      Script: {instanceID: 26480}
     - Class: 114
-      Script: {instanceID: 26066}
+      Script: {instanceID: 26510}
     - Class: 114
-      Script: {instanceID: 26232}
+      Script: {instanceID: 26682}
     - Class: 114
-      Script: {instanceID: 26344}
+      Script: {instanceID: 26800}
     - Class: 114
-      Script: {instanceID: 26680}
+      Script: {instanceID: 27152}
     - Class: 114
-      Script: {instanceID: 26878}
+      Script: {instanceID: 27368}
     - Class: 114
-      Script: {instanceID: 27086}
+      Script: {instanceID: 27580}
     - Class: 114
-      Script: {instanceID: 27264}
+      Script: {instanceID: 27772}
     - Class: 114
-      Script: {instanceID: 27608}
+      Script: {instanceID: 28144}
     - Class: 114
-      Script: {instanceID: 27696}
+      Script: {instanceID: 28236}
     - Class: 114
-      Script: {instanceID: 27814}
+      Script: {instanceID: 28362}
     - Class: 114
-      Script: {instanceID: 27874}
+      Script: {instanceID: 28426}
     - Class: 114
-      Script: {instanceID: 28186}
+      Script: {instanceID: 28758}
     - Class: 114
-      Script: {instanceID: 28448}
+      Script: {instanceID: 29030}
     - Class: 114
-      Script: {instanceID: 29316}
+      Script: {instanceID: 29934}
     - Class: 114
-      Script: {instanceID: 29336}
+      Script: {instanceID: 29956}
     - Class: 114
-      Script: {instanceID: 29632}
+      Script: {instanceID: 30268}
     - Class: 114
-      Script: {instanceID: 29890}
+      Script: {instanceID: 30536}
     - Class: 114
-      Script: {instanceID: 29978}
+      Script: {instanceID: 30630}
     - Class: 114
-      Script: {instanceID: 30184}
+      Script: {instanceID: 30840}
     - Class: 114
-      Script: {instanceID: 30534}
+      Script: {instanceID: 31210}
     - Class: 114
-      Script: {instanceID: 31172}
-    - Class: 114
-      Script: {instanceID: 33034}
+      Script: {instanceID: 31876}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1018,57 +1056,55 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 24884}
+      Script: {instanceID: 25246}
     - Class: 114
-      Script: {instanceID: 25120}
+      Script: {instanceID: 25498}
     - Class: 114
-      Script: {instanceID: 25186}
+      Script: {instanceID: 25570}
     - Class: 114
-      Script: {instanceID: 26036}
+      Script: {instanceID: 26480}
     - Class: 114
-      Script: {instanceID: 26066}
+      Script: {instanceID: 26510}
     - Class: 114
-      Script: {instanceID: 26232}
+      Script: {instanceID: 26682}
     - Class: 114
-      Script: {instanceID: 26344}
+      Script: {instanceID: 26800}
     - Class: 114
-      Script: {instanceID: 26680}
+      Script: {instanceID: 27152}
     - Class: 114
-      Script: {instanceID: 26878}
+      Script: {instanceID: 27368}
     - Class: 114
-      Script: {instanceID: 27086}
+      Script: {instanceID: 27580}
     - Class: 114
-      Script: {instanceID: 27264}
+      Script: {instanceID: 27772}
     - Class: 114
-      Script: {instanceID: 27608}
+      Script: {instanceID: 28144}
     - Class: 114
-      Script: {instanceID: 27696}
+      Script: {instanceID: 28236}
     - Class: 114
-      Script: {instanceID: 27814}
+      Script: {instanceID: 28362}
     - Class: 114
-      Script: {instanceID: 27874}
+      Script: {instanceID: 28426}
     - Class: 114
-      Script: {instanceID: 28186}
+      Script: {instanceID: 28758}
     - Class: 114
-      Script: {instanceID: 28448}
+      Script: {instanceID: 29030}
     - Class: 114
-      Script: {instanceID: 29316}
+      Script: {instanceID: 29934}
     - Class: 114
-      Script: {instanceID: 29336}
+      Script: {instanceID: 29956}
     - Class: 114
-      Script: {instanceID: 29632}
+      Script: {instanceID: 30268}
     - Class: 114
-      Script: {instanceID: 29890}
+      Script: {instanceID: 30536}
     - Class: 114
-      Script: {instanceID: 29978}
+      Script: {instanceID: 30630}
     - Class: 114
-      Script: {instanceID: 30184}
+      Script: {instanceID: 30840}
     - Class: 114
-      Script: {instanceID: 30534}
+      Script: {instanceID: 31210}
     - Class: 114
-      Script: {instanceID: 31172}
-    - Class: 114
-      Script: {instanceID: 33034}
+      Script: {instanceID: 31876}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1149,57 +1185,55 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 24884}
+      Script: {instanceID: 25246}
     - Class: 114
-      Script: {instanceID: 25120}
+      Script: {instanceID: 25498}
     - Class: 114
-      Script: {instanceID: 25186}
+      Script: {instanceID: 25570}
     - Class: 114
-      Script: {instanceID: 26036}
+      Script: {instanceID: 26480}
     - Class: 114
-      Script: {instanceID: 26066}
+      Script: {instanceID: 26510}
     - Class: 114
-      Script: {instanceID: 26232}
+      Script: {instanceID: 26682}
     - Class: 114
-      Script: {instanceID: 26344}
+      Script: {instanceID: 26800}
     - Class: 114
-      Script: {instanceID: 26680}
+      Script: {instanceID: 27152}
     - Class: 114
-      Script: {instanceID: 26878}
+      Script: {instanceID: 27368}
     - Class: 114
-      Script: {instanceID: 27086}
+      Script: {instanceID: 27580}
     - Class: 114
-      Script: {instanceID: 27264}
+      Script: {instanceID: 27772}
     - Class: 114
-      Script: {instanceID: 27608}
+      Script: {instanceID: 28144}
     - Class: 114
-      Script: {instanceID: 27696}
+      Script: {instanceID: 28236}
     - Class: 114
-      Script: {instanceID: 27814}
+      Script: {instanceID: 28362}
     - Class: 114
-      Script: {instanceID: 27874}
+      Script: {instanceID: 28426}
     - Class: 114
-      Script: {instanceID: 28186}
+      Script: {instanceID: 28758}
     - Class: 114
-      Script: {instanceID: 28448}
+      Script: {instanceID: 29030}
     - Class: 114
-      Script: {instanceID: 29316}
+      Script: {instanceID: 29934}
     - Class: 114
-      Script: {instanceID: 29336}
+      Script: {instanceID: 29956}
     - Class: 114
-      Script: {instanceID: 29632}
+      Script: {instanceID: 30268}
     - Class: 114
-      Script: {instanceID: 29890}
+      Script: {instanceID: 30536}
     - Class: 114
-      Script: {instanceID: 29978}
+      Script: {instanceID: 30630}
     - Class: 114
-      Script: {instanceID: 30184}
+      Script: {instanceID: 30840}
     - Class: 114
-      Script: {instanceID: 30534}
+      Script: {instanceID: 31210}
     - Class: 114
-      Script: {instanceID: 31172}
-    - Class: 114
-      Script: {instanceID: 33034}
+      Script: {instanceID: 31876}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1280,57 +1314,55 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 24884}
+      Script: {instanceID: 25246}
     - Class: 114
-      Script: {instanceID: 25120}
+      Script: {instanceID: 25498}
     - Class: 114
-      Script: {instanceID: 25186}
+      Script: {instanceID: 25570}
     - Class: 114
-      Script: {instanceID: 26036}
+      Script: {instanceID: 26480}
     - Class: 114
-      Script: {instanceID: 26066}
+      Script: {instanceID: 26510}
     - Class: 114
-      Script: {instanceID: 26232}
+      Script: {instanceID: 26682}
     - Class: 114
-      Script: {instanceID: 26344}
+      Script: {instanceID: 26800}
     - Class: 114
-      Script: {instanceID: 26680}
+      Script: {instanceID: 27152}
     - Class: 114
-      Script: {instanceID: 26878}
+      Script: {instanceID: 27368}
     - Class: 114
-      Script: {instanceID: 27086}
+      Script: {instanceID: 27580}
     - Class: 114
-      Script: {instanceID: 27264}
+      Script: {instanceID: 27772}
     - Class: 114
-      Script: {instanceID: 27608}
+      Script: {instanceID: 28144}
     - Class: 114
-      Script: {instanceID: 27696}
+      Script: {instanceID: 28236}
     - Class: 114
-      Script: {instanceID: 27814}
+      Script: {instanceID: 28362}
     - Class: 114
-      Script: {instanceID: 27874}
+      Script: {instanceID: 28426}
     - Class: 114
-      Script: {instanceID: 28186}
+      Script: {instanceID: 28758}
     - Class: 114
-      Script: {instanceID: 28448}
+      Script: {instanceID: 29030}
     - Class: 114
-      Script: {instanceID: 29316}
+      Script: {instanceID: 29934}
     - Class: 114
-      Script: {instanceID: 29336}
+      Script: {instanceID: 29956}
     - Class: 114
-      Script: {instanceID: 29632}
+      Script: {instanceID: 30268}
     - Class: 114
-      Script: {instanceID: 29890}
+      Script: {instanceID: 30536}
     - Class: 114
-      Script: {instanceID: 29978}
+      Script: {instanceID: 30630}
     - Class: 114
-      Script: {instanceID: 30184}
+      Script: {instanceID: 30840}
     - Class: 114
-      Script: {instanceID: 30534}
+      Script: {instanceID: 31210}
     - Class: 114
-      Script: {instanceID: 31172}
-    - Class: 114
-      Script: {instanceID: 33034}
+      Script: {instanceID: 31876}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1413,53 +1445,55 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 692}
+      Script: {instanceID: 694}
     - Class: 114
-      Script: {instanceID: 17904}
+      Script: {instanceID: 17902}
     - Class: 114
-      Script: {instanceID: 24884}
+      Script: {instanceID: 25246}
     - Class: 114
-      Script: {instanceID: 25120}
+      Script: {instanceID: 25498}
     - Class: 114
-      Script: {instanceID: 25162}
+      Script: {instanceID: 25546}
     - Class: 114
-      Script: {instanceID: 25596}
+      Script: {instanceID: 26000}
     - Class: 114
-      Script: {instanceID: 25918}
+      Script: {instanceID: 26354}
     - Class: 114
-      Script: {instanceID: 25980}
+      Script: {instanceID: 26422}
     - Class: 114
-      Script: {instanceID: 26026}
+      Script: {instanceID: 26470}
     - Class: 114
-      Script: {instanceID: 26036}
+      Script: {instanceID: 26480}
     - Class: 114
-      Script: {instanceID: 26232}
+      Script: {instanceID: 26682}
     - Class: 114
-      Script: {instanceID: 26680}
+      Script: {instanceID: 27152}
     - Class: 114
-      Script: {instanceID: 26878}
+      Script: {instanceID: 27368}
     - Class: 114
-      Script: {instanceID: 27086}
+      Script: {instanceID: 27580}
     - Class: 114
-      Script: {instanceID: 27608}
+      Script: {instanceID: 28144}
     - Class: 114
-      Script: {instanceID: 28660}
+      Script: {instanceID: 29248}
     - Class: 114
-      Script: {instanceID: 29094}
+      Script: {instanceID: 29702}
     - Class: 114
-      Script: {instanceID: 29242}
+      Script: {instanceID: 29858}
     - Class: 114
-      Script: {instanceID: 29336}
+      Script: {instanceID: 29956}
     - Class: 114
-      Script: {instanceID: 29978}
+      Script: {instanceID: 30630}
     - Class: 114
-      Script: {instanceID: 30184}
+      Script: {instanceID: 30840}
     - Class: 114
-      Script: {instanceID: 30384}
+      Script: {instanceID: 31050}
     - Class: 114
-      Script: {instanceID: 30482}
+      Script: {instanceID: 31154}
     - Class: 114
-      Script: {instanceID: 31054}
+      Script: {instanceID: 31756}
+    - Class: 114
+      Script: {instanceID: 33772}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1514,29 +1548,29 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 24884}
+      Script: {instanceID: 25246}
     - Class: 114
-      Script: {instanceID: 25120}
+      Script: {instanceID: 25498}
     - Class: 114
-      Script: {instanceID: 26036}
+      Script: {instanceID: 26480}
     - Class: 114
-      Script: {instanceID: 26232}
+      Script: {instanceID: 26682}
     - Class: 114
-      Script: {instanceID: 26680}
+      Script: {instanceID: 27152}
     - Class: 114
-      Script: {instanceID: 26878}
+      Script: {instanceID: 27368}
     - Class: 114
-      Script: {instanceID: 27086}
+      Script: {instanceID: 27580}
     - Class: 114
-      Script: {instanceID: 27904}
+      Script: {instanceID: 28460}
     - Class: 114
-      Script: {instanceID: 28372}
+      Script: {instanceID: 28946}
     - Class: 114
-      Script: {instanceID: 29336}
+      Script: {instanceID: 29956}
     - Class: 114
-      Script: {instanceID: 29978}
+      Script: {instanceID: 30630}
     - Class: 114
-      Script: {instanceID: 30184}
+      Script: {instanceID: 30840}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1554,12 +1588,6 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
-  - hash:
-      serializedVersion: 2
-      Hash: 738eac63c5842b9df3c8903be2655890
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: ResolutionChange
   - hash:
       serializedVersion: 2
       Hash: 9ebb206587356b4f57cd7f4108f0f87f
@@ -1640,10 +1668,10 @@ ScriptsOnlyBuild:
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
-      Hash: f8b731c1f434192ac2a7830f45025042
+      Hash: 4a8ed8752780f029675f9119d94d990d
     assemblyName: Assembly-CSharp
     namespaceName: 
-    className: ShootTurretElectroc
+    className: ShootTurretElectric
   - hash:
       serializedVersion: 2
       Hash: 80a72b656b55a7a1fc92e1a02151ea22
@@ -1790,6 +1818,12 @@ ScriptsOnlyBuild:
     className: UnityOnMouseExitMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 738eac63c5842b9df3c8903be2655890
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: ResolutionChange
+  - hash:
+      serializedVersion: 2
       Hash: 99d733a7d0587cff973274af67df5358
     assemblyName: Assembly-CSharp
     namespaceName: 
@@ -1838,7 +1872,7 @@ ScriptsOnlyBuild:
     className: Vignette
   - hash:
       serializedVersion: 2
-      Hash: 6a52c38803ab26d0e1e9170f04313753
+      Hash: fa9ead7f4a92a3ddf7b0568832863f7b
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: SpawnEnemy
@@ -1868,7 +1902,7 @@ ScriptsOnlyBuild:
     className: FireProjectile
   - hash:
       serializedVersion: 2
-      Hash: 82b0fb49d879c76d86b2052f64ead396
+      Hash: 22dcda1843a6cb88605541296160b65f
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: ShootTowerWater
@@ -2156,7 +2190,7 @@ ScriptsOnlyBuild:
     className: UnityOnDropMessageListener
   - hash:
       serializedVersion: 2
-      Hash: a9236c119d54bb65cbcbeb812358c417
+      Hash: d2b694b8690946f7396284eb8a31f27c
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: ShootTurretAOEDmg
@@ -2294,7 +2328,7 @@ ScriptsOnlyBuild:
     className: BaseInput
   - hash:
       serializedVersion: 2
-      Hash: df016c215e432711b1a60940c5189e00
+      Hash: b5dfa02bc4f0497bc299480fae1b7940
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: shootTurretBasic
@@ -2588,16 +2622,16 @@ ScriptsOnlyBuild:
     className: VertexColorCycler
   - hash:
       serializedVersion: 2
-      Hash: 216f6c07bfa250e44b3e8d62572474e8
-    assemblyName: Assembly-CSharp
-    namespaceName: TMPro.Examples
-    className: Benchmark01
-  - hash:
-      serializedVersion: 2
       Hash: 4fcf0bb4aff1d14a1dfcdedc4b07bd05
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.EventSystems
     className: TouchInputModule
+  - hash:
+      serializedVersion: 2
+      Hash: 216f6c07bfa250e44b3e8d62572474e8
+    assemblyName: Assembly-CSharp
+    namespaceName: TMPro.Examples
+    className: Benchmark01
   - hash:
       serializedVersion: 2
       Hash: 424074d3010ce4ec3d155fbdba52a3b3
@@ -2606,16 +2640,16 @@ ScriptsOnlyBuild:
     className: Grain
   - hash:
       serializedVersion: 2
-      Hash: 8703b6ae2b0eefd9dafbc44d8d333fb1
-    assemblyName: UnityEngine.UI
-    namespaceName: UnityEngine.UI
-    className: Shadow
-  - hash:
-      serializedVersion: 2
       Hash: f778e23b6ff26b8de4721be0eb1fa240
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnCollisionStayMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 8703b6ae2b0eefd9dafbc44d8d333fb1
+    assemblyName: UnityEngine.UI
+    namespaceName: UnityEngine.UI
+    className: Shadow
   - hash:
       serializedVersion: 2
       Hash: 1ab136900c0edaeeb49424c852595030
@@ -2720,7 +2754,7 @@ ScriptsOnlyBuild:
     className: VertexShakeA
   - hash:
       serializedVersion: 2
-      Hash: ecc41d28f868995e7feb9f165838bf1c
+      Hash: 78d127a4f8f716c8a12b8157581836bd
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: LevelManager
@@ -2852,7 +2886,7 @@ ScriptsOnlyBuild:
     className: UnityOnBecameInvisibleMessageListener
   - hash:
       serializedVersion: 2
-      Hash: fc28890f8dbc70d4045e534b8417a27b
+      Hash: e81c17dda957af355fc3b62e191a08cc
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: ShootTurretAriaDmg
@@ -2874,6 +2908,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: MouseHover
+  - hash:
+      serializedVersion: 2
+      Hash: 505a372f16adb642652414009122ad6b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Hiscore
   platform: 5
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
@@ -2885,4 +2925,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Lvl4.unity
   - Assets/Scenes/Lvl5.unity
   - Assets/Scenes/Lvl6.unity
-  playerPath: "C:/Users/N\xE9v/Desktop/Vizsgaprojek_SchoolTD/SchoolTD_3.2.7f1.exe"
+  playerPath: E:/Github/SchoolTD/SchoolTD_3.2.7f1/School TD/SchoolTD_3.2.7f1.exe

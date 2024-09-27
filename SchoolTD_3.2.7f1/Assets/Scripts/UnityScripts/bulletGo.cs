@@ -17,6 +17,13 @@ public class bulletGo : MonoBehaviour
         EndPos = GameObject.FindGameObjectWithTag("Enemy");
         Destroy(gameObject, lifetime);
     }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Enemy") && other.transform.position == EndPos.transform.position)
+        {
+            Destroy(gameObject, lifetime);
+        }
+    }
     void Update()
     {
         if (EndPos == null)
@@ -31,13 +38,4 @@ public class bulletGo : MonoBehaviour
         agent.destination = EndPos.transform.position;
         agent.angularSpeed = 270f;
     }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Enemy") && other.transform.position == EndPos.transform.position)
-        {
-            Destroy(gameObject,lifetime);
-        }
-    }
-
 }

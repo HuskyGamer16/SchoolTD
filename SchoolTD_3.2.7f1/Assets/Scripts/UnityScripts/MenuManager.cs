@@ -6,25 +6,6 @@ public class MenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject MainMenu;
     [SerializeField] private GameObject SettingsMenu;
-    private void Start()
-    {
-        CloseAllMenus();
-    }
-    private void Update()
-    {
-        if(Input.GetKey(KeyCode.Escape))
-        {
-            if (!PauseManager.IsPaused)
-            {
-               PauseManager.instance.Pause();
-               OpenMainMenu();
-            }
-            else { 
-               PauseManager.instance.unPause();
-                CloseAllMenus();
-            }
-        }   
-    }
     void OpenMainMenu() { 
         MainMenu.SetActive(true);
         SettingsMenu.SetActive(false);
@@ -36,5 +17,25 @@ public class MenuManager : MonoBehaviour
     void CloseAllMenus() {
         MainMenu.SetActive(false);
         SettingsMenu.SetActive(false);
+    }
+    private void Start()
+    {
+        CloseAllMenus();
+    }
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            if (!PauseManager.IsPaused)
+            {
+                PauseManager.instance.Pause();
+                OpenMainMenu();
+            }
+            else
+            {
+                PauseManager.instance.unPause();
+                CloseAllMenus();
+            }
+        }
     }
 }

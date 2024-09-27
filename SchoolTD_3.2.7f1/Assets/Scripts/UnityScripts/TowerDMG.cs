@@ -15,21 +15,6 @@ public class TowerDMG : MonoBehaviour
         timeToSpawn = 5f;
         spawnCooldown = timeToSpawn;
     }
-    void Update()
-    {
-        if (isFlameOut)
-        {
-            if (spawnCooldown <= 0)
-                gameObject.GetComponentInChildren<ParticleSystem>().Stop();
-                isFlameOut = false;
-        }
-        else
-        {
-            if (spawnCooldown <= 0)
-                gameObject.GetComponentInChildren<ParticleSystem>().Play();
-                isFlameOut = true;
-        }
-    }
     private void Setfire(GameObject enemy)
     {
         effects preEffect = enemy.GetComponent<EnemyMovement>().effect;
@@ -73,6 +58,21 @@ public class TowerDMG : MonoBehaviour
                 if(isFlameOut) Setfire(other.gameObject);
                 spawnCooldown = timeToSpawn;
             }
+        }
+    }
+    void Update()
+    {
+        if (isFlameOut)
+        {
+            if (spawnCooldown <= 0)
+                gameObject.GetComponentInChildren<ParticleSystem>().Stop();
+            isFlameOut = false;
+        }
+        else
+        {
+            if (spawnCooldown <= 0)
+                gameObject.GetComponentInChildren<ParticleSystem>().Play();
+            isFlameOut = true;
         }
     }
 }

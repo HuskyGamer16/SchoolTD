@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,20 +12,13 @@ public class ShootTurretAriaDmg : MonoBehaviour
     private float dmgCooldown;
     public int towerid;
     public int towerdmg;
-
     void Start()
     {
         dmgCooldown = dmgRate;
     }
-    private void Update()
-    {
-        transform.Rotate(0,-25*Time.deltaTime,0);
-        
-            Shoot();
-        
-    }
     public void Shoot()
-    {   try
+    {
+        try
         {
             if (targets.Count != 0)
             {
@@ -58,9 +52,27 @@ public class ShootTurretAriaDmg : MonoBehaviour
         }
         catch (MissingReferenceException)
         {
-            db.TowerXPgain(LoginHandler.playerid, towerid, targetExps[0]);
-            targets.Remove(targets[0]);
-            targetExps.Remove(targetExps[0]);
+            if (targetExps.Count >= 1)
+            {
+                db.TowerXPgain(LoginHandler.playerid, towerid, targetExps[0]);
+                targetExps.Clear();
+            }
+            if (targets.Count >= 1)
+            {
+                targets.Clear();
+            }
+            Shoot();
+        }
+        catch (NullReferenceException) {
+            if (targetExps.Count >= 1)
+            {
+                db.TowerXPgain(LoginHandler.playerid, towerid, targetExps[0]);
+                targetExps.Clear();
+            }
+            if (targets.Count >= 1)
+            {
+                targets.Clear();
+            }
             Shoot();
         }
     }
@@ -72,7 +84,18 @@ public class ShootTurretAriaDmg : MonoBehaviour
             targetExps.Remove(other.gameObject.GetComponent<EnemyMovement>().EXP);
         }
     }
-
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.activeSelf && other.CompareTag("Enemy"))
+        {
+            int j = 0;
+            while (j < targets.Count && targets[j].gameObject != other.gameObject){ j++; }
+            if (j >= targets.Count) { 
+            targetExps.Add(other.gameObject.GetComponent<EnemyMovement>().EXP);
+            targets.Add(other.gameObject);
+            }
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.activeSelf && other.CompareTag("Enemy"))
@@ -80,5 +103,10 @@ public class ShootTurretAriaDmg : MonoBehaviour
             targetExps.Add(other.gameObject.GetComponent<EnemyMovement>().EXP);
             targets.Add(other.gameObject);
         }
+    }
+    private void Update()
+    {
+        transform.Rotate(0, -25 * Time.deltaTime, 0);
+        Shoot();
     }
 }

@@ -24,7 +24,6 @@ public class LevelManager : MonoBehaviour
         playerid = LoginHandler.playerid;
         test = true;
         lvlnum = 0;
-        Debug.Log(playerid);
     }
     public void CheckLevel()
     {
@@ -122,14 +121,6 @@ public class LevelManager : MonoBehaviour
                 break;
         }
     }
-    void Update()
-    {
-        if (test)
-        {
-            CheckLevel();
-            test = !test;
-        }
-    }
     public void AddLvlNum() {
     if(lvlnum<5)
         lvlnum++;
@@ -141,11 +132,13 @@ public class LevelManager : MonoBehaviour
     public void TowerShop()
     {
         SceneManager.LoadScene(TowerSelect);
+        SceneManager.UnloadSceneAsync(1);
     }
     public void Quit()
     {
         LoginHandler.playerid = playerid;
         SceneManager.LoadScene(Exit);
+        SceneManager.UnloadSceneAsync(1);
     }
     public void QuitToDesktop()
     {
@@ -153,7 +146,15 @@ public class LevelManager : MonoBehaviour
     }
     public void Level()
     {
-        //Debug.Log("Lvl" + (lvlnum + 1));
         SceneManager.LoadScene("Lvl" + (lvlnum + 1));
+        SceneManager.UnloadSceneAsync(1);
+    }
+    void Update()
+    {
+        if (test)
+        {
+            CheckLevel();
+            test = !test;
+        }
     }
 }

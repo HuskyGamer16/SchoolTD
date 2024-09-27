@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,25 +6,19 @@ using UnityEngine;
 public class ShootTowerWater : MonoBehaviour
 {
     static DbConnect db = new DbConnect("127.0.0.1", "schooltd", "root", "");
-
     public List<GameObject> targets;
     public List<int> targetExps;
     public float dmgRate = 0.25f;
     private float dmgCooldown;
     public int towerdmg;
     public int towerid;
-
     void Start()
     {
         dmgCooldown = dmgRate;
     }
-    private void Update()
-    {
-        transform.Rotate(0, 0,25 * Time.deltaTime);
-        Shoot();
-    }
     public void Shoot()
-    {try
+    {
+        try
         {
             if (targets.Count != 0)
             {
@@ -57,9 +52,28 @@ public class ShootTowerWater : MonoBehaviour
         }
         catch (MissingReferenceException)
         {
-            db.TowerXPgain(LoginHandler.playerid, towerid, targetExps[0]);
-            targets.Remove(targets[0]);
-            targetExps.Remove(targetExps[0]);
+            if (targetExps.Count >= 1)
+            {
+                db.TowerXPgain(LoginHandler.playerid, towerid, targetExps[0]);
+                targetExps.Clear();
+            }
+            if (targets.Count >= 1)
+            {
+                targets.Clear();
+            }
+            Shoot();
+        }
+        catch (NullReferenceException)
+        {
+            if (targetExps.Count >= 1)
+            {
+                db.TowerXPgain(LoginHandler.playerid, towerid, targetExps[0]);
+                targetExps.Clear();
+            }
+            if (targets.Count >= 1)
+            {
+                targets.Clear();
+            }
             Shoot();
         }
     }
@@ -71,13 +85,30 @@ public class ShootTowerWater : MonoBehaviour
             targetExps.Remove(other.gameObject.GetComponent<EnemyMovement>().EXP);
         }
     }
-
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.activeSelf && other.CompareTag("Enemy"))
+        {
+            int j = 0;
+            while (j < targets.Count && targets[j].gameObject != other.gameObject) { j++; }
+            if (j >= targets.Count)
+            {
+                targetExps.Add(other.gameObject.GetComponent<EnemyMovement>().EXP);
+                targets.Add(other.gameObject);
+            }
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.activeSelf && other.CompareTag("Enemy"))
         {
-            targets.Add(other.gameObject);
             targetExps.Add(other.gameObject.GetComponent<EnemyMovement>().EXP);
+            targets.Add(other.gameObject);
         }
+    }
+    private void Update()
+    {
+        transform.Rotate(0, 0, 25 * Time.deltaTime);
+        Shoot();
     }
 }

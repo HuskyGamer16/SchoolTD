@@ -26,17 +26,9 @@ public class RegistryHandler : MonoBehaviour
         IsGood = false;
         pwError.enabled = false;
     }
-    private void FixedUpdate()
-    {
-        if (IsGood && Delay != 0)
-        {
-            Delay -= Time.unscaledTime;
-            if (Delay < 0)
-            {
-                ResetInputs();
-                panelFrom.SetActive(false);
-                panelTo.SetActive(true);
-            }
+    public void CheckAll(){
+        if(chPw && chName && chLength){
+            IsGood = true;
         }
     }
     public void ResetInputs() {
@@ -62,15 +54,14 @@ public class RegistryHandler : MonoBehaviour
                 pwError.text = "This (user)name is already in use!";
                 chName = false;
                 IsGood = false;
-                CheckAll();
             }
             else
             {
                 pwError.enabled = false;
                 pwError.text = "";
                 chName = true;
-                CheckAll();
             }
+            CheckAll();
         }
     }
     public void IsPwLongEnough()
@@ -83,15 +74,14 @@ public class RegistryHandler : MonoBehaviour
                 pwError.enabled = true;
                 chLength = false;
                 IsGood = false;
-                CheckAll();
             }
             else
             {
                 pwError.text = "";
                 pwError.enabled = false;
                 chLength = true;
-                CheckAll();
             }
+            CheckAll();
         }
     }
     public void CheckPW()
@@ -105,21 +95,16 @@ public class RegistryHandler : MonoBehaviour
                 pwError.enabled = true;
                 chPw = false;
                 IsGood = false;
-                CheckAll();
             }
             else
             {
                 pwError.enabled = false;
                 chPw = true;
-                CheckAll();
             }
+            CheckAll();
         }
     }
-    public void CheckAll(){
-        if(chPw && chName && chLength){
-            IsGood = true;
-        }
-    }
+    
     public void Register()
     {
         if (!IsGood)
@@ -135,6 +120,19 @@ public class RegistryHandler : MonoBehaviour
             db.InsertPlayer(new player(nameInput.text, hash));
             sReg.text = "Succesful Enrollment!";
             Delay = 1050f;
+        }
+    }
+    private void FixedUpdate()
+    {
+        if (IsGood && Delay != 0)
+        {
+            Delay -= Time.unscaledTime;
+            if (Delay < 0)
+            {
+                ResetInputs();
+                panelFrom.SetActive(false);
+                panelTo.SetActive(true);
+            }
         }
     }
 }

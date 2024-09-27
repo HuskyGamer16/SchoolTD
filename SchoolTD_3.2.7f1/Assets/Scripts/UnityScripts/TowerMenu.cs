@@ -23,20 +23,6 @@ public class TowerMenu : MonoBehaviour
     public int currentTowerid=0;
     public bool CanBuy;
     public bool CanUpg;
-
-    void Start()
-    {
-        playerid = LoginHandler.playerid;
-        CanBuy = false;
-        CanUpg = false;
-        CanUpThis();
-        CanBuyThis();
-        playerTowers = db.SelectPlayerTower(playerid);
-        TowerLvlCannon();
-        CheckSlider();
-        //Debug.Log(playerid);
-        //Debug.Log("");
-    }
     public void CheckSlider()
     {
         Slider SliderAct = Slider.GetComponent<Slider>();
@@ -56,6 +42,30 @@ public class TowerMenu : MonoBehaviour
         else {
             CanUpg = false;
             CanBuy = false;
+        }
+    }
+    public void CanBuyThis()
+    {
+        if (CanBuy)
+        {
+            Buy.SetActive(true);
+            Upgrade.SetActive(false);
+        }
+        else
+        {
+            Buy.SetActive(false);
+        }
+    }
+    public void CanUpThis()
+    {
+        if (CanUpg)
+        {
+            Upgrade.SetActive(true);
+            Buy.SetActive(false);
+        }
+        else
+        {
+            Upgrade.SetActive(false);
         }
     }
     public void TowerLvlCannon()
@@ -120,48 +130,18 @@ public class TowerMenu : MonoBehaviour
             currentTowerid = temp[temp.Count - 1].TowerID;
             int maxlvl = db.GetMaxLvl(currentTowerid); //torony max szint
             int currentLvl = db.GetLvl(currentTowerid); //jelen szint
-            if (currentLvl == maxlvl)
+            if (currentLvl != maxlvl)
             {
-                CanBuy = true;
-                CanBuyThis();
-                CheckSlider();
-            }
-            else
-            {
-                CanBuyThis();
                 CheckSlider();
                 CanUpThis();
             }
+            else
+            {
+                CanBuy = true;
+            }
         }
-        else
-        {
-            CanBuy = true;
-            CanBuyThis();
-            CheckSlider();
-        }
-
-    }
-    public void CanBuyThis() {
-        if (CanBuy)
-        {
-            Buy.SetActive(true);
-            Upgrade.SetActive(false);
-        }
-        else { 
-        Buy.SetActive(false);
-        }
-    }
-    public void CanUpThis()
-    {
-        if (CanUpg)
-        {
-            Upgrade.SetActive(true);
-            Buy.SetActive(false);
-        }
-        else
-        {
-           Upgrade.SetActive(false);
-        }
+        CheckSlider();
+        CanBuyThis();
     }
     public void BuyTower() {
         int tower = 0;
@@ -185,22 +165,26 @@ public class TowerMenu : MonoBehaviour
         }
         db.InsertPlayerTower(new playerTower(0,tower, playerid, 0));
         CanBuy = false;
-        CanBuyThis();
         playerTowers = db.SelectPlayerTower(playerid);
         CheckSlider();
+        CanBuyThis();
     }
     public void UpgradeTower()
     {
         db.TowerLvlUP(currentTowerid,playerid); //szint fejlesztés (szint num +1)
         CanUpg = false;
-        CanUpThis();
         playerTowers = db.SelectPlayerTower(playerid);
         CheckSlider();
+        CanUpThis();
     }
     public void Exit()
     {
         LoginHandler.playerid = playerid; 
         SceneManager.LoadScene(Menu);
+        SceneManager.UnloadSceneAsync(2);
+    }
+    public void position(int current) {
+        Camera.transform.position = Vector3.MoveTowards(Markers[num].transform.position,Markers[current].transform.position,camSpeed*Time.deltaTime);
     }
     public void right()
     {
@@ -234,7 +218,15 @@ public class TowerMenu : MonoBehaviour
         }
         position(pre);
     }
-    public void position(int current) {
-        Camera.transform.position = Vector3.MoveTowards(Markers[num].transform.position,Markers[current].transform.position,camSpeed*Time.deltaTime);
+    void Start()
+    {
+        playerid = LoginHandler.playerid;
+        CanBuy = false;
+        CanUpg = false;
+        playerTowers = db.SelectPlayerTower(playerid);
+        TowerLvlCannon();
+        CheckSlider();
+        CanUpThis();
+        CanBuyThis();
     }
 }

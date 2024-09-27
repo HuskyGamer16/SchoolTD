@@ -25,12 +25,11 @@ public class CheckPlayerHP : MonoBehaviour
         gradeNum = 3;
         gradeSum = 15f;
     }
-    private void Update()
+    private void LoseCondition()
     {
-        WriteAvg();
-        CheckHp();
+        Time.timeScale = .1f;
+        LosePanel.SetActive(true);
     }
-
     private void CheckHp()
     {
         if (gradeAvg < 2.00f)
@@ -51,11 +50,6 @@ public class CheckPlayerHP : MonoBehaviour
         else {
             avgText.faceColor = Color.blue;
         }
-    }
-    private void LoseCondition()
-    {
-        Time.timeScale = .1f;
-        LosePanel.SetActive(true);
     }
     public void ExitLose()
     {
@@ -103,5 +97,10 @@ public class CheckPlayerHP : MonoBehaviour
             gradeSum += (grade*2);
             Destroy(other.gameObject);
         }
+    }
+    private void Update()
+    {
+        WriteAvg();
+        CheckHp();
     }
 }

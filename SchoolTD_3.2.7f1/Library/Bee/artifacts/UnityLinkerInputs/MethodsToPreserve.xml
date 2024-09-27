@@ -7,31 +7,41 @@
 			<method name="ExitLose"/>
 			<method name="ExitLose"/>
 			<method name="ExitLose"/>
-			<method name="ExitLose"/>
-			<method name="ExitLose"/>
-			<method name="ExitLose"/>
-			<method name="ExitLose"/>
-			<method name="ExitLose"/>
-			<method name="ExitLose"/>
+			<method name="ExitWin"/>
+			<method name="ExitWin"/>
+			<method name="ExitWin"/>
+			<method name="ExitWin"/>
+			<method name="ExitWin"/>
+			<method name="ExitWin"/>
 			<method name="QuitLose"/>
 			<method name="QuitLose"/>
 			<method name="QuitLose"/>
 			<method name="QuitLose"/>
 			<method name="QuitLose"/>
 			<method name="QuitLose"/>
-			<method name="QuitWin"/>
-			<method name="QuitWin"/>
-			<method name="QuitWin"/>
-			<method name="QuitWin"/>
-			<method name="QuitWin"/>
 			<method name="QuitWin"/>
 		</type>
 		<type fullname="GoSelectLvl">
 			<method name="ToLevelSelect"/>
 		</type>
 		<type fullname="LevelManager">
-			<method name="lvl1"/>
+			<method name="AddLvlNum"/>
+			<method name="AddLvlNum"/>
+			<method name="AddLvlNum"/>
+			<method name="AddLvlNum"/>
+			<method name="AddLvlNum"/>
+			<method name="Level"/>
+			<method name="Level"/>
+			<method name="Level"/>
+			<method name="Level"/>
+			<method name="Level"/>
+			<method name="Level"/>
 			<method name="Quit"/>
+			<method name="SubLvlNum"/>
+			<method name="SubLvlNum"/>
+			<method name="SubLvlNum"/>
+			<method name="SubLvlNum"/>
+			<method name="SubLvlNum"/>
 			<method name="TowerShop"/>
 		</type>
 		<type fullname="LoginHandler">
@@ -118,6 +128,10 @@
 	</assembly>
 	<assembly fullname="UnityEngine.CoreModule" ignoreIfMissing="1">
 		<type fullname="UnityEngine.GameObject">
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
+			<method name="SetActive"/>
 			<method name="SetActive"/>
 			<method name="SetActive"/>
 			<method name="SetActive"/>

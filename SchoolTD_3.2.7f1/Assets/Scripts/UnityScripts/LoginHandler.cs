@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Security.Cryptography;
 using System.Text;
 using TMPro;
-
+using UnityEngine.Profiling;
 public class LoginHandler : MonoBehaviour
 {
     public float Delay = 5f;
@@ -23,89 +23,6 @@ public class LoginHandler : MonoBehaviour
     [SerializeField] private TMP_Text sLog;
     [SerializeField] private Camera cam;
     DbConnect db = new DbConnect("127.0.0.1", "schooltd", "root", "");
-    void Start()
-    {
-        TimeTo = Delay;
-        ResetInputs();
-    }
-    private void Update()
-    {
-        if (!stop) {
-            TimeTo -= Time.deltaTime;
-            if (TimeTo <= 0)
-            {
-                stop = true;
-            }
-        }
-        if (Input.GetKey(KeyCode.Escape))
-        {
-            BackToMain();
-        }
-    }
-    public void ResetInputs()
-    {
-        if (playerid != 0)
-        {
-            IsGood = true;
-            Login();
-        }
-        else { 
-        playerid = 0;
-        sLog.text = "To enter, show Student ID";
-        nameInput.text = "";
-        pwInput.text = "";
-        IsGood = false;
-        pwError.enabled = false;
-        }
-    }
-    public void UsernameGood()
-    {
-        if (nameInput != null)
-        {
-            int count = db.CountUserPlayer(nameInput.text);
-            if (count == 1)
-            {
-                pwError.enabled = false;
-                pwError.text = "";
-            }
-            else if (count <= 0)
-            {
-                pwError.enabled = true;
-                pwError.text = "There is no one in the school with this name!";
-            }
-            if (count > 1)
-            {
-                pwError.enabled = true;
-                pwError.text = "There is more than one person in the school with this name!";
-            }
-        }
-    }
-
-    public void CheckPW()
-    {
-        if (nameInput != null)
-        {
-            List<player> players = db.SelectAllPlayer();
-
-            int i = 0;
-            while (i < players.Count && players[i].Username != nameInput.text)
-            {
-                i++;
-            }
-            if (i < players.Count)
-            {
-                string pass = players[i].Pw;
-                byte[] data = Encoding.UTF8.GetBytes(pwInput.text);
-                data = new SHA512Managed().ComputeHash(data);
-                string hash = Encoding.UTF8.GetString(data);
-                if (pass == hash)
-                {
-                    IsGood = true;
-                    playerid = players[i].Id;
-                }
-            }
-        }
-    }
     public void Login()
     {
         if (!IsGood)
@@ -130,6 +47,74 @@ public class LoginHandler : MonoBehaviour
             MainPanel.SetActive(true);
         }
     }
+    public void ResetInputs()
+    {
+        if (playerid != 0)
+        {
+            IsGood = true;
+            Login();
+        }
+        else { 
+        playerid = 0;
+        sLog.text = "To enter, show Student ID";
+        nameInput.text = "";
+        pwInput.text = "";
+        IsGood = false;
+        pwError.enabled = false;
+        }
+    }
+    void Start()
+    {
+        Profiler.maxUsedMemory = 256 * 1024 *1024;
+        TimeTo = Delay;
+        ResetInputs();
+    }
+    public void UsernameGood()
+    {
+        if (nameInput != null)
+        {
+            int count = db.CountUserPlayer(nameInput.text);
+            if (count == 1)
+            {
+                pwError.enabled = false;
+                pwError.text = "";
+            }
+            else if (count <= 0)
+            {
+                pwError.enabled = true;
+                pwError.text = "There is no one in the school with this name!";
+            }
+            if (count > 1)
+            {
+                pwError.enabled = true;
+                pwError.text = "There is more than one person in the school with this name!";
+            }
+        }
+    }
+    public void CheckPW()
+    {
+        if (nameInput != null)
+        {
+            List<player> players = db.SelectAllPlayer();
+            int i = 0;
+            while (i < players.Count && players[i].Username != nameInput.text)
+            {
+                i++;
+            }
+            if (i < players.Count)
+            {
+                string pass = players[i].Pw;
+                byte[] data = Encoding.UTF8.GetBytes(pwInput.text);
+                data = new SHA512Managed().ComputeHash(data);
+                string hash = Encoding.UTF8.GetString(data);
+                if (pass == hash)
+                {
+                    IsGood = true;
+                    playerid = players[i].Id;
+                }
+            }
+        }
+    }
     public void BackToMain()
     {
         Animator ani = cam.GetComponent<Animator>();
@@ -139,5 +124,20 @@ public class LoginHandler : MonoBehaviour
         ani.PlayInFixedTime("CamMovementReverse");
         panelFrom.SetActive(false);
         MainPanel.SetActive(true);
+    }
+    private void Update()
+    {
+        if (!stop)
+        {
+            TimeTo -= Time.deltaTime;
+            if (TimeTo <= 0)
+            {
+                stop = true;
+            }
+        }
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            BackToMain();
+        }
     }
 }

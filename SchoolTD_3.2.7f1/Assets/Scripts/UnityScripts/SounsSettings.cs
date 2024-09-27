@@ -8,14 +8,13 @@ public class SounsSettings : MonoBehaviour
 {
     [SerializeField] Slider soundSlider; 
     [SerializeField] AudioMixer masterMixer;
-    // Start is called before the first frame update
-    private void Start()
+    public void RefreshSlider (float _value)
     {
-        SetVolume(PlayerPrefs.GetFloat("SavedMasterVolume",100));
+        soundSlider.value = _value;
     }
-    // Any AudioOutput to Master
     public void SetVolume(float _value) {
-        if (_value < 1) {
+        if (_value < 1)
+        {
             _value = .001f;
         }
         RefreshSlider(_value);
@@ -25,8 +24,8 @@ public class SounsSettings : MonoBehaviour
     public void SetVolumeOnSlider() {
         SetVolume(soundSlider.value);
     }
-    public void RefreshSlider (float _value)
+    private void Start()
     {
-        soundSlider.value = _value;
+        SetVolume(PlayerPrefs.GetFloat("SavedMasterVolume",100));
     }
 }
